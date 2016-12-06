@@ -1,0 +1,57 @@
+<div class="main-content" autoscroll="true" bs-affix-target="" init-ripples="" ng-controller="payrollCtrl">
+    <section>
+
+        <div class="row m-b-40">
+            <div class="col-md-12">
+                <div class="card no-margin">
+                    <div class="table-responsive white">
+                        <table ng-table="payrollListTable" show-filter="true" class="table table-full table-full-small table-striped">
+                            <colgroup>
+                               
+                            </colgroup>
+                            <tbody>
+                                <!--ng href sending get data need to be fixed later-->
+                                <tr ng-repeat="u in data">
+
+									<td data-title="'#'" style="text-align: center;">
+                                       <i class="md md-open-in-new" ng-click="checkPayroll(u)"></i>
+                                    </td>
+
+                                    <td data-title="'Staff'" sortable="'staff'" filter="{ 'staff': 'text' }" style='text-align: center;'>{{u.staff}}</td>
+                                    <td data-title="'total Commission'" sortable="'total_commission'" filter="{ 'total_commission': 'text' }" style='text-align: center;'>{{u.total_commission}}</td>
+                                    <td data-title="'Submit Date'" sortable="'date'" filter="{ 'date': 'text' }" style='text-align: center;'>
+                                        {{u.date}}
+                                    </td>
+                                    <td data-title="'Approved By'" sortable="'approved_by'" filter="{ 'approved_by': 'text' }" style='text-align: center;'>
+                                        {{u.approved_by}}
+                                    </td>
+                                    <td data-title="'Payroll Number'" sortable="'payroll_number'" filter="{ 'payroll_number': 'text' }" style='text-align: center;'>
+                                        {{u.payroll_number}}
+                                    </td>
+									 <td data-title="'Status'" sortable="'status'" filter="{ 'status': 'text' }" style='text-align: center;'>
+                                        {{u.status}}
+                                    </td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+
+
+                        <!-- <pagination total-items="customers.length" ng-model="currentPage" max-size="maxSize" class="pagination-sm" boundary-links="true">
+                                    </pagination>-->
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+	
+	
+	
+	
+	
+	    <div class="footer-buttons">
+        <div class="btn btn-primary btn-round btn-lg" ng-click="findArchivedPayrun()" ng-hide="hideArchive"><i class="md md-archive"></i></div>
+		<div class="btn btn-primary btn-round btn-lg" ng-click="findPendingPayrun()" ng-hide="hidePending"><i class="md md-keyboard-arrow-left"></i></div>
+    </div>
+</div>

@@ -1,0 +1,2151 @@
+<div class="main-content" autoscroll="true" bs-affix-target="" init-ripples="" ng-controller="profileCtrl">
+    <section>
+<!--
+        <div class="page-header">
+            <h1>      <i class="md md-list"></i>      Booking Profile  </h1>
+
+        </div>
+-->
+        
+        <div class="row m-b-40">
+            <div class="col-md-3">
+                                        <div class="panel panel-default weather">
+                                <div class="panel-body">
+
+                                    <div class="weather-icon"> <i class="md md-account-circle"></i> </div>
+                                   
+                                </div>
+                            </div>
+
+				
+				             <div class="card">
+                                <div class="card-header relative">
+                                    <div class="card-title capitalize">{{profile.first_name}} {{profile.middle_name}}{{profile.last_name}}</div>
+                                    
+                                </div>
+                                <div class="list-group">
+<!--
+									<a href="" class="list-group-item clearfix">
+                                        <div class="pull-left m-r-10"> <i class="md md-account-circle"></i> </div>
+                                        <div class="list-group-item-heading Smallprofile">First Name: <input ng-model="view.editableValue9" size="10" class="notEditingInput" ng-change="enableEditorButtons(view.id9)"><i class="md md-history" ng-click="showModal('first_name')"></i></div></a>
+									
+									<a href="" class="list-group-item clearfix">
+                                        <div class="pull-left m-r-10"> <i class="md md-account-circle"></i> </div>
+                                        <div class="list-group-item-heading Smallprofile">Last Name: <input ng-model="view.editableValue10" size="10" class="notEditingInput" ng-change="enableEditorButtons(view.id10)"><i class="md md-history" ng-click="showModal('last_name')"></i></div></a>
+-->
+									
+									<a href="" class="list-group-item clearfix">
+                                        <div class="pull-left m-r-10"> <i class="md md-flare"></i></div>
+                                        <div class="list-group-item-heading Smallprofile">Trip Status: !!</div></a>
+                                    <a href="" class="list-group-item clearfix">
+                                        <div class="pull-left m-r-10"> <i class="md md-payment"></i></div>
+                                        <div class="list-group-item-heading Smallprofile">Task Status: {{status}}</div></a>
+									
+									<a href="" class="list-group-item clearfix">
+                                        <div class="pull-left m-r-10"> <i class="md md-email"></i> </div>
+                                        <div class="list-group-item-heading Smallprofile"><input ng-model="view.editableValue" size="30" class="notEditingInput" ng-change="enableEditorButtons(view.id)"><i class="md md-history" ng-click="showModal('email')"></i></div></a>
+                                    
+                                    <a href="" class="list-group-item clearfix">
+                                        <div class="pull-left m-r-10"><i class="md md-phone"></i></div>
+                                        <div class="list-group-item-heading Smallprofile"><input ng-model="view.editableValue2" size="30" class="notEditingInput" ng-change="enableEditorButtons(view.id2)"><i class="md md-history" ng-click="showModal('prefferd_contact_no')"></i></div>  </a>
+                                </div>
+                            </div>
+				
+				
+                
+                                            <div class="card">
+                                <div class="card-header relative">
+                                    <div class="card-title capitalize">
+										<span ng-click="showNotes()" style="padding-left: 5px;"><i class="md md-event-note" style="font-size: 22px;"></i><span id="noteBadge" ng-show="noteRedFlag"></span></span>
+<!--										<span ng-click="addPay()" style="padding-left: 5px;"><i class="md md-attach-money"></i></span>-->				
+									</div>            
+                                </div>
+
+                            </div>
+                
+            </div>
+            <div class="col-md-9">
+                <div class="row well white">
+                                <div role="tabpanel">
+                        <!-- Nav tabs -->
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li role="presentation" id="personalClass" class="active"><a aria-controls="home" role="tab" data-toggle="tab" href="/#personal-details">Personal<span class="badge newbadge" ng-hide="hidePersonalNotification">{{personalNotification}}</span></a></li>
+                            <li role="presentation"><a aria-controls="home" role="tab" data-toggle="tab" href="/#trip-details">Package <span class="badge newbadge" ng-hide="hideTripNotification">{{tripNotification}}</span></a></li>
+                            <li role="presentation"><a aria-controls="home" role="tab" data-toggle="tab" href="/#travel-details">Travel </a></li>
+                            <li role="presentation"><a aria-controls="home" role="tab" data-toggle="tab" href="/#other-details">Other <span class="badge newbadge" ng-hide="hideOtherNotification">{{otherNotification}}</span></a></li>
+							<li role="presentation"><a aria-controls="home" role="tab" data-toggle="tab" href="/#payment">Payments<span class="badge newbadge" ng-hide="hidePaymentNotification">{{paymentNotification}}</span></a></li>
+                            <li role="presentation"><a aria-controls="home" role="tab" data-toggle="tab" href="/#booking-conditions">Booking Conditions</a></li>
+                            <li role="presentation"><a aria-controls="home" role="tab" data-toggle="tab" href="/#survey">Survey<span class="badge newbadge" ng-hide="hideSurveyNotification">{{surveyNotification}}</span></a></li>
+                            <li role="presentation"><a aria-controls="home" role="tab" data-toggle="tab" href="/#hubspot">Sales</a></li>
+                            <li role="presentation"><a aria-controls="home" role="tab" data-toggle="tab" href="/#tasks">Tasks List</a></li>
+							<li role="presentation" id="complianceClass" ng-show="showComplianceSection"><a aria-controls="home" role="tab" data-toggle="tab" href="/#compliance">Compliance</a></li>
+							<li role="presentation"><a aria-controls="home" role="tab" data-toggle="tab" href="/#resume">Resume</a></li>
+							<li role="presentation"><a aria-controls="home" role="tab" data-toggle="tab" href="/#documents">Documents</a></li>
+							<li role="presentation"><a aria-controls="home" role="tab" data-toggle="tab" href="/#timeline">Timeline</a></li>
+                        </ul>
+                        <!-- Tab panes -->
+                        <div class="tab-content m-t-10">
+                            <div role="tabpanel" class="tab-pane active" id="personal-details">
+
+                                            <div class="col-md-12">
+                <div class="no-margin">
+                    <div class="table-responsive white">
+                        
+                        <table class="table table-striped table-full-small line profileTable">
+                            <colgroup>
+                                <col class="auto-cell-size p-r-20">
+                            </colgroup>
+                            <tbody>						
+								<tr>
+                                    <td class="f20"><i class="md md-chevron-right lime darken-2 icon-color"></i></td>
+                                    <td>First Name:</td>
+                                    <td><input ng-model="view.editableValue9" size="10" class="notEditingInput" ng-change="enableEditorButtons(view.id9)"></td>
+									<td class="f20"><i class="md md-history" ng-click="showModal('first_name')"></i></td>
+                                </tr>
+								
+								<tr>
+                                    <td class="f20"><i class="md md-chevron-right lime darken-2 icon-color"></i></td>
+                                    <td>Last Name:</td>
+                                    <td><input ng-model="view.editableValue10" size="10" class="notEditingInput" ng-change="enableEditorButtons(view.id10)"></td>
+									<td class="f20"><i class="md md-history" ng-click="showModal('last_name')"></i></td>
+                                </tr>
+								
+								
+								
+                                <tr>
+                                    <td class="f20"><i class="md md-chevron-right lime darken-2 icon-color"></i></td>
+                                    <td>Nationality:</td>
+                                    <td><input ng-model="viewPersonal.editableValue" size="25" class="notEditingInput" ng-change="enableEditorButtons(viewPersonal.id)"></td>
+									<td class="f20"><i class="md md-history" ng-click="showModal('nationality')"></i></td>
+                                </tr>
+                                <tr>
+                                    <td class="f20"><i class="md md-chevron-right lime darken-2 icon-color"></i></td>
+                                    <td>Valid Passport:</td>
+                                    <td><input ng-model="viewPersonal.editableValue2" size="25" class="notEditingInput" ng-change="enableEditorButtons(viewPersonal.id2)"></td>
+									<td class="f20"><i class="md md-history" ng-click="showModal('valid_passport')"></i></td>
+                                </tr>
+                                <tr>
+                                    <td class="f20"><i class="md md-chevron-right lime darken-2 icon-color"></i></td>
+                                    <td>Gender:</td>
+                                    <td><input ng-model="viewPersonal.editableValue3" size="25" class="notEditingInput" ng-change="enableEditorButtons(viewPersonal.id3)"></td>
+									<td class="f20"><i class="md md-history" ng-click="showModal('gender')"></i></td>
+                                </tr>
+                                <tr>
+                                    <td class="f20"><i class="md md-chevron-right lime darken-2 icon-color"></i></td>
+                                    <td>Secondary Contact No: </td>
+                                    <td><input ng-model="viewPersonal.editableValue4" size="25" class="notEditingInput" ng-change="enableEditorButtons(viewPersonal.id4)"></td>
+									<td class="f20"><i class="md md-history" ng-click="showModal('secondary_contact_no')"></i></td>
+                                </tr>
+								<tr>
+                                    <td class="f20"><i class="md md-chevron-right lime darken-2 icon-color"></i></td>
+                                    <td>Skype: </td>
+                                    <td><input ng-model="view.editableValue3" size="35" class="notEditingInput" ng-change="enableEditorButtons(view.id3)"></td>
+									<td class="f20"><i class="md md-history" ng-click="showModal('skype')"></i></td>
+                                </tr>
+                                <tr>
+                                    <td class="f20"><span id="ageIcon"></span></td>
+                                    <td><span ng-class="{rednotification: checkagered}">Age:</span></td>
+                                    <td><input ng-model="viewPersonal.editableValue5" size="25" class="notEditingInput" ng-change="enableEditorButtons(viewPersonal.id5)"></td>
+									<td class="f20"><i class="md md-history" ng-click="showModal('age')"></i></td>
+                                </tr>
+                                <tr>
+                                    <td class="f20"><i class="md md-chevron-right lime darken-2 icon-color"></i></td>
+                                    <td>Date of Birth:</td>
+                                    <td><input type="text" class="form-control" ng-model="viewPersonal.editableValue6" data-date-format="dd/MM/yyyy" data-date-type="string" data-autoclose="1" bs-datepicker class="notEditingInput" ng-change="enableEditorButtons(viewPersonal.id6)"></td>
+									<td class="f20"><i class="md md-history" ng-click="showModal('dob')"></i></td>
+                                </tr>
+                                <tr>
+                                    <td class="f20"><i class="md md-chevron-right lime darken-2 icon-color"></i></td>
+                                    <td>Weight(KG):</td>
+                                    <td><input ng-model="viewPersonal.editableValue7" size="25" class="notEditingInput" ng-change="enableEditorButtons(viewPersonal.id7)"></td>
+									<td class="f20"><i class="md md-history" ng-click="showModal('weight')"></i></td>
+                                </tr>
+                                <tr>
+                                    <td class="f20"><i class="md md-chevron-right lime darken-2 icon-color"></i></td>
+                                    <td>Height(CM):</td>
+                                    <td><input ng-model="viewPersonal.editableValue8" size="25" class="notEditingInput" ng-change="enableEditorButtons(viewPersonal.id8)"></td>
+									<td class="f20"><i class="md md-history" ng-click="showModal('height')"></i></td>
+                                </tr>
+								 <tr>
+                                    <td class="f20"><i class="md md-chevron-right lime darken-2 icon-color"></i></td>
+                                    <td>Address:</td>
+                                    <td>
+									 <input ng-model="view.editableValue4" class="notEditingInput" ng-change="enableEditorButtons(view.id4)">
+									 </td>
+									 <td class="f20"><i class="md md-history" ng-click="showModal('address')"></i></td>
+                                </tr>
+								<tr>
+                                    <td class="f20"><i class="md md-chevron-right lime darken-2 icon-color"></i></td>
+                                    <td>Suburb:</td>
+                                    <td>
+									<input ng-model="view.editableValue5" size="10" class="notEditingInput" ng-change="enableEditorButtons(view.id5)">
+									 </td>
+									<td class="f20"><i class="md md-history" ng-click="showModal('suburb')"></i></td>
+                                </tr>
+								<tr>
+                                    <td class="f20"><i class="md md-chevron-right lime darken-2 icon-color"></i></td>
+                                    <td>State:</td>
+                                    <td>
+									<input ng-model="view.editableValue6" size="5" class="notEditingInput" ng-change="enableEditorButtons(view.id6)">
+									 </td>
+									<td class="f20"><i class="md md-history" ng-click="showModal('state')"></i></td>
+                                </tr>
+								<tr>
+                                    <td class="f20"><i class="md md-chevron-right lime darken-2 icon-color"></i></td>
+                                    <td>Country:</td>
+                                    <td>
+									<input ng-model="view.editableValue7" size="10" class="notEditingInput" ng-change="enableEditorButtons(view.id7)">
+									 </td>
+									<td class="f20"><i class="md md-history" ng-click="showModal('country')"></i></td>
+                                </tr>
+								<tr>
+                                    <td class="f20"><i class="md md-chevron-right lime darken-2 icon-color"></i></td>
+                                    <td>Post code:</td>
+                                    <td>
+									<input ng-model="view.editableValue8" size="5" class="notEditingInput" ng-change="enableEditorButtons(view.id8)">
+									 </td>
+									<td class="f20"><i class="md md-history" ng-click="showModal('post_code')"></i></td>
+                                </tr>		
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+                           </div>
+                            <div role="tabpanel" class="tab-pane" id="trip-details">
+            					<div class="col-md-12">
+                <div class="no-margin">
+                    <div class="table-responsive white">
+                        <table class="table table-striped table-full-small line profileTable">
+                            <colgroup>
+                                <col class="auto-cell-size">
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <td class="f20"><i class="md md-chevron-right lime darken-2 icon-color"></i></td>
+                                    <td>Your Experience:</td>
+                                    <td><input ng-model="viewTrip.editableValue" size="25" class="notEditingInput" ng-change="enableEditorButtons(viewTrip.id)"></td>
+									<td class="f20"><i class="md md-history" ng-click="showModal('trip_experience_name')"></i></td>
+                                </tr>
+                                <tr>
+                                    <td class="f20"><i class="md md-chevron-right lime darken-2 icon-color"></i></td>
+                                    <td>In:</td>
+                                    <td><input ng-model="viewTrip.editableValue2" size="25" class="notEditingInput" ng-change="enableEditorButtons(viewTrip.id2)"></td>
+									<td class="f20"><i class="md md-history" ng-click="showModal('trip_destination')"></i></td>
+                                </tr>
+                                <tr>
+                                    <td class="f20"><i class="md md-chevron-right lime darken-2 icon-color"></i></td>
+                                    <td>Trip Code:</td>
+                                    <td><input ng-model="viewTrip.editableValue3" size="25" class="notEditingInput" ng-change="enableEditorButtons(viewTrip.id3)"></td>
+									<td class="f20"><i class="md md-history" ng-click="showModal('trip_code')"></i></td>
+                                </tr>
+                                <tr>
+                                    <td class="f20"><i class="md md-chevron-right lime darken-2 icon-color"></i></td>
+                                    <td>Duration:</td>
+                                    <td><input ng-model="viewTrip.editableValue4" size="25" class="notEditingInput" ng-change="enableEditorButtons(viewTrip.id4)"></td>
+									<td class="f20"><i class="md md-history" ng-click="showModal('trip_duration')"></i></td>
+                                </tr>
+                                <tr>
+                                    <td class="f20"><i class="md md-chevron-right lime darken-2 icon-color"></i></td>
+                                    <td>Price:</td>
+                                    <td><input ng-model="viewTrip.editableValue5" size="25" class="notEditingInput" ng-change="enableEditorButtons(viewTrip.id5)"></td>
+									<td class="f20"><i class="md md-history" ng-click="showModal('trip_price')"></i></td>
+                                </tr>
+								<tr>
+                                    <td class="f20"><span id="subjectIcon"></span></td>
+                                    <td><span ng-class="{rednotification: checksubjectred}">Subject:</span></td>
+                                    <td><input ng-model="viewTrip.editableValue6" size="25" class="notEditingInput" ng-change="enableEditorButtons(viewTrip.id6)"></td>
+									<td class="f20"><i class="md md-history" ng-click="showModal('subject')"></i></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+
+            </div>
+
+								<div class="col-md-12">        
+      		<div class="card">
+        		<div class="table-responsive white">
+					<h3 class="table-title p-20">Trip <button type="button" class="btn btn-link btn-round btn-lg editbutton" ng-click="addNewTrip()"><i class="md md-add"></i></button></h3>
+		        	          <table class="table table-full table-full-small">
+            <colgroup>
+              <col class="p-r-20" />
+            </colgroup>
+            <thead>
+            <tr>
+			 	<th>Experience</th>
+              	<th>Destination</th>
+				<th>Trip Code</th>
+				<th>Duration</th>
+				<th>Price</th>
+				<th>Status</th>
+            </tr>
+            </thead>
+            <tbody>
+				<tr ng-repeat="tl in tripList">
+					<td ng-click="editTrip(tl)">{{tl.trip_experience_name}}</td>
+					<td ng-click="editTrip(tl)">{{tl.trip_destination}}</td>
+					<td ng-click="editTrip(tl)">{{tl.trip_code}}</td>
+					<td ng-click="editTrip(tl)">{{tl.trip_duration}}</td>
+					<td ng-click="editTrip(tl)">{{tl.trip_price}}</td>
+					<td ng-click="editTrip(tl)">{{tl.trip_status}}</td>
+				</tr>
+				<tr>
+					<td colspan="5" style="text-align: center;" ng-show="tripTableNodata">There is no data yet.</td>
+				</tr>
+            </tbody>
+          </table>
+        		</div>         
+     		</div>      
+    	</div>						
+								
+								
+								
+								<div class="col-md-12">        
+      		<div class="card">
+        		<div class="table-responsive white">
+					<h3 class="table-title p-20">Flights <button type="button" class="btn btn-link btn-round btn-lg editbutton" ng-click="addFlights()"><i class="md md-add"></i></button></h3>
+		        	          <table class="table table-full table-full-small">
+            <colgroup>
+              <col class="p-r-20" />
+            </colgroup>
+            <thead>
+            <tr>
+                 <th>Airline</th>
+              <th>Class</th>
+				<th>Tentative Departure Date</th>
+				<th>Quoted Airfare Amount</th>
+				<th>Taxes Amount</th>
+				<th>Departure City</th>
+				<th>Arrival City</th>
+				<th>Return/Oneway</th>
+                <th>Status</th>
+            </tr>
+            </thead>
+            <tbody>
+				<tr ng-repeat="f in flightsList">
+					<td ng-click="editFlight(f)">{{f.flight_airline}}</td>
+					<td ng-click="editFlight(f)">{{f.flight_booking_class}}</td>
+					<td ng-click="editFlight(f)">{{f.flight_tentative_departure_date}}</td>
+					<td ng-click="editFlight(f)">{{f.flight_quoted_airfare_amount}}</td>
+					<td ng-click="editFlight(f)">{{f.flight_taxes_amount}}</td>
+					<td ng-click="editFlight(f)">{{f.flight_departure_city}}</td>
+					<td ng-click="editFlight(f)">{{f.flight_arrival_city}}</td>
+					<td ng-click="editFlight(f)">{{f.flight_rtnow}}</td>
+					<td ng-click="editFlight(f)">{{f.flight_status}}</td>
+				</tr>
+				<tr>
+				<td colspan="9" style="text-align: center;" ng-show="flightTableNodata">There is no flight information yet.</td>
+				</tr>
+            </tbody>
+          </table>
+        		</div>         
+     		</div>      
+    	</div>
+								<div class="col-md-12">        
+      		<div class="card">
+        		<div class="table-responsive white">
+					<h3 class="table-title p-20">Insurance<button type="button" class="btn btn-link btn-round btn-lg editbutton" ng-click="addInsurance()"><i class="md md-add"></i></button></h3>
+		        	          <table class="table table-full table-full-small">
+            <colgroup>
+              <col class="p-r-20" />
+            </colgroup>
+            <thead>
+            <tr>
+                 <th>Company</th>
+              <th>From</th>
+                <th>To</th>
+				<th>Plan</th>
+				<th>Excess</th>
+				<th>Amount</th>
+				<th>Comments</th>
+				<th>Status</th>
+            </tr>
+            </thead>
+            <tbody>
+				<tr ng-repeat="i in insuranceList">
+					<td ng-click="editInsurance(i)">{{i.insurance_company}}</td>
+					<td ng-click="editInsurance(i)">{{i.insurance_from}}</td>
+					<td ng-click="editInsurance(i)">{{i.insurance_to}}</td>
+					<td ng-click="editInsurance(i)">{{i.insurance_plan}}</td>
+					<td ng-click="editInsurance(i)">{{i.insurance_excess}}</td>
+					<td ng-click="editInsurance(i)">{{i.insurance_amount}}</td>
+					<td ng-click="editInsurance(i)">{{i.insurance_comments}}</td>
+					<td ng-click="editInsurance(i)">{{i.insurance_status}}</td>
+				</tr>
+				<tr>
+				<td colspan="8" style="text-align: center;" ng-show="insuranceTableNodata">There is no Insurance information yet.</td>
+				</tr>
+            </tbody>
+          </table>
+        		</div>         
+     		</div>      
+    	</div>
+								<div class="col-md-12">        
+      		<div class="card">
+        		<div class="table-responsive white">
+					<h3 class="table-title p-20">Accommodation<button type="button" class="btn btn-link btn-round btn-lg editbutton" ng-click="addAccommodation()"><i class="md md-add"></i></button></h3>
+		        	          <table class="table table-full table-full-small">
+            <colgroup>
+              <col class="p-r-20" />
+            </colgroup>
+            <thead>
+            <tr>
+			 	<th>Additional Accommodation</th>
+              	<th>Amount</th>
+                <th>From</th>
+				<th>To</th>
+				<th>Transfer</th>
+				<th>Status</th>
+				<th>Comments</th>
+            </tr>
+            </thead>
+            <tbody>
+				<tr ng-repeat="a in accommodationList">
+					<td ng-click="editAccommodation(a)">{{a.additional_accommodation}}</td>
+					<td ng-click="editAccommodation(a)">{{a.accommodation_amount}}</td>
+					<td ng-click="editAccommodation(a)">{{a.accommodation_from}}</td>
+					<td ng-click="editAccommodation(a)">{{a.accommodation_to}}</td>
+					<td ng-click="editAccommodation(a)">{{a.accommodation_transfer}}</td>
+					<td ng-click="editAccommodation(a)">{{a.accommodation_status}}</td>
+					<td ng-click="editAccommodation(a)">{{a.accommodation_comments}}</td>
+				</tr>
+				<tr>
+				<td colspan="7" style="text-align: center;" ng-show="accommodationTableNodata">There is no accommodation information yet.</td>
+				</tr>
+            </tbody>
+          </table>
+        		</div>         
+     		</div>      
+    	</div>
+								<div class="col-md-12">        
+      		<div class="card">
+        		<div class="table-responsive white">
+					<h3 class="table-title p-20">Transfer<button type="button" class="btn btn-link btn-round btn-lg editbutton" ng-click="addTransfer()"><i class="md md-add"></i></button></h3>
+		  <table class="table table-full table-full-small">
+            <colgroup>
+              <col class="p-r-20" />
+            </colgroup>
+            <thead>
+            <tr>
+			 	<th>Additional Transfer</th>
+              	<th>Amount</th>
+                <th>From</th>
+				<th>To</th>
+				<th>Return/Oneway</th>
+				<th>Status</th>
+				<th>Comments</th>
+            </tr>
+            </thead>
+            <tbody>
+				<tr ng-repeat="t in transferList">
+					<td ng-click="editTransfer(t)">{{t.additional_transfer}}</td>
+					<td ng-click="editTransfer(t)">{{t.transfer_amount}}</td>
+					<td ng-click="editTransfer(t)">{{t.transfer_from}}</td>
+					<td ng-click="editTransfer(t)">{{t.transfer_to}}</td>
+					<td ng-click="editTransfer(t)">{{t.transfer_returnow}}</td>
+					<td ng-click="editTransfer(t)">{{t.transfer_comments}}</td>
+					<td ng-click="editTransfer(t)">{{t.transfer_status}}</td>
+				</tr>
+				<tr>
+				<td colspan="7" style="text-align: center;" ng-show="transferTableNodata">There is no transfer information yet.</td>
+				</tr>
+            </tbody>
+          </table>
+        		</div>         
+     		</div>      
+    	</div>
+								<div class="col-md-12">        
+      		<div class="card">
+        		<div class="table-responsive white">
+					<h3 class="table-title p-20">Addon<button type="button" class="btn btn-link btn-round btn-lg editbutton" ng-click="addAddon()"><i class="md md-add"></i></button></h3>
+		        	          <table class="table table-full table-full-small">
+            <colgroup>
+              <col class="p-r-20" />
+            </colgroup>
+            <thead>
+            <tr>
+			 	<th>Supplier</th>
+              	<th>Gross Amount</th>
+                <th>Tour Name</th>
+				<th>Nett Amount</th>
+				<th>From</th>
+				<th>To</th>
+				<th>Comments</th>
+				<th>Status</th>
+            </tr>
+            </thead>
+            <tbody>
+				<tr ng-repeat="a in addonList">
+					<td ng-click="editAddon(a)">{{a.addon_supplier}}</td>
+					<td ng-click="editAddon(a)">{{a.addon_gross_amount}}</td>
+					<td ng-click="editAddon(a)">{{a.addon_tour_name}}</td>
+					<td ng-click="editAddon(a)">{{a.addon_nett_amount}}</td>
+					<td ng-click="editAddon(a)">{{a.addon_from}}</td>
+					<td ng-click="editAddon(a)">{{a.addon_to}}</td>
+					<td ng-click="editAddon(a)">{{a.addon_comments}}</td>
+					<td ng-click="editAddon(a)">{{a.addon_status}}</td>
+				</tr>
+				<tr>
+				<td colspan="8" style="text-align: center;" ng-show="addonTableNodata">There is no addon information yet.</td>
+				</tr>
+            </tbody>
+          </table>
+        		</div>         
+     		</div>      
+    	</div>
+								<div class="col-md-12">        
+      		<div class="card">
+        		<div class="table-responsive white">
+					<h3 class="table-title p-20">Charity<button type="button" class="btn btn-link btn-round btn-lg editbutton" ng-click="addCharity()"><i class="md md-add"></i></button></h3>
+		        	          <table class="table table-full table-full-small">
+            <colgroup>
+              <col class="p-r-20" />
+            </colgroup>
+            <thead>
+            <tr>
+			 	<th>Global Foundation</th>
+              	<th>Amount</th>
+                <th>Comments</th>
+				<th>Status</th>
+            </tr>
+            </thead>
+            <tbody>
+				<tr ng-repeat="c in charityList">
+					<td ng-click="editCharity(c)">{{c.charity_global_foundation}}</td>
+					<td ng-click="editCharity(c)">{{c.charity_amount}}</td>
+					<td ng-click="editCharity(c)">{{c.charity_comments}}</td>
+					<td ng-click="editCharity(c)">{{c.charity_status}}</td>
+				</tr>
+				<tr>
+				<td colspan="4" style="text-align: center;" ng-show="charityTableNodata">There is no charity information yet.</td>
+				</tr>
+            </tbody>
+          </table>
+        		</div>         
+     		</div>      
+    	</div>
+								<div class="col-md-12">        
+      		<div class="card">
+        		<div class="table-responsive white">
+					<h3 class="table-title p-20">Travel Voucher<button type="button" class="btn btn-link btn-round btn-lg editbutton" ng-click="addVoucher()"><i class="md md-add"></i></button></h3>
+		        	          <table class="table table-full table-full-small">
+            <colgroup>
+              <col class="p-r-20" />
+            </colgroup>
+            <thead>
+            <tr>
+                 <th>Travel Credit Voucher</th>
+              <th>Travel Voucher Amount</th>
+                <th>Travel Voucher Comments</th>
+				<th>Travel Voucher Status</th>
+            </tr>
+            </thead>
+            <tbody>
+				<tr ng-repeat="v in voucherList">
+					<td ng-click="editVoucher(v)">{{v.travel_credit_voucher}}</td>
+					<td ng-click="editVoucher(v)">{{v.travel_voucher_amount}}</td>
+					<td ng-click="editVoucher(v)">{{v.travel_voucher_comments}}</td>
+					<td ng-click="editVoucher(v)">{{v.travel_voucher_status}}</td>
+				</tr>
+				<tr>
+				<td colspan="4" style="text-align: center;" ng-show="travelVoucherTableNodata">There is no travel voucher information yet.</td>
+				</tr>
+            </tbody>
+          </table>
+        		</div>         
+     		</div>      
+    	</div>
+								<div class="col-md-12">        
+      		<div class="card">
+        		<div class="table-responsive white">
+					<h3 class="table-title p-20">Other Charges<button type="button" class="btn btn-link btn-round btn-lg editbutton" ng-click="addOtherCharges()"><i class="md md-add"></i></button></h3>
+		  <table class="table table-full table-full-small">
+            <colgroup>
+              <col class="p-r-20" />
+            </colgroup>
+            <thead>
+            <tr>
+                 <th>Item</th>
+              <th>Amount</th>
+                <th>Comments</th>
+				<th>Status</th>
+            </tr>
+            </thead>
+            <tbody>
+				<tr ng-repeat="oo in otherChargesList">
+					<td ng-click="editOther(oo)">{{oo.other_charges_item}}</td>
+					<td ng-click="editOther(oo)">{{oo.other_charges_amount}}</td>
+					<td ng-click="editOther(oo)">{{oo.other_charges_comments}}</td>
+					<td ng-click="editOther(oo)">{{oo.other_charges_status}}</td>
+				</tr>
+				<tr>
+				<td colspan="4" style="text-align: center;" ng-show="otherChargesTableNodata">There is no other chargers yet.</td>
+				</tr>
+            </tbody>
+          </table>
+					
+        		</div>         
+     		</div>      
+    	</div>
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="travel-details">             
+                                <div class="col-md-12">
+                <div class="no-margin">
+                    <div class="table-responsive white">
+                        <table class="table table-hover table-striped table-full-small line profileTable">
+                            <colgroup>
+                                <col class="auto-cell-size">
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <td class="f20"><i class="md md-chevron-right lime darken-2 icon-color"></i></td>
+                                    <td>Approximate date of departure:</td>
+                                    <td><input type="text" class="form-control" ng-model="viewTravel.editableValue" data-date-format="MM/yyyy" data-date-type="string" data-autoclose="1" bs-datepicker class="notEditingInput" ng-change="enableEditorButtons(viewTravel.id)"></td>
+									<td class="f20"><i class="md md-history" ng-click="showModal('date_departure')"></i></td>
+                                </tr>
+                                <tr>
+                                    <td class="f20"><i class="md md-chevron-right lime darken-2 icon-color"></i></td>
+                                    <td>Travelling before you start your experience:</td>
+                                    <td><input ng-model="viewTravel.editableValue2" size="25" class="notEditingInput" ng-change="enableEditorButtons(viewTravel.id2)"></td>
+									<td class="f20"><i class="md md-history" ng-click="showModal('travel_before_exp')"></i></td>
+                                </tr>
+								<tr>
+                                    <td class="f20"><i class="md md-chevron-right lime darken-2 icon-color"></i></td>
+                                    <td>Travelling before you start your experience - how long:</td>
+                                    <td><input ng-model="viewTravel.editableValue3" size="25" class="notEditingInput" ng-change="enableEditorButtons(viewTravel.id3)"></td>
+									<td class="f20"><i class="md md-history" ng-click="showModal('travel_before_exp_how_long')"></i></td>
+                                </tr>
+                                <tr>
+                                    <td class="f20"><i class="md md-chevron-right lime darken-2 icon-color"></i></td>
+                                    <td>Travelling with a friend:</td>
+                                    <td><input ng-model="viewTravel.editableValue4" size="25" class="notEditingInput" ng-change="enableEditorButtons(viewTravel.id4)"></td>
+									<td class="f20"><i class="md md-history" ng-click="showModal('traveL_with_someone')"></i></td>
+                                </tr>
+								 <tr>
+                                    <td class="f20"><i class="md md-chevron-right lime darken-2 icon-color"></i></td>
+                                    <td>Travelling with a friend - who:</td>
+                                    <td><input ng-model="viewTravel.editableValue5" size="25" class="notEditingInput" ng-change="enableEditorButtons(viewTravel.id5)"></td>
+									 <td class="f20"><i class="md md-history" ng-click="showModal('traveL_with_someone_who')"></i></td>
+                                </tr>
+                                <tr>
+                                    <td class="f20"><i class="md md-chevron-right lime darken-2 icon-color"></i></td>
+                                    <td>Would you consider staying longer:</td>
+                                    <td><input ng-model="viewTravel.editableValue6" size="25" class="notEditingInput" ng-change="enableEditorButtons(viewTravel.id6)"></td>
+									<td class="f20"><i class="md md-history" ng-click="showModal('stay_longer')"></i></td>
+                                </tr>
+                                   <tr>
+                                    <td class="f20"><i class="md md-chevron-right lime darken-2 icon-color"></i></td>
+                                    <td>Destination Country & City:</td>
+                                    <td>{{travelDetails.destination}}</td>
+                                </tr>
+                                   <tr>
+                                    <td class="f20"><i class="md md-chevron-right lime darken-2 icon-color"></i></td>
+                                    <td>Intended Length Of Stay:</td>
+                                    <td>{{travelDetails.stayLength}}</td>
+                                </tr>
+                                   <tr>
+                                    <td class="f20"><i class="md md-chevron-right lime darken-2 icon-color"></i></td>
+                                    <td>Approximate Date Of Departure:</td>
+                                    <td>{{travelDetails.departuredate}}</td>
+                                </tr>
+                                   <tr>
+                                    <td class="f20"><i class="md md-chevron-right lime darken-2 icon-color"></i></td>
+                                    <td>Approximate Date Of Return:</td>
+                                    <td>{{travelDetails.returndate}}</td>
+                                </tr>
+                                   <tr>
+                                    <td class="f20"><i class="md md-chevron-right lime darken-2 icon-color"></i></td>
+                                    <td>One Way Airfare Only:</td>
+                                    <td>{{travelDetails.oneway}}</td>
+                                </tr>
+                                                                   <tr>
+                                    <td class="f20"><i class="md md-chevron-right lime darken-2 icon-color"></i></td>
+                                    <td>Departure Country:</td>
+                                    <td>{{travelDetails.departurecountry}}</td>
+                                </tr>
+                                                                   <tr>
+                                    <td class="f20"><i class="md md-chevron-right lime darken-2 icon-color"></i></td>
+                                    <td>Departure Province:</td>
+                                    <td>{{travelDetails.departureprovince}}</td>
+                                </tr>
+                                                                   <tr>
+                                    <td class="f20"><i class="md md-chevron-right lime darken-2 icon-color"></i></td>
+                                    <td>Departing From Which City:</td>
+                                    <td>{{travelDetails.departurecity}}</td>
+                                </tr>
+                                                                   <tr>
+                                    <td class="f20"><i class="md md-chevron-right lime darken-2 icon-color"></i></td>
+                                    <td>Special Meal Request?</td>
+                                    <td>{{travelDetails.meal}}</td>
+                                </tr>
+                                                                   <tr>
+                                    <td class="f20"><i class="md md-chevron-right lime darken-2 icon-color"></i></td>
+                                    <td>Meal Request Details:</td>
+                                    <td>{{travelDetails.mealdetail}}</td>
+                                </tr>
+                                    <tr>
+                                    <td class="f20"><i class="md md-chevron-right lime darken-2 icon-color"></i></td>
+                                    <td>Passport Nation:</td>
+                                    <td>{{travelDetails.pnation}}</td>
+                                </tr>
+                                    <tr>
+                                    <td class="f20"><i class="md md-chevron-right lime darken-2 icon-color"></i></td>
+                                    <td>Passport Number:</td>
+                                    <td>{{travelDetails.pnumber}}</td>
+                                </tr>
+                                    <tr>
+                                    <td class="f20"><i class="md md-chevron-right lime darken-2 icon-color"></i></td>
+                                    <td>Name Of Passport:</td>
+                                    <td>{{travelDetails.pname}}</td>
+                                </tr>
+                                    <tr>
+                                    <td class="f20"><i class="md md-chevron-right lime darken-2 icon-color"></i></td>
+                                    <td>Place Of Issue:</td>
+                                    <td>{{travelDetails.pissueplace}}</td>
+                                </tr>
+                                    <tr>
+                                    <td class="f20"><i class="md md-chevron-right lime darken-2 icon-color"></i></td>
+                                    <td>Date Issued:</td>
+                                    <td>{{travelDetails.pissuedate}}</td>
+                                </tr>
+                                    <tr>
+                                    <td class="f20"><i class="md md-chevron-right lime darken-2 icon-color"></i></td>
+                                    <td>Passport Expiry:</td>
+                                    <td>{{travelDetails.pexpiry}}</td>
+                                </tr>
+                                <tr>
+                                    <td class="f20"><i class="md md-chevron-right lime darken-2 icon-color"></i></td>
+                                    <td>Airline/Hotel/Car/Other:</td>
+                                    <td>{{travelDetails.others1}}</td>
+                                </tr>
+                                <tr>
+                                    <td class="f20"><i class="md md-chevron-right lime darken-2 icon-color"></i></td>
+                                    <td>Membership NO.:</td>
+                                    <td>{{travelDetails.memberno1}}</td>
+                                </tr>
+                                <tr>
+                                    <td class="f20"><i class="md md-chevron-right lime darken-2 icon-color"></i></td>
+                                    <td>Name As Per Membership:</td>
+                                    <td>{{travelDetails.membername1}}</td>
+                                </tr>
+                                <tr>
+                                    <td class="f20"><i class="md md-chevron-right lime darken-2 icon-color"></i></td>
+                                    <td>Expiry:</td>
+                                    <td>{{travelDetails.memberexpire1}}</td>
+                                </tr>
+                                <tr>
+                                    <td class="f20"><i class="md md-chevron-right lime darken-2 icon-color"></i></td>
+                                    <td>Status:</td>
+                                    <td>{{travelDetails.memberstatus1}}</td>
+                                </tr>
+                                 <tr>
+                                    <td class="f20"><i class="md md-chevron-right lime darken-2 icon-color"></i></td>
+                                    <td>Airline/Hotel/Car/Other:</td>
+                                    <td>{{travelDetails.others2}}</td>
+                                </tr>
+                                <tr>
+                                    <td class="f20"><i class="md md-chevron-right lime darken-2 icon-color"></i></td>
+                                    <td>Membership NO.:</td>
+                                    <td>{{travelDetails.memberno2}}</td>
+                                </tr>
+                                <tr>
+                                    <td class="f20"><i class="md md-chevron-right lime darken-2 icon-color"></i></td>
+                                    <td>Name As Per Membership:</td>
+                                    <td>{{travelDetails.membername2}}</td>
+                                </tr>
+                                <tr>
+                                    <td class="f20"><i class="md md-chevron-right lime darken-2 icon-color"></i></td>
+                                    <td>Expiry:</td>
+                                    <td>{{travelDetails.memberexpire2}}</td>
+                                </tr>
+                                <tr>
+                                    <td class="f20"><i class="md md-chevron-right lime darken-2 icon-color"></i></td>
+                                    <td>Status:</td>
+                                    <td>{{travelDetails.memberstatus2}}</td>
+                                </tr>
+                                 <tr>
+                                    <td class="f20"><i class="md md-chevron-right lime darken-2 icon-color"></i></td>
+                                    <td>Airline/Hotel/Car/Other:</td>
+                                    <td>{{travelDetails.others3}}</td>
+                                </tr>
+                                <tr>
+                                    <td class="f20"><i class="md md-chevron-right lime darken-2 icon-color"></i></td>
+                                    <td>Membership NO.:</td>
+                                    <td>{{travelDetails.memberno3}}</td>
+                                </tr>
+                                <tr>
+                                    <td class="f20"><i class="md md-chevron-right lime darken-2 icon-color"></i></td>
+                                    <td>Name As Per Membership:</td>
+                                    <td>{{travelDetails.membername3}}</td>
+                                </tr>
+                                <tr>
+                                    <td class="f20"><i class="md md-chevron-right lime darken-2 icon-color"></i></td>
+                                    <td>Expiry:</td>
+                                    <td>{{travelDetails.memberexpire3}}</td>
+                                </tr>
+                                <tr>
+                                    <td class="f20"><i class="md md-chevron-right lime darken-2 icon-color"></i></td>
+                                    <td>Status:</td>
+                                    <td>{{travelDetails.memberstatus3}}</td>
+                                </tr>
+                                
+                            </tbody>
+                        </table>                        
+                    </div>
+                </div>
+            </div>   </div>
+                            <div role="tabpanel" class="tab-pane" id="other-details">  
+								<div class="row">
+                                <div class="col-md-12">
+                <div class="no-margin">
+                    <div class="table-responsive white">
+                        <table class="table table-striped table-full-small line profileTable">
+                            <colgroup>
+                                <col class="auto-cell-size">
+                            </colgroup>
+                            <thead>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="f20"><i class="md md-chevron-right lime darken-2 icon-color"></i></td>
+                                    <td>Your emergency contact is:</td>
+                                    <td><input ng-model="viewOther.editableValue" size="25" class="notEditingInput" ng-change="enableEditorButtons(viewOther.id)"></td>
+									<td class="f20"><i class="md md-history" ng-click="showModal('emrg_contact_name')"></i></td>
+                                </tr>
+                                <tr>
+                                    <td class="f20"><i class="md md-chevron-right lime darken-2 icon-color"></i></td>
+                                    <td>Which is your:</td>
+                                    <td><input ng-model="viewOther.editableValue2" size="25" class="notEditingInput" ng-change="enableEditorButtons(viewOther.id2)"></td>
+									<td class="f20"><i class="md md-history" ng-click="showModal('emrg_contact_relation')"></i></td>
+                                </tr>
+                                <tr>
+                                    <td class="f20"><i class="md md-chevron-right lime darken-2 icon-color"></i></td>
+                                    <td>Their email is:</td>
+                                    <td><input ng-model="viewOther.editableValue3" size="25" class="notEditingInput" ng-change="enableEditorButtons(viewOther.id3)"></td>
+									<td class="f20"><i class="md md-history" ng-click="showModal('emrg_contact_email')"></i></td>
+                                </tr>
+                                <tr>
+                                    <td class="f20"><i class="md md-chevron-right lime darken-2 icon-color"></i></td>
+                                    <td>Their number is:</td>
+                                    <td><input ng-model="viewOther.editableValue4" size="25" class="notEditingInput" ng-change="enableEditorButtons(viewOther.id4)"></td>
+									<td class="f20"><i class="md md-history" ng-click="showModal('emrg_contact_number')"></i></td>
+                                </tr>
+                                <tr>
+                                    <td class="f20"><span id="drinkDrivingIcon"></span></td>
+                                    <td><span ng-class="{rednotification: checkDrinkDriveRed}">Drink driving convictions:</span></td>
+                                    <td><input ng-model="viewOther.editableValue5" size="25" class="notEditingInput" ng-change="enableEditorButtons(viewOther.id5)"></td>
+									<td class="f20"><i class="md md-history" ng-click="showModal('drink_driving_convictions')"></i></td>
+                                </tr>
+								<tr>
+                                    <td class="f20"><i class="md md-chevron-right lime darken-2 icon-color"></i></td>
+                                    <td>Drink driving convictions - date:</td>
+                                    <td><input type="text" class="form-control" ng-model="viewOther.editableValue6" data-date-format="dd/MM/yyyy" data-date-type="string" data-autoclose="1" bs-datepicker class="notEditingInput" ng-change="enableEditorButtons(viewOther.id6)"></td>
+									<td class="f20"><i class="md md-history" ng-click="showModal('drink_driving_convictions_date')"></i></td>
+                                </tr>
+								<tr>
+                                    <td class="f20"><i class="md md-chevron-right lime darken-2 icon-color"></i></td>
+                                    <td>Drink driving convictions - bac:</td>
+                                     <td><input ng-model="viewOther.editableValue7" size="25" class="notEditingInput" ng-change="enableEditorButtons(viewOther.id7)"></td>
+									<td class="f20"><i class="md md-history" ng-click="showModal('drink_driving_convictions_bac')"></i></td>
+                                </tr>
+								<tr>
+                                    <td class="f20"><i class="md md-chevron-right lime darken-2 icon-color"></i></td>
+                                    <td>Drink driving convictions - describe:</td>
+                                    <td><input ng-model="viewOther.editableValue8" size="25" class="notEditingInput" ng-change="enableEditorButtons(viewOther.id8)"></td>
+									<td class="f20"><i class="md md-history" ng-click="showModal('drink_driving_convictions_describe')"></i></td>
+                                </tr>
+                                <tr>
+                                    <td class="f20"><span id="criminalIcon"></span></td>
+                                    <td><span ng-class="{rednotification: checkCriminalRed}">Criminal convictions:</span></td>
+                                    <td><input ng-model="viewOther.editableValue9" size="25" class="notEditingInput" ng-change="enableEditorButtons(viewOther.id9)"></td>
+									<td class="f20"><i class="md md-history" ng-click="showModal('criminal_convictions')"></i></td>
+                                </tr>
+								 <tr>
+								<td class="f20"><i class="md md-chevron-right lime darken-2 icon-color"></i></td>
+                                    <td>Criminal convictions - date:</td>
+                                    <td><input type="text" class="form-control" ng-model="viewOther.editableValue10" data-date-format="dd/MM/yyyy" data-date-type="string" data-autoclose="1" bs-datepicker class="notEditingInput" ng-change="enableEditorButtons(viewOther.id10)"></td>
+									 <td class="f20"><i class="md md-history" ng-click="showModal('criminal_convictions_date')"></i></td>
+								</tr>
+								 <tr>
+								<td class="f20"><i class="md md-chevron-right lime darken-2 icon-color"></i></td>
+                                    <td>Criminal convictions - describe:</td>
+                                    <td><input ng-model="viewOther.editableValue11" size="25" class="notEditingInput" ng-change="enableEditorButtons(viewOther.id11)"></td>
+									 <td class="f20"><i class="md md-history" ng-click="showModal('criminal_convictions_describe')"></i></td>
+								</tr>
+                                <tr>
+                                    <td class="f20"><span id="drivingOffencesIcon"></span></td>
+                                    <td><span ng-class="{rednotification: checkDrivingOffencesRed}">Serious traffic offences:</span></td>
+                                    <td><input ng-model="viewOther.editableValue12" size="25" class="notEditingInput" ng-change="enableEditorButtons(viewOther.id12)"></td>
+									<td class="f20"><i class="md md-history" ng-click="showModal('driving_offences')"></i></td>
+                                </tr>
+								<tr>
+                                    <td class="f20"><i class="md md-chevron-right lime darken-2 icon-color"></i></td>
+                                    <td>Serious traffic offences - date:</td>
+                                   <td><input type="text" class="form-control" ng-model="viewOther.editableValue13" data-date-format="dd/MM/yyyy" data-date-type="string" data-autoclose="1" bs-datepicker class="notEditingInput" ng-change="enableEditorButtons(viewOther.id13)"></td>
+									<td class="f20"><i class="md md-history" ng-click="showModal('driving_offences_date')"></i></td>
+                                </tr>
+								<tr>
+                                    <td class="f20"><i class="md md-chevron-right lime darken-2 icon-color"></i></td>
+                                    <td><span ng-class="{rednotification: checkDrivingOffencesRed}">Serious traffic offences - describe:</span></td>
+                                    <td><input ng-model="viewOther.editableValue14" size="25" class="notEditingInput" ng-change="enableEditorButtons(viewOther.id14)"></td>
+									<td class="f20"><i class="md md-history" ng-click="showModal('driving_offences_describe')"></i></td>
+                                </tr>
+                                <tr>
+                                    <td class="f20"><i class="md md-chevron-right lime darken-2 icon-color"></i></td>
+                                    <td>Visible tattoos/piercings:</td>
+                                    <td><input ng-model="viewOther.editableValue15" size="25" class="notEditingInput" ng-change="enableEditorButtons(viewOther.id15)"></td>
+									<td class="f20"><i class="md md-history" ng-click="showModal('tattoos')"></i></td>
+                                </tr>
+								<tr>
+                                    <td class="f20"><i class="md md-chevron-right lime darken-2 icon-color"></i></td>
+                                    <td>Visible tattoos/piercings - describe:</td>
+                                    <td><input ng-model="viewOther.editableValue16" size="25" class="notEditingInput" ng-change="enableEditorButtons(viewOther.id16)"></td>
+									<td class="f20"><i class="md md-history" ng-click="showModal('tattoos_describe')"></i></td>
+                                </tr>
+                                <tr>
+                                    <td class="f20"><span id="medicationIcon"></span></td>
+                                    <td><span ng-class="{rednotification: checkMedicationRed}">Medications:</span></td>
+                                    <td><input ng-model="viewOther.editableValue17" size="25" class="notEditingInput" ng-change="enableEditorButtons(viewOther.id17)"></td>
+									<td class="f20"><i class="md md-history" ng-click="showModal('medication')"></i></td>
+                                </tr>
+								<tr>
+                                    <td class="f20"><i class="md md-chevron-right lime darken-2 icon-color"></i></td>
+                                    <td>Medications - describe:</td>
+                                    <td><input ng-model="viewOther.editableValue18" size="25" class="notEditingInput" ng-change="enableEditorButtons(viewOther.id18)"></td>
+									<td class="f20"><i class="md md-history" ng-click="showModal('medication_describe')"></i></td>
+                                </tr>
+                                <tr>
+                                    <td class="f20"><span id="healthIcon"></span></td>
+                                    <td><span ng-class="{rednotification: checkMentalRed}">Diagnosed or treated for any physical or mental health conditions:</span></td>
+                                    <td><input ng-model="viewOther.editableValue19" size="25" class="notEditingInput" ng-change="enableEditorButtons(viewOther.id19)"></td>
+									<td class="f20"><i class="md md-history" ng-click="showModal('health_conditions')"></i></td>
+                                </tr>
+								 <tr>
+                                    <td class="f20"><i class="md md-chevron-right lime darken-2 icon-color"></i></td>
+                                    <td>Diagnosed or treated for any physical or mental health conditions - describe:</td>
+                                    <td><input ng-model="viewOther.editableValue20" size="25" class="notEditingInput" ng-change="enableEditorButtons(viewOther.id20)"></td>
+									 <td class="f20"><i class="md md-history" ng-click="showModal('health_conditions_describe')"></i></td>
+                                </tr>
+                                <tr>
+                                    <td class="f20"><i class="md md-chevron-right lime darken-2 icon-color"></i></td>
+                                    <td>Smoke:</td>
+                                    <td><input ng-model="viewOther.editableValue21" size="25" class="notEditingInput" ng-change="enableEditorButtons(viewOther.id21)"></td>
+									<td class="f20"><i class="md md-history" ng-click="showModal('smoke')"></i></td>
+                                </tr>
+                                <tr>
+                                    <td class="f20"><i class="md md-chevron-right lime darken-2 icon-color"></i></td>
+                                    <td>Drink alcohol:</td>
+                                    <td><input ng-model="viewOther.editableValue22" size="25" class="notEditingInput" ng-change="enableEditorButtons(viewOther.id22)"></td>
+									<td class="f20"><i class="md md-history" ng-click="showModal('alcohol')"></i></td>
+                                </tr>
+                                <tr>
+                                    <td class="f20"><span id="illicitIcon"></span></td>
+                                    <td><span ng-class="{rednotification: checkIllicitRed}">Use illicit substances:</span></td>
+                                    <td><input ng-model="viewOther.editableValue23" size="25" class="notEditingInput" ng-change="enableEditorButtons(viewOther.id23)"></td>
+									<td class="f20"><i class="md md-history" ng-click="showModal('illicit')"></i></td>
+                                </tr>
+                                <tr>
+                                    <td class="f20"><span id="dietaryIcon"></span></td>
+                                    <td><span ng-class="{rednotification: checkDietaryRed}">Dietary requirements:</span></td>
+                                    <td><input ng-model="viewOther.editableValue24" size="25" class="notEditingInput" ng-change="enableEditorButtons(viewOther.id24)"></td>
+									<td class="f20"><i class="md md-history" ng-click="showModal('dietary')"></i></td>
+                                </tr>
+								<tr>
+                                    <td class="f20"><i class="md md-chevron-right lime darken-2 icon-color"></i></td>
+                                    <td>Dietary requirements - describe:</td>
+                                    <td><input ng-model="viewOther.editableValue25" size="25" class="notEditingInput" ng-change="enableEditorButtons(viewOther.id25)"></td>
+									<td class="f20"><i class="md md-history" ng-click="showModal('dietary_describe')"></i></td>
+                                </tr>
+                            </tbody>
+                        </table>    
+                    </div>
+                </div>
+            </div> 
+		</div>
+							
+			<div class="row">
+    	<div class="col-md-12">        
+      		<div class="card">
+        		<div class="table-responsive white">
+					<h3 class="table-title p-20">Add-Ons</h3>
+		        	<table class="table table-striped table-full-small line ">
+                            <colgroup>
+                                <col class="auto-cell-size">
+                            </colgroup>
+                            <tbody>
+								<tr>
+                                    <td class="f20"><i class="md md-chevron-right lime darken-2 icon-color"></i></td>
+                                    <td>Is there anything else you would like us to organise for your trip? (eg. room upgrades, extra accommodation, tours, etc.)</td>
+                                </tr>
+								
+								<tr>
+                                    <td class="f20"><i class="md md-chevron-right lime darken-2 icon-color"></i></td>
+                                    <td><input ng-model="viewAddons.editableValue" size="120" class="notEditingInput" ng-change="enableEditorButtons(viewAddons.id)"></td>
+									<td class="f20"><i class="md md-history" ng-click="showModal('addon')"></i></td>
+                                </tr>
+								   
+                            </tbody>
+                	</table>
+        		</div>         
+     		</div>      
+    	</div>
+  	</div>									
+</div>	
+							<div role="tabpanel" class="tab-pane" id="payment">
+	<div class="row">
+    	<div class="col-md-12">        
+      		<div class="card">
+        		<div class="table-responsive white">
+					<h3 class="table-title p-20">CC Details</h3>
+		        	<table class="table table-striped table-full-small line profileTable">
+                            <colgroup>
+                                <col class="auto-cell-size">
+                            </colgroup>
+                            <tbody>
+								<tr>
+                                    <td class="f20"><i class="md md-chevron-right lime darken-2 icon-color"></i></td>
+                                    <td>Card Number:</td>
+                                    <td>{{profile.paid_card_number}}</td>
+                                </tr>
+								<tr>
+                                    <td class="f20"><i class="md md-chevron-right lime darken-2 icon-color"></i></td>
+                                    <td>Card Name:</td>
+                                    <td>{{profile.paid_card_name}}</td>
+                                </tr>
+								<tr>
+                                    <td class="f20"><i class="md md-chevron-right lime darken-2 icon-color"></i></td>
+                                    <td>Card Expiry Date:</td>
+                                    <td>{{profile.paid_card_expiry}}</td>
+                                </tr>
+								<tr>
+                                    <td class="f20"><i class="md md-chevron-right lime darken-2 icon-color"></i></td>
+                                    <td>Card CVC:</td>
+                                    <td>{{profile.paid_card_cvc}}</td>
+                                </tr>          
+                            </tbody>
+                	</table>
+        		</div>         
+     		</div>      
+    	</div>
+  	</div>
+								
+	<div class="row">
+    	<div class="col-md-12">        
+      		<div class="card">
+        		<div class="table-responsive white">
+					<h3 class="table-title p-20">Sales</h3>
+					 <table class="table table-striped table-full-small line profileTable">
+                            <colgroup>
+                                <col class="auto-cell-size">
+                            </colgroup>
+                            <tbody>
+								<tr>
+                                    <td class="f20"><i class="md md-chevron-right lime darken-2 icon-color"></i></td>
+                                    <td>Payment Status:</td>
+                                    <td><input ng-model="viewPayment.editableValue6" size="25" class="notEditingInput" ng-change="enableEditorButtons(viewPayment.id6)"></td>
+									<td class="f20"><i class="md md-history" ng-click="showModal('payment_status')"></i></td>
+                                </tr>
+								<tr>
+                                    <td class="f20"><i class="md md-chevron-right lime darken-2 icon-color"></i></td>
+                                    <td>Payment Amount:</td>
+                                    <td><input ng-model="viewPayment.editableValue7" size="25" class="notEditingInput" ng-change="enableEditorButtons(viewPayment.id7)"></td>
+									<td class="f20"><i class="md md-history" ng-click="showModal('paid_amount')"></i></td>
+                                </tr>
+								<tr>
+                                    <td class="f20"><i class="md md-chevron-right lime darken-2 icon-color"></i></td>
+                                    <td>Payment Date:</td>
+                                    <td><input ng-model="viewPayment.editableValue8" size="25" class="notEditingInput" ng-change="enableEditorButtons(viewPayment.id8)"></td>
+									<td class="f20"><i class="md md-history" ng-click="showModal('paid_date')"></i></td>
+                                </tr>
+								<tr>
+                                    <td class="f20"><i class="md md-chevron-right lime darken-2 icon-color"></i></td>
+                                    <td>Payment Term Condition:</td>
+                                    <td><input ng-model="viewPayment.editableValue9" size="25" class="notEditingInput" ng-change="enableEditorButtons(viewPayment.id9)"></td>
+									<td class="f20"><i class="md md-history" ng-click="showModal('paid_tc')"></i></td>
+                                </tr>
+								<tr>
+                                    <td class="f20"><i class="md md-chevron-right lime darken-2 icon-color"></i></td>
+                                    <td>Wish Payment Type:</td>
+                                    <td><input ng-model="viewPayment.editableValue10" size="25" class="notEditingInput" ng-change="enableEditorButtons(viewPayment.id10)"></td>
+									<td class="f20"><i class="md md-history" ng-click="showModal('wish_payment_type')"></i></td>
+                                </tr>
+								<tr>
+                                    <td class="f20"><i class="md md-chevron-right lime darken-2 icon-color"></i></td>
+                                    <td>Wish Payment Promotion:</td>
+                                    <td><input ng-model="viewPayment.editableValue11" size="25" class="notEditingInput" ng-change="enableEditorButtons(viewPayment.id11)"></td>
+									<td class="f20"><i class="md md-history" ng-click="showModal('wish_payment_promotional')"></i></td>
+                                </tr>
+								<tr>
+                                    <td class="f20"><i class="md md-chevron-right lime darken-2 icon-color"></i></td>
+                                    <td>Wish Payment Method:</td>
+                                    <td><input ng-model="viewPayment.editableValue12" size="25" class="notEditingInput" ng-change="enableEditorButtons(viewPayment.id12)"></td>
+									<td class="f20"><i class="md md-history" ng-click="showModal('wish_payment_method')"></i></td>
+                                </tr>
+								<tr>
+                                    <td class="f20"><i class="md md-chevron-right lime darken-2 icon-color"></i></td>
+                                    <td>Wish Payment Amount:</td>
+                                    <td><input ng-model="viewPayment.editableValue13" size="25" class="notEditingInput" ng-change="enableEditorButtons(viewPayment.id13)"></td>
+									<td class="f20"><i class="md md-history" ng-click="showModal('wish_payment_amount')"></i></td>
+                                </tr>
+								
+                                <tr>
+                                    <td class="f20"><span id="promotionIcon"></span></td>
+									<td><span ng-class="{rednotification: checkpromotionred}">Promotion:</span></td>
+                                    <td><div class="">
+                                                <div class="radio radioBlockRadio">
+                                                    <label>
+                                                        <input type="radio" ng-model="viewPayment.editableValue" value="no" ng-change="enableEditorButtons(viewPayment.id)"> No
+                                                    </label>
+                                                </div>
+                                                <div class="radio radioBlockRadio">
+                                                    <label>
+                                                        <input type="radio" ng-model="viewPayment.editableValue" value="yes" ng-change="enableEditorButtons(viewPayment.id)"> Yes
+                                                    </label>
+                                                </div>
+                                            </div>
+										</td>
+									<td class="f20"><i class="md md-history" ng-click="showModal('promotion')"></i></td>
+                                </tr>
+								<tr>
+									<td class="f20"><i class="md md-chevron-right lime darken-2 icon-color"></i></td>
+									<td>Promotion 1:</td>
+									<td><input ng-model="viewPayment.editableValue3" size="25" ng-disabled="viewPayment.editableValue == 'no'" class="notEditingInput" ng-change="enableEditorButtons(viewPayment.id3)"></td>
+									<td class="f20"><i class="md md-history" ng-click="showModal('promotion_detail1')"></i></td>
+								</tr>
+								<tr>
+									<td class="f20"><i class="md md-chevron-right lime darken-2 icon-color"></i></td>
+									<td>Promotion 2:</td>
+									<td><input ng-model="viewPayment.editableValue4" size="25" ng-disabled="viewPayment.editableValue == 'no'" class="notEditingInput" ng-change="enableEditorButtons(viewPayment.id4)"></td>
+									<td class="f20"><i class="md md-history" ng-click="showModal('promotion_detail2')"></i></td>
+								</tr>
+								<tr>
+									<td class="f20"><i class="md md-chevron-right lime darken-2 icon-color"></i></td>
+									<td>Promotion 3:</td>
+									<td><input ng-model="viewPayment.editableValue5" size="25" ng-disabled="viewPayment.editableValue == 'no'" class="notEditingInput" ng-change="enableEditorButtons(viewPayment.id5)"></td>
+									<td class="f20"><i class="md md-history" ng-click="showModal('promotion_detail3')"></i></td>
+								</tr>
+								
+                                <tr>
+                                    <td class="f20"><span id="transactionIcon"></span></td>
+									<td><span ng-class="{rednotification: checktransactionNOred}">Transaction Number:</span></td>
+                                    <td><input ng-model="viewPayment.editableValue2" size="25" class="notEditingInput" ng-change="enableEditorButtons(viewPayment.id2)"></td>
+									<td class="f20"><i class="md md-history" ng-click="showModal('transactionNO')"></i></td>
+                                </tr>
+                               
+                               
+                            </tbody>
+                        </table>
+        		</div>         
+     		</div>      
+    	</div>	 
+	</div>
+	
+	<div class="row">
+    	<div class="col-md-12">        
+      		<div class="card">
+        		<div class="table-responsive white">
+					<div class="row">
+					<div class="col-md-12"> 
+					<div class="col-md-10">
+					<h3 class="table-title p-20">Coordination</h3>
+					</div>
+					<div class="col-md-2">
+						<button class="btn btn-link btn-round btn-lg editbutton" ng-click="addPay()"><i class="md md-add"></i></button></div>
+					</div>
+						</div>
+					
+		        	          <table class="table table-full table-full-small">
+            <colgroup>
+              <col class="p-r-20" />
+            </colgroup>
+            <thead>
+            <tr>
+                 <th>Date</th>
+              <th>Amount</th>
+                <th>Status</th>
+            </tr>
+            </thead>
+            <tbody>
+
+            <tr ng-repeat="item in list">
+              <td>{{ item.paymentDate }}</td>
+              <td>{{ item.paymentAmount }} {{item.Currency}}</td>
+              <td>{{ item.paymentStatus }} </td>
+            </tr>
+            </tbody>
+          </table>
+            <h3 class="table-title p-20 profilePaymentSummary">Total Paid Amount: {{totalAmountPaid}}  {{currency}}</h3>
+			<h3 class="table-title p-20 profilePaymentSummary">Total Next Amount: {{totalAmountNext}}  {{currency}}</h3>
+			<h3 class="table-title p-20 profilePaymentSummary">Total Discount Amount: {{totalAmountDiscount}}  {{currency}}</h3>
+        		</div>         
+     		</div>      
+    	</div>
+  	</div>
+	
+	<div class="row">
+    	<div class="col-md-12">        
+      		<div class="card">
+        		<div class="table-responsive white">
+					<div class="col-md-10">
+					<h3 class="table-title p-20">
+						Travel
+					</h3>
+					</div>
+					<div class="col-md-2">
+		        	<button class="btn btn-link btn-round btn-lg editbutton" ng-click="invoice()"><i class="md md-add"></i></button>
+					</div>
+        		</div>         
+     		</div>      
+    	</div>
+  	</div>
+
+                            </div>		
+                            <div role="tabpanel" class="tab-pane" id="booking-conditions">             
+                                <div class="col-md-12">
+                
+                    <form class="form-floating">
+                        <fieldset>
+                            <div class="form-group">
+                                <p>You acknowledge that you have read in full, wholly understand, accept & agree to the Booking Conditions.</p>
+                                <p>You acknowledge that job opportunity locations & types are preferences only, and there's no guarantee on a certain location or type.</p>
+                                <p>You acknowledge that the trip package you are booking is an arrival & support service for the purposes of a cultural exchange, and you are still responsible for securing & sustaining your own work abroad.</p>
+                                
+                                
+                            </div>
+                        </fieldset>
+                    </form>
+									<p>Ip Address was: <span class = "boldfont">{{profile.ip}}</span> and the time this booking was made was: <span class = "boldfont">{{profile.time}}</span>. Term and condition file name is: <span class = "boldfont">{{profile.tc_name}}</span></p>
+               <div id="tcDetails" class="tcDetails" ng-show="showTC"></div>
+                                    
+                                    
+                
+            </div>  </div>
+                            <div role="tabpanel" class="tab-pane" id="survey">          
+                                <div class="col-md-12">
+                <div class="no-margin">
+                    <div class="table-responsive white">
+                        <table class="table table-striped table-full-small line profileTable">
+                            <colgroup>
+                        <col class="auto-cell-size">
+
+                            </colgroup>
+                            <thead>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="f20"><i class="md md-chevron-right lime darken-2 icon-color"></i></td>
+                                    <td>You heard about us through:</td>
+                                    <td><input ng-model="viewSurvey.editableValue" size="25" class="notEditingInput" ng-change="enableEditorButtons(viewSurvey.id)"></td>   
+									<td class="f20"><i class="md md-history" ng-click="showModal('hear')"></i></td>
+                                </tr>
+								<tr>
+                                    <td class="f20"><i class="md md-chevron-right lime darken-2 icon-color"></i></td>
+                                    <td>Other: </td>
+                                    <td><input ng-model="viewSurvey.editableValue2" size="25" class="notEditingInput" ng-change="enableEditorButtons(viewSurvey.id2)"></td>
+									<td class="f20"><i class="md md-history" ng-click="showModal('hear_other')"></i></td>
+                                </tr>
+                                <tr>
+                                    <td class="f20"><i class="md md-chevron-right lime darken-2 icon-color"></i></td>
+                                    <td>Friend referred:</td>
+                                    <td><input ng-model="viewSurvey.editableValue3" size="25" class="notEditingInput" ng-change="enableEditorButtons(viewSurvey.id3)"></td>
+									<td class="f20"><i class="md md-history" ng-click="showModal('friend_name')"></i></td>
+                                </tr>
+                                <tr>
+                                    <td class="f20"><i class="md md-chevron-right lime darken-2 icon-color"></i></td>
+                                    <td>Friend's email:</td>
+                                    <td><input ng-model="viewSurvey.editableValue4" size="25" class="notEditingInput" ng-change="enableEditorButtons(viewSurvey.id4)"></td>
+									<td class="f20"><i class="md md-history" ng-click="showModal('friend_email')"></i></td>
+                                </tr>
+                                <tr>
+                                    <td class="f20"><i class="md md-chevron-right lime darken-2 icon-color"></i></td>
+                                    <td>Friend's number:</td>
+                                    <td><input ng-model="viewSurvey.editableValue5" size="25" class="notEditingInput" ng-change="enableEditorButtons(viewSurvey.id5)"></td>
+									<td class="f20"><i class="md md-history" ng-click="showModal('friend_number')"></i></td>
+                                </tr>
+                                <tr>
+                                    <td class="f20"><i class="md md-chevron-right lime darken-2 icon-color"></i></td>
+                                    <td>Your Work & Travel Expert's name:</td>
+                                    <td><input ng-model="viewSurvey.editableValue6" size="25" class="notEditingInput" ng-change="enableEditorButtons(viewSurvey.id6)"></td>
+									<td class="f20"><i class="md md-history" ng-click="showModal('consultant_name')"></i></td>
+                                </tr>
+                                <tr>
+                                    <td class="f20"><i class="md md-chevron-right lime darken-2 icon-color"></i></td>
+                                    <td>Your Work & Travel Expert answered all your questions:</td>
+                                    <td><input ng-model="viewSurvey.editableValue7" size="25" class="notEditingInput" ng-change="enableEditorButtons(viewSurvey.id7)"></td>
+									<td class="f20"><i class="md md-history" ng-click="showModal('consultant_answer')"></i></td>
+                                </tr>
+								<tr>
+                                    <td class="f20"><i class="md md-chevron-right lime darken-2 icon-color"></i></td>
+                                    <td>Your Work & Travel Expert answered all your questions - describe:</td>
+                                    <td><input ng-model="viewSurvey.editableValue8" size="25" class="notEditingInput" ng-change="enableEditorButtons(viewSurvey.id8)"></td>
+									<td class="f20"><i class="md md-history" ng-click="showModal('consultant_answer_describe')"></i></td>
+                                </tr>
+                                <tr>
+                                    <td class="f20"><span id="consultantGuaranteeIcon"></span></td>
+									<td><span ng-class="{rednotification: checkConsultantGuaranteeRed}">Your Work & Travel Expert gave you any specific or additional guarantees:</span></td>
+                                    <td><input ng-model="viewSurvey.editableValue9" size="25" class="notEditingInput" ng-change="enableEditorButtons(viewSurvey.id9)"></td>
+									<td class="f20"><i class="md md-history" ng-click="showModal('consultant_guarantee')"></i></td>
+                                </tr>
+								 <tr>
+                                    <td class="f20"><i class="md md-chevron-right lime darken-2 icon-color"></i></td>
+									<td>Your Work & Travel Expert gave you any specific or additional guarantees - describe:</td>
+                                    <td><input ng-model="viewSurvey.editableValue10" size="25" class="notEditingInput" ng-change="enableEditorButtons(viewSurvey.id10)"></td>
+									 <td class="f20"><i class="md md-history" ng-click="showModal('consultant_guarantee_describe')"></i></td>
+                                </tr>
+                                <tr>
+                                    <td class="f20"><i class="md md-chevron-right lime darken-2 icon-color"></i></td>
+                                    <td>You rated the experience with your Work & Travel Expert as:</td>
+                                    <td><input ng-model="viewSurvey.editableValue11" size="25" class="notEditingInput" ng-change="enableEditorButtons(viewSurvey.id11)"></td>
+									<td class="f20"><i class="md md-history" ng-click="showModal('rate')"></i></td>
+                                </tr>
+                                <tr>
+                                    <td class="f20"><span id="commentsIcon"></span></td>
+									<td><span ng-class="{rednotification: checkCommentsRed}">Additional Comments:</span></td>
+                                    <td><input ng-model="viewSurvey.editableValue12" size="50" class="notEditingInput" ng-change="enableEditorButtons(viewSurvey.id12)"></td>
+									<td class="f20"><i class="md md-history" ng-click="showModal('comments')"></i></td>
+                                </tr>
+                            </tbody>
+                        </table>                 
+                    </div>
+                </div>
+            </div>   </div>
+                            <div role="tabpanel" class="tab-pane" id="hubspot">             
+                            <div class="col-md-12">
+                <div class="no-margin">
+                    <div class="table-responsive white">
+                        <h3 class="table-title p-20">Hubspot</h3>
+                        <table class="table table-full-small table-striped">
+                            <colgroup>
+                                <col class="auto-cell-size">
+                            </colgroup>
+                            <thead>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="f20"><i class="md md-chevron-right lime darken-2 icon-color"></i></td>
+                                    <td>Original Source:</td>
+                                    <td>{{os}}</td>
+                                </tr>
+                                <tr>
+                                    <td class="f20"><i class="md md-chevron-right lime darken-2 icon-color"></i></td>
+                                    <td>Create Date:</td>
+                                    <td>{{cd}}</td>
+                                </tr>
+                                <tr>
+                                    <td class="f20"><i class="md md-chevron-right lime darken-2 icon-color"></i></td>
+                                    <td>HubSpot Owner:</td>
+                                    <td>{{ownerName}}</td>
+                                </tr>
+                                <tr>
+                                    <td class="f20"><i class="md md-chevron-right lime darken-2 icon-color"></i></td>
+                                    <td>Original Source Drill-Down 1:</td>
+                                    <td>{{osd}}</td>
+                                </tr>
+                                <tr>
+                                    <td class="f20"><i class="md md-chevron-right lime darken-2 icon-color"></i></td>
+                                    <td>Close Date:</td>
+                                    <td>{{closedate}}</td>
+                                </tr>
+                                <tr>
+                                    <td>
+
+                                        <button class="btn btn-info btn-lg btn-block" ng-click="uploadHubspot()">{{button}}</button>
+
+                                    </td>
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>  </div>
+                            <div role="tabpanel" class="tab-pane" id="tasks">
+								
+                                <div class="col-md-12">  
+<!--									<button class="btn btn-info btn-lg btn-block" ng-click="testButton()" ng-show="true">test and fix</button>-->
+                                    <div class="">  
+										<div ng-repeat="t in tasklist track by $index">
+											<div ng-if="t.tid == '1' ">
+        										    <legend>Sales</legend>
+                                        			<br/>
+    										</div>
+										    <div ng-if="t.tid == '6' ">
+        										    <legend>Admin</legend>
+                                        			<br/>
+    										</div>
+											<div ng-if="t.tid == '10' ">
+        										    <legend>Coordination</legend>
+                                        			<br/>
+    										</div>	
+											
+										<div class="form-group">										
+                                            <div class="checkbox col-md-12 nopaddingleft">
+											<span class="col-md-4 nopaddingleft">
+                                                <label>
+                                                    <input type="checkbox" ng-model="t.value" ng-true-value="'yes'" ng-false-value="'no'" ng-click="checkClick(t.tid, $index)" ng-disabled="t.value == 'yes'"> {{t.taskName}}
+                                                </label>
+												
+								
+                                               <span id='{{ "t" + $index }}'></span>
+												</span>
+												
+												<span class="col-md-8 taskLog"><span ng_show="t.time">Last modified:</span>  {{t.time}}<span ng_show="t.user">. By: </span>{{t.user}}
+													
+												</span>   
+                                            </div>
+												
+                                             
+                                        </div> 
+											
+											
+											
+										</div>
+									
+										
+                                    </div>
+   
+                   
+                                
+                                </div>
+                            </div>
+							<div role="tabpanel" class="tab-pane" id="compliance" ng-show="showComplianceSection">								
+                                <div class="col-md-12">     
+                                    <div class="">
+										 <div class="col-md-6">  
+										<div id="nocompliance"></div>
+										</div>
+										 <div class="col-md-3 col-md-offset-3">  
+											 <button class="btn btn-info btn-lg btn-block" ng-click="addCompliance()" ng-show="showComplianceSection">Add Compliance</button>
+										</div>
+										<div ng-repeat="c in clist track by $index">
+											
+										<div class="form-group">										
+                                            <div class="col-md-12 nopaddingleft">
+											<span class="col-md-3 nopaddingleft">
+                                                <label>
+                                                     {{c.date}}
+                                                </label>
+												</span>
+												
+												<span class="col-md-3 taskLog">  
+													{{c.staff}}
+													
+												</span>   
+												<span class="col-md-2 taskLog">  
+													{{c.redflag}}
+													
+												</span>   
+												<span class="col-md-2 taskLog">  
+													{{c.yellowflag}}
+													
+												</span>
+												<span class="col-md-1 taskLog" ng-click="showComplianceDetails(c.qid)">  
+													<i class="md md-open-in-new"></i>
+													
+												</span> 
+                                            </div>
+												
+                                             
+                                        </div> 
+											
+											
+											
+										</div>
+									
+										
+                                    </div>
+   
+                   
+                                
+                                </div>
+                            </div>
+							<div role="tabpanel" class="tab-pane" id="resume">								
+								
+							<h3>{{resumeErrorMessage}}</h3>	
+								
+								<div ng-hide = "hideEmptyResume">
+								<div class="page-header row col-md-12">
+ 
+	  <div class="form-group col-md-3">
+                                    <div class="switch">
+                                        <label class="filled"> Incomplete
+                                            <input type="checkbox" ng-model="action" ng-change="actionChange()" ng-true-value="'complete'" ng-false-value="'incomplete'"> <span class="lever"></span> Complete</label>
+                                    </div>
+                                </div>
+	  
+	  <p class="col-md-3">
+	  Last Modified Date: {{form.modified_date}}
+	  </p>
+	  
+
+  </div>
+    
+
+    
+<!--
+<h2>Editors</h2>
+    <div class="field">
+        <strong>State:</strong>
+        <div click-to-edit="location.state"></div>
+    </div>
+    <div class="field">
+        <strong>City:</strong>
+        <div click-to-edit="location.city"></div>
+    </div>
+    <div class="field">
+        <strong>Neighbourhood:</strong>
+        <div click-to-edit="location.neighbourhood"></div>
+    </div>
+-->
+   
+    
+    
+ 
+  <div class="row">
+    <div class="col-md-9">
+      <div class="card">
+
+        <div class="table-responsive white">
+          <h3 class="table-title p-20">Contact Details & Photo <button type="button" class="btn btn-link btn-round btn-lg editbutton" ng-click="cancelallcontact()"><i class="md md-cancel"></i></button><button type="button" class="btn btn-link btn-round btn-lg editbutton" ng-click="enableEditorContact()"><i class="md md-edit"></i></button> </h3>
+
+          <table class="table table-hover table-full table-full-small">
+            <tbody>
+
+            <tr> 
+              <td><span ng-hide="view.editorEnabled">{{form.fname}}</span> <span ng-show="view.editorEnabled"><input ng-model="view.editableValue"><a ng-click="save()">Save</a> or <a ng-click="disableEditor()">cancel</a>.</span></td>
+                
+              <td><span ng-hide="view2.editorEnabled">{{form.mname}}</span> <span ng-show="view2.editorEnabled"><input ng-model="view2.editableValue"><a ng-click="save2()">Save</a> or <a ng-click="disableEditor2()">cancel</a>.</span></td>
+                
+                <td><span ng-hide="view3.editorEnabled">{{form.lname}}</span> <span ng-show="view3.editorEnabled"><input ng-model="view3.editableValue"><a ng-click="save3()">Save</a> or <a ng-click="disableEditor3()">cancel</a>.</span></td>
+            </tr>
+                
+            <tr> 
+              <td colspan="2"><span ng-hide="view4.editorEnabled">{{form.email}}</span> <span ng-show="view4.editorEnabled"><input ng-model="view4.editableValue"><a ng-click="save4()">Save</a> or <a ng-click="disableEditor4()">cancel</a>.</span></td>
+                
+             <td><span ng-hide="view5.editorEnabled">{{form.phoneno}}</span> <span ng-show="view5.editorEnabled"><input ng-model="view5.editableValue"><a ng-click="save5()">Save</a> or <a ng-click="disableEditor5()">cancel</a>.</span></td>
+            </tr>
+             <tr> 
+              
+              <td><span ng-hide="view6.editorEnabled">{{form.skype}}</span> <span ng-show="view6.editorEnabled"><input ng-model="view6.editableValue"><a ng-click="save6()">Save</a> or <a ng-click="disableEditor6()">cancel</a>.</span></td>
+              
+            </tr>
+                
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+      
+        <div class="col-md-3" ng-dblclick="enableEditorIMG()">
+       <form name="upload_form" ng-submit="saveIMG(upload_form)">
+           <div class="form-group">
+       <span ng-hide="viewIMG.editorEnabled"><img src={{src}} alt="upload file" style="width:170px;height:190px;"></span> <span ng-show="viewIMG.editorEnabled"><input 
+               type="file" 
+               ngf-select 
+               ng-model="file" 
+               name="file" 
+               ngf-pattern="'image/*'"
+               accept="image/*" 
+               ngf-max-size="20MB" 
+               /><i ng-show="upload_form.file.$error.required">*required</i><br><i ng-show="upload_form.file.$error.maxSize">File too large 
+            {{file.size / 1000000|number:1}}MB: max 20M</i><button type="submit" class="btn btn-warning">Save</button> or <button ng-click="disableEditorIMG()" class="btn btn-primary">cancel</button>.</span> 
+           </div>
+         </form> 
+<!--            <p>{{progress}}</p>-->
+           </div>  
+      
+
+  </div>
+<!--    <br>-->
+    <div class="row">
+    <div class="col-md-12">
+        
+        
+      <div class="card">
+
+        <div class="table-responsive white">
+          <h3 class="table-title p-20">Introduction <button type="button" class="btn btn-link btn-round btn-lg editbutton" ng-click="enableEditor7()"><i class="md md-edit"></i></button></h3>
+            
+            <span ng-hide="view7.editorEnabled">             
+            <div class="card-content">
+                <div class="row form-group">
+             <div id="myintroduce"></div>               
+                </div>
+            </div>
+            </span>
+            
+              <span ng-show="view7.editorEnabled">  <div class="form-group">
+              <text-angular-toolbar name="toolbar1" ta-toolbar="[['bold', 'italics', 'redo', 'undo', 'insertLink']]"></text-angular-toolbar>
+              <text-angular name="htmlcontent" ng-model="view7.editableValue" ta-target-toolbars='toolbar1,toolbar2'></text-angular>
+              <text-angular-toolbar name="toolbar2" ta-toolbar="[['html', 'charcount', 'wordcount']]"></text-angular-toolbar>
+            </div><a ng-click="save7()">Save</a> or <a ng-click="disableEditor7()">cancel</a>.</span>
+        </div>         
+      </div>      
+        
+    </div>
+
+  </div>
+    
+      <div class="row">
+    <div class="col-md-12">
+      <div class="card">
+
+        <div class="table-responsive white">
+           <h3 class="table-title p-20"> Objective<button type="button" class="btn btn-link btn-round btn-lg editbutton" ng-click="enableEditor8()"><i class="md md-edit"></i></button></h3>
+            
+            <span ng-hide="view8.editorEnabled">             
+            <div class="card-content"><div class="row">
+             <div id="myobjective"></div>               
+           </div></div>
+            </span>
+            
+              <span ng-show="view8.editorEnabled">  <div class="form-group">
+              <text-angular-toolbar name="toolbar3" ta-toolbar="[['bold', 'italics', 'ul', 'redo', 'undo', 'insertLink']]"></text-angular-toolbar>
+              <text-angular name="htmlcontent2" ng-model="view8.editableValue" ta-target-toolbars='toolbar3,toolbar4'></text-angular>
+              <text-angular-toolbar name="toolbar4" ta-toolbar="[['html', 'charcount', 'wordcount']]"></text-angular-toolbar>
+            </div><a ng-click="save8()">Save</a> or <a ng-click="disableEditor8()">cancel</a>.</span>
+            
+            
+        </div>
+      </div>
+    </div>
+
+  </div> 
+    
+   
+  
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card">
+
+        <div class="table-responsive white">
+          <h3 class="table-title p-20">Skills <button type="button" class="btn btn-link btn-round btn-lg editbutton" ng-click="enableEditor9()"><i class="md md-edit"></i></button></h3>
+            
+            <span ng-hide="view9.editorEnabled">             
+            <div class="card-content"><div class="row">
+             <div id="myskill1"></div>               
+          </div></div>
+            </span>
+            
+              <span ng-show="view9.editorEnabled">  <div class="form-group">
+              <text-angular-toolbar name="toolbar5" ta-toolbar="[['bold', 'italics', 'ul', 'redo', 'undo', 'insertLink']]"></text-angular-toolbar>
+              <text-angular name="htmlcontent3" ng-model="view9.editableValue" ta-target-toolbars='toolbar5,toolbar6'></text-angular>
+              <text-angular-toolbar name="toolbar6" ta-toolbar="[['html', 'charcount', 'wordcount']]"></text-angular-toolbar>
+            </div><a ng-click="save9()">Save</a> or <a ng-click="disableEditor9()">cancel</a>.</span>
+
+        </div>
+      </div>
+    </div>
+
+  </div> 
+   <div class="row">
+    <div class="col-md-12">
+      <div class="card">
+
+        <div class="table-responsive white">
+   <h3 class="table-title p-20">Education <button type="button" class="btn btn-link btn-round btn-lg editbutton" ng-click="addoneEducation()"><i class="md md-add"></i></button> </h3>
+          <table class="table table-hover table-full table-full-small">
+            <colgroup>
+            
+            </colgroup>
+            <thead>
+        <tr> 
+              
+              <th>Title </th>
+                 <th>Institution </th>
+                 <th>From </th>
+                 <th>To </th>
+                <th>Functions</th>
+              
+            </tr>
+            </thead>
+            <tbody>        
+              <tr> 
+              <td><span ng-hide="view10.editorEnabled">{{form.title1}}</span> <span ng-show="view10.editorEnabled"><input ng-model="view10.editableValue"><a ng-click="save10()">Save</a> or <a ng-click="disableEditor10()">cancel</a></span></td>
+                  
+                  <td><span ng-hide="view11.editorEnabled">{{form.institution1}}</span> <span ng-show="view11.editorEnabled"><input ng-model="view11.editableValue"><a ng-click="save11()">Save</a> or <a ng-click="disableEditor11()">cancel</a></span></td>
+                  
+                  <td><span ng-hide="view12.editorEnabled">{{form.educationfrom1}}</span> <span ng-show="view12.editorEnabled"><input type="text" class="form-control" ng-model="view12.editableValue" data-date-format="MMMM-yyyy" data-date-type="string" data-autoclose="1" bs-datepicker><a ng-click="save12()">Save</a> or <a ng-click="disableEditor12()">cancel</a></span></td>
+                  
+                  <td><span ng-hide="view13.editorEnabled">{{form.educationto1}}</span> <span ng-show="view13.editorEnabled"><input type="text" class="form-control" ng-model="view13.editableValue" data-date-format="MMMM-yyyy" data-date-type="string" data-autoclose="1" bs-datepicker><a ng-click="save13()">Save</a> or <a ng-click="disableEditor13()">cancel</a></span></td>
+                  <td><button type="button" class="btn btn-link btn-round btn-lg" ng-click="enableEditorEducation1()"><i class="md md-edit"></i></button><button type="button" class="btn btn-link btn-round btn-lg" ng-click="cancelalleducation1()"><i class="md md-cancel"></i></button></td>
+            </tr>
+                
+                 <tr ng-hide="hideEducation2"> 
+              <td><span ng-hide="view14.editorEnabled">{{form.title2}}</span> <span ng-show="view14.editorEnabled"><input ng-model="view14.editableValue"><span ng-hide="hidewhenadd2"><a ng-click="save14()">Save</a> or <a ng-click="disableEditor14()">cancel</a></span></span></td>
+                     
+                     <td><span ng-hide="view15.editorEnabled">{{form.institution2}}</span> <span ng-show="view15.editorEnabled"><input ng-model="view15.editableValue"><span ng-hide="hidewhenadd2"><a ng-click="save15()">Save</a> or <a ng-click="disableEditor15()">cancel</a></span></span></td>
+                     
+                     <td><span ng-hide="view16.editorEnabled">{{form.educationfrom2}}</span> <span ng-show="view16.editorEnabled"><input type="text" class="form-control" ng-model="view16.editableValue" data-date-format="MMMM-yyyy" data-date-type="string" data-autoclose="1" bs-datepicker><span ng-hide="hidewhenadd2"><a ng-click="save16()">Save</a> or <a ng-click="disableEditor16()">cancel</a></span></span></td>
+                     
+                     <td><span ng-hide="view17.editorEnabled">{{form.educationto2}}</span> <span ng-show="view17.editorEnabled"><input type="text" class="form-control" ng-model="view17.editableValue" data-date-format="MMMM-yyyy" data-date-type="string" data-autoclose="1" bs-datepicker><span ng-hide="hidewhenadd2"><a ng-click="save17()">Save</a> or <a ng-click="disableEditor17()">cancel</a></span></span></td>
+                     
+                       <td><button type="button" class="btn btn-link btn-round btn-lg" ng-click="enableEditorEducation2()" ng-show="showEditorEducation2"><i class="md md-edit"></i></button><button type="button" class="btn btn-link btn-round btn-lg" ng-click="saveallEducation2()" ng-hide="showEditorEducation2"><i class="md md-save"></i></button><button type="button" class="btn btn-link btn-round btn-lg" ng-click="cancelalleducation2()"><i class="md md-cancel"></i></button></td>
+            </tr>
+                
+                 <tr ng-hide="hideEducation3"> 
+              <td><span ng-hide="view18.editorEnabled">{{form.title3}}</span> <span ng-show="view18.editorEnabled"><input ng-model="view18.editableValue"><span ng-hide="hidewhenadd3"><a ng-click="save18()">Save</a> or <a ng-click="disableEditor18()">cancel</a></span></span></td>
+                     
+                  <td><span ng-hide="view19.editorEnabled">{{form.institution3}}</span> <span ng-show="view19.editorEnabled"><input ng-model="view19.editableValue"><span ng-hide="hidewhenadd3"><a ng-click="save19()">Save</a> or <a ng-click="disableEditor19()">cancel</a></span></span></td>
+                     
+                  <td><span ng-hide="view20.editorEnabled">{{form.educationfrom3}}</span> <span ng-show="view20.editorEnabled"><input type="text" class="form-control" ng-model="view20.editableValue" data-date-format="MMMM-yyyy" data-date-type="string" data-autoclose="1" bs-datepicker><span ng-hide="hidewhenadd3"><a ng-click="save20()">Save</a> or <a ng-click="disableEditor20()">cancel</a></span></span></td>
+                     
+                  <td><span ng-hide="view21.editorEnabled">{{form.educationto3}}</span> <span ng-show="view21.editorEnabled"><input type="text" class="form-control" ng-model="view21.editableValue" data-date-format="MMMM-yyyy" data-date-type="string" data-autoclose="1" bs-datepicker><span ng-hide="hidewhenadd3"><a ng-click="save21()">Save</a> or <a ng-click="disableEditor21()">cancel</a></span></span></td>
+                     <td><button type="button" class="btn btn-link btn-round btn-lg" ng-click="enableEditorEducation3()" ng-show="showEditorEducation3"><i class="md md-edit"></i></button><button type="button" class="btn btn-link btn-round btn-lg" ng-click="saveallEducation3()" ng-hide="showEditorEducation3"><i class="md md-save"></i></button><button type="button" class="btn btn-link btn-round btn-lg" ng-click="cancelalleducation3()"><i class="md md-cancel"></i></button></td>
+            </tr>
+                
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+  </div>      
+   
+       
+
+   
+    <div class="row">
+    <div class="col-md-12">
+      <div class="card">
+
+        <div class="table-responsive white">
+          <h3 class="table-title p-20">Certificates<button type="button" class="btn btn-link btn-round btn-lg editbutton" ng-click="enableEditor22()"><i class="md md-edit"></i></button></h3>
+
+        <span ng-hide="view22.editorEnabled">             
+            <div class="card-content"><div class="row">
+             <div id="mycertificate"></div>               
+           </div></div>
+            </span>
+            
+              <span ng-show="view22.editorEnabled">  <div class="form-group">
+              <text-angular-toolbar name="toolbar7" ta-toolbar="[['bold', 'italics', 'ul', 'redo', 'undo', 'insertLink']]"></text-angular-toolbar>
+              <text-angular name="htmlcontent4" ng-model="view22.editableValue" ta-target-toolbars='toolbar7,toolbar8'></text-angular>
+              <text-angular-toolbar name="toolbar8" ta-toolbar="[['html', 'charcount', 'wordcount']]"></text-angular-toolbar>
+            </div><a ng-click="save22()">Save</a> or <a ng-click="disableEditor22()">cancel</a>.</span>
+        </div>
+      </div>
+    </div>
+
+  </div>    
+    <div class="row">
+    <div class="col-md-12">
+      <div class="card">
+
+        <div class="table-responsive white">
+             <h3 class="table-title p-20">Licenses<button type="button" class="btn btn-link btn-round btn-lg editbutton" ng-click="enableEditor23()"><i class="md md-edit"></i></button></h3>
+            
+        <span ng-hide="view23.editorEnabled">             
+            <div class="card-content"><div class="row">
+             <div id="mylicense"></div>               
+           </div></div>
+            </span>
+            
+              <span ng-show="view23.editorEnabled">  <div class="form-group">
+              <text-angular-toolbar name="toolbar9" ta-toolbar="[['bold', 'italics', 'ul', 'redo', 'undo', 'insertLink']]"></text-angular-toolbar>
+              <text-angular name="htmlcontent5" ng-model="view23.editableValue" ta-target-toolbars='toolbar9,toolbar10'></text-angular>
+              <text-angular-toolbar name="toolbar10" ta-toolbar="[['html', 'charcount', 'wordcount']]"></text-angular-toolbar>
+            </div><a ng-click="save23()">Save</a> or <a ng-click="disableEditor23()">cancel</a>.</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+    
+    
+    
+        <div class="row">
+    <div class="col-md-12">
+      <div class="card no-margin">
+
+        <div class="table-responsive white">
+          <h3 class="table-title p-20">Employment History<button type="button" class="btn btn-link btn-round btn-lg editbutton" ng-click="addoneEmployment()"><i class="md md-add"></i></button> </h3>
+
+          <table class="table table-hover table-full table-full-small">
+        <thead>
+        <tr> 
+        <th>Job Title</th>
+         <th>Company Name</th>
+        <th>Company Website</th>
+        <th>Period</th> 
+        <th>Functions</th>    
+            </tr>
+            </thead>
+            <tbody>
+                <tr> 
+              <td><span ng-hide="view24.editorEnabled">{{form.jtitle1}}</span> <span ng-show="view24.editorEnabled"><input ng-model="view24.editableValue"><a ng-click="save24()">Save</a> or <a ng-click="disableEditor24()">cancel</a>.</span></td>
+                    
+                <td><span ng-hide="view25.editorEnabled">{{form.cname1}}</span> <span ng-show="view25.editorEnabled"><input ng-model="view25.editableValue"><a ng-click="save25()">Save</a> or <a ng-click="disableEditor25()">cancel</a>.</span></td>
+                    
+                <td><span ng-hide="view26.editorEnabled">{{form.cwebsite1}}</span> <span ng-show="view26.editorEnabled"><input ng-model="view26.editableValue"><a ng-click="save26()">Save</a> or <a ng-click="disableEditor26()">cancel</a>.</span></td>
+                    
+                <td><span ng-hide="view27.editorEnabled">{{form.jfrom1}}</span> <span ng-show="view27.editorEnabled"><input type="text" class="form-control" ng-model="view27.editableValue" data-date-format="MMMM-yyyy" data-date-type="string" data-autoclose="1" bs-datepicker><a ng-click="save27()">Save</a> or <a ng-click="disableEditor27()">cancel</a>.</span> - <span ng-hide="view28.editorEnabled">{{form.jto1}}</span> <span ng-show="view28.editorEnabled"><input type="text" class="form-control" ng-model="view28.editableValue" data-date-format="MMMM-yyyy" data-date-type="string" data-autoclose="1" bs-datepicker><a ng-click="save28()">Save</a> or <a ng-click="disableEditor28()">cancel</a>.</span></td>
+                    <td><button type="button" class="btn btn-link btn-round btn-lg" ng-click="enableEditorEmployment1()"><i class="md md-edit"></i></button><button type="button" class="btn btn-link btn-round btn-lg" ng-click="cancelallemployment1()"><i class="md md-cancel"></i></button></td>
+              
+            </tr>                                      
+            </tbody>
+          </table>
+            
+            
+            
+        </div>
+      </div>
+      
+    </div>
+
+  </div> 
+        <div class="row">
+    <div class="col-md-12">
+      <div class="card">
+
+        <div class="table-responsive white">          
+            <span ng-hide="view29.editorEnabled">             
+            <div class="card-content"><div class="row">
+             <div id="myduty1"></div>               
+          </div></div>
+            </span>
+            
+              <span ng-show="view29.editorEnabled">  <div class="form-group">
+              <text-angular-toolbar name="toolbar11" ta-toolbar="[['bold', 'italics', 'ul', 'redo', 'undo', 'insertLink']]"></text-angular-toolbar>
+              <text-angular name="htmlcontent6" ng-model="view29.editableValue" ta-target-toolbars='toolbar11,toolbar12'></text-angular>
+              <text-angular-toolbar name="toolbar12" ta-toolbar="[['html', 'charcount', 'wordcount']]"></text-angular-toolbar>
+            </div><a ng-click="save29()">Save</a> or <a ng-click="disableEditor29()">cancel</a>.</span>
+            
+            
+        </div>
+      </div>
+    </div>
+
+  </div> 
+    
+        <div class="row" ng-hide="hideEmployment2">
+    <div class="col-md-12">
+      <div class="card no-margin">
+
+        <div class="table-responsive white">
+          <table class="table table-hover table-full table-full-small">
+            <thead>
+            </thead>
+            <tbody>    
+            <tr> 
+              <td><span ng-hide="view30.editorEnabled">{{form.jtitle2}}</span> <span ng-show="view30.editorEnabled"><input ng-model="view30.editableValue"><span ng-hide="hidewhenaddemployment2"><a ng-click="save30()">Save</a> or <a ng-click="disableEditor30()">cancel</a>.</span></span></td>
+                
+                <td><span ng-hide="view31.editorEnabled">{{form.cname2}}</span> <span ng-show="view31.editorEnabled"><input ng-model="view31.editableValue"><span ng-hide="hidewhenaddemployment2"><a ng-click="save31()">Save</a> or <a ng-click="disableEditor31()">cancel</a>.</span></span></td>
+                
+                <td><span ng-hide="view32.editorEnabled">{{form.cwebsite2}}</span> <span ng-show="view32.editorEnabled"><input ng-model="view32.editableValue"><span ng-hide="hidewhenaddemployment2"><a ng-click="save32()">Save</a> or <a ng-click="disableEditor32()">cancel</a>.</span></span></td>
+                
+                <td><span ng-hide="view33.editorEnabled">{{form.jfrom2}}</span> <span ng-show="view33.editorEnabled"><input type="text" class="form-control" ng-model="view33.editableValue" data-date-format="MMMM-yyyy" data-date-type="string" data-autoclose="1" bs-datepicker><span ng-hide="hidewhenaddemployment2"><a ng-click="save33()">Save</a> or <a ng-click="disableEditor33()">cancel</a>.</span></span> - <span ng-hide="view34.editorEnabled">{{form.jto2}}</span> <span ng-show="view34.editorEnabled"><input type="text" class="form-control" ng-model="view34.editableValue" data-date-format="MMMM-yyyy" data-date-type="string" data-autoclose="1" bs-datepicker><span ng-hide="hidewhenaddemployment2"><a ng-click="save34()">Save</a> or <a ng-click="disableEditor34()">cancel</a>.</span></span></td>
+                <td><button type="button" class="btn btn-link btn-round btn-lg" ng-click="enableEditorEmployment2()" ng-show="showEditorEmployment2"><i class="md md-edit"></i></button><button type="button" class="btn btn-link btn-round btn-lg" ng-click="saveallEmployment2()" ng-hide="showEditorEmployment2"><i class="md md-save"></i></button><button type="button" class="btn btn-link btn-round btn-lg" ng-click="cancelallemployment2()"><i class="md md-cancel"></i></button></td>
+              
+            </tr>                
+            </tbody>
+          </table>          
+        </div>
+      </div>        
+    </div>
+  </div>
+        <div class="row" ng-hide="hideEmployment2">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="table-responsive white">          
+            <span ng-hide="view35.editorEnabled">             
+            <div class="card-content"><div class="row">
+             <div id="myduty2"></div>               
+           </div></div>
+            </span>
+            
+              <span ng-show="view35.editorEnabled">  <div class="form-group">
+              <text-angular-toolbar name="toolbar13" ta-toolbar="[['bold', 'italics', 'ul', 'redo', 'undo', 'insertLink']]"></text-angular-toolbar>
+              <text-angular name="htmlcontent7" ng-model="view35.editableValue" ta-target-toolbars='toolbar13,toolbar14'></text-angular>
+              <text-angular-toolbar name="toolbar14" ta-toolbar="[['html', 'charcount', 'wordcount']]"></text-angular-toolbar>
+                  </div><span ng-hide="hidewhenaddemployment2"><a ng-click="save35()">Save</a> or <a ng-click="disableEditor35()">cancel</a>.</span></span>       
+            
+        </div>
+      </div>
+    </div>
+
+  </div> 
+    
+    
+        <div class="row" ng-hide="hideEmployment3">
+    <div class="col-md-12">
+      <div class="card no-margin">
+
+        <div class="table-responsive white">
+
+          <table class="table table-hover table-full table-full-small">
+            <thead>
+            </thead>
+            <tbody>
+              <tr> 
+                  
+                  <td><span ng-hide="view36.editorEnabled">{{form.jtitle3}}</span> <span ng-show="view36.editorEnabled"><input ng-model="view36.editableValue"><span ng-hide="hidewhenaddemployment3"><a ng-click="save36()">Save</a> or <a ng-click="disableEditor36()">cancel</a>.</span></span></td>
+                  
+                  <td><span ng-hide="view37.editorEnabled">{{form.cname3}}</span> <span ng-show="view37.editorEnabled"><input ng-model="view37.editableValue"><span ng-hide="hidewhenaddemployment3"><a ng-click="save37()">Save</a> or <a ng-click="disableEditor37()">cancel</a>.</span></span></td>
+                  
+                  <td><span ng-hide="view38.editorEnabled">{{form.cwebsite3}}</span> <span ng-show="view38.editorEnabled"><input ng-model="view38.editableValue"><span ng-hide="hidewhenaddemployment3"><a ng-click="save38()">Save</a> or <a ng-click="disableEditor38()">cancel</a>.</span></span></td>
+                  
+                  <td><span ng-hide="view39.editorEnabled">{{form.jfrom3}}</span> <span ng-show="view39.editorEnabled"><input type="text" class="form-control" ng-model="view39.editableValue" data-date-format="MMMM-yyyy" data-date-type="string" data-autoclose="1" bs-datepicker><span ng-hide="hidewhenaddemployment3"><a ng-click="save39()">Save</a> or <a ng-click="disableEditor39()">cancel</a>.</span></span> - <span ng-hide="view40.editorEnabled">{{form.jto3}}</span> <span ng-show="view40.editorEnabled"><input type="text" class="form-control" ng-model="view40.editableValue" data-date-format="MMMM-yyyy" data-date-type="string" data-autoclose="1" bs-datepicker><span ng-hide="hidewhenaddemployment3"><a ng-click="save40()">Save</a> or <a ng-click="disableEditor40()">cancel</a>.</span></span></td>
+                  <td><button type="button" class="btn btn-link btn-round btn-lg" ng-click="enableEditorEmployment3()" ng-show="showEditorEmployment3"><i class="md md-edit"></i></button><button type="button" class="btn btn-link btn-round btn-lg" ng-click="saveallEmployment3()" ng-hide="showEditorEmployment3"><i class="md md-save"></i></button><button type="button" class="btn btn-link btn-round btn-lg" ng-click="cancelallemployment3()"><i class="md md-cancel"></i></button></td>
+              
+            </tr>              
+            </tbody>
+          </table>
+           
+        </div>
+      </div>
+       
+    </div>
+
+  </div>
+        <div class="row" ng-hide="hideEmployment3">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="table-responsive white">          
+            <span ng-hide="view41.editorEnabled">             
+            <div class="card-content"><div class="row">
+             <div id="myduty3"></div>               
+           </div></div>
+            </span>
+            
+              <span ng-show="view41.editorEnabled">  <div class="form-group">
+              <text-angular-toolbar name="toolbar15" ta-toolbar="[['bold', 'italics', 'ul', 'redo', 'undo', 'insertLink']]"></text-angular-toolbar>
+              <text-angular name="htmlcontent8" ng-model="view41.editableValue" ta-target-toolbars='toolbar15,toolbar16'></text-angular>
+              <text-angular-toolbar name="toolbar16" ta-toolbar="[['html', 'charcount', 'wordcount']]"></text-angular-toolbar>
+                  </div><span ng-hide="hidewhenaddemployment3"><a ng-click="save41()">Save</a> or <a ng-click="disableEditor41()">cancel</a>.</span></span>       
+            
+        </div>
+      </div>
+    </div>
+
+  </div> 
+    
+        <div class="row" ng-hide="hideEmployment4">
+    <div class="col-md-12">
+      <div class="card no-margin">
+
+        <div class="table-responsive white">
+          <table class="table table-hover table-full table-full-small">
+            <thead>
+            </thead>
+            <tbody>
+
+             <tr> 
+                                    
+                 <td><span ng-hide="view42.editorEnabled">{{form.jtitle4}}</span> <span ng-show="view42.editorEnabled"><input ng-model="view42.editableValue"><span ng-hide="hidewhenaddemployment4"><a ng-click="save42()">Save</a> or <a ng-click="disableEditor42()">cancel</a>.</span></span></td>
+                                    
+                 <td><span ng-hide="view43.editorEnabled">{{form.cname4}}</span> <span ng-show="view43.editorEnabled"><input ng-model="view43.editableValue"><span ng-hide="hidewhenaddemployment4"><a ng-click="save43()">Save</a> or <a ng-click="disableEditor43()">cancel</a>.</span></span></td>
+                                    
+                 <td><span ng-hide="view44.editorEnabled">{{form.cwebsite4}}</span> <span ng-show="view44.editorEnabled"><input ng-model="view44.editableValue"><span ng-hide="hidewhenaddemployment4"><a ng-click="save44()">Save</a> or <a ng-click="disableEditor44()">cancel</a>.</span></span></td>
+                                    
+                 <td><span ng-hide="view45.editorEnabled">{{form.jfrom4}}</span> <span ng-show="view45.editorEnabled"><input type="text" class="form-control" ng-model="view45.editableValue" data-date-format="MMMM-yyyy" data-date-type="string" data-autoclose="1" bs-datepicker><span ng-hide="hidewhenaddemployment4"><a ng-click="save45()">Save</a> or <a ng-click="disableEditor45()">cancel</a>.</span></span> - <span ng-hide="view46.editorEnabled">{{form.jto4}}</span> <span ng-show="view46.editorEnabled"><input type="text" class="form-control" ng-model="view46.editableValue" data-date-format="MMMM-yyyy" data-date-type="string" data-autoclose="1" bs-datepicker><span ng-hide="hidewhenaddemployment4"><a ng-click="save46()">Save</a> or <a ng-click="disableEditor46()">cancel</a>.</span></span></td>
+              <td><button type="button" class="btn btn-link btn-round btn-lg" ng-click="enableEditorEmployment4()" ng-show="showEditorEmployment4"><i class="md md-edit"></i></button><button type="button" class="btn btn-link btn-round btn-lg" ng-click="saveallEmployment4()" ng-hide="showEditorEmployment4"><i class="md md-save"></i></button><button type="button" class="btn btn-link btn-round btn-lg" ng-click="cancelallemployment4()"><i class="md md-cancel"></i></button></td>
+            </tr>                
+            </tbody>
+          </table>       
+        </div>
+      </div>
+  
+    </div>
+
+  </div> 
+        <div class="row" ng-hide="hideEmployment4">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="table-responsive white">          
+            <span ng-hide="view47.editorEnabled">             
+            <div class="card-content"><div class="row">
+             <div id="myduty4"></div>               
+          </div></div>
+            </span>
+            
+              <span ng-show="view47.editorEnabled">  <div class="form-group">
+              <text-angular-toolbar name="toolbar17" ta-toolbar="[['bold', 'italics', 'ul', 'redo', 'undo', 'insertLink']]"></text-angular-toolbar>
+              <text-angular name="htmlcontent9" ng-model="view47.editableValue" ta-target-toolbars='toolbar17,toolbar18'></text-angular>
+              <text-angular-toolbar name="toolbar18" ta-toolbar="[['html', 'charcount', 'wordcount']]"></text-angular-toolbar>
+                  </div><span ng-hide="hidewhenaddemployment4"><a ng-click="save47()">Save</a> or <a ng-click="disableEditor47()">cancel</a>.</span></span>       
+            
+        </div>
+      </div>
+    </div>
+
+  </div> 
+       
+        <div class="row" ng-hide="hideEmployment5">
+    <div class="col-md-12">
+      <div class="card no-margin">
+        <div class="table-responsive white">
+          <table class="table table-hover table-full table-full-small">
+            <thead>
+            </thead>
+            <tbody>                
+              <tr>                   
+                  <td><span ng-hide="view48.editorEnabled">{{form.jtitle5}}</span> <span ng-show="view48.editorEnabled"><input ng-model="view48.editableValue"><span ng-hide="hidewhenaddemployment5"><a ng-click="save48()">Save</a> or <a ng-click="disableEditor48()">cancel</a>.</span></span></td>
+                                    
+                <td><span ng-hide="view49.editorEnabled">{{form.cname5}}</span> <span ng-show="view49.editorEnabled"><input ng-model="view49.editableValue"><a ng-click="save49()">Save</a> or <a ng-click="disableEditor49()">cancel</a>.</span></td>
+                                    
+                  <td><span ng-hide="view50.editorEnabled">{{form.cwebsite5}}</span> <span ng-show="view50.editorEnabled"><input ng-model="view50.editableValue"><span ng-hide="hidewhenaddemployment5"><a ng-click="save50()">Save</a> or <a ng-click="disableEditor50()">cancel</a>.</span></span></td>
+                                    
+                  <td><span ng-hide="view51.editorEnabled">{{form.jfrom5}}</span> <span ng-show="view51.editorEnabled"><input type="text" class="form-control" ng-model="view51.editableValue" data-date-format="MMMM-yyyy" data-date-type="string" data-autoclose="1" bs-datepicker><span ng-hide="hidewhenaddemployment5"><a ng-click="save51()">Save</a> or <a ng-click="disableEditor51()">cancel</a>.</span></span> - <span ng-hide="view52.editorEnabled">{{form.jto5}}</span> <span ng-show="view52.editorEnabled"><input type="text" class="form-control" ng-model="view52.editableValue" data-date-format="MMMM-yyyy" data-date-type="string" data-autoclose="1" bs-datepicker><span ng-hide="hidewhenaddemployment5"><a ng-click="save52()">Save</a> or <a ng-click="disableEditor52()">cancel</a>.</span></span></td>
+    
+              <td><button type="button" class="btn btn-link btn-round btn-lg" ng-click="enableEditorEmployment5()" ng-show="showEditorEmployment5"><i class="md md-edit"></i></button><button type="button" class="btn btn-link btn-round btn-lg" ng-click="saveallEmployment5()" ng-hide="showEditorEmployment5"><i class="md md-save"></i></button><button type="button" class="btn btn-link btn-round btn-lg" ng-click="cancelallemployment5()"><i class="md md-cancel"></i></button></td>
+            </tr>                    
+            </tbody>
+          </table>            
+        </div>
+      </div>        
+    </div>
+
+  </div>  
+        <div class="row" ng-hide="hideEmployment5">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="table-responsive white">          
+            <span ng-hide="view53.editorEnabled">             
+            <div class="card-content"><div class="row">
+             <div id="myduty5"></div>               
+           </div></div>
+            </span>
+            
+              <span ng-show="view53.editorEnabled">  <div class="form-group">
+              <text-angular-toolbar name="toolbar19" ta-toolbar="[['bold', 'italics', 'ul', 'redo', 'undo', 'insertLink']]"></text-angular-toolbar>
+              <text-angular name="htmlcontent10" ng-model="view53.editableValue" ta-target-toolbars='toolbar19,toolbar20'></text-angular>
+              <text-angular-toolbar name="toolbar20" ta-toolbar="[['html', 'charcount', 'wordcount']]"></text-angular-toolbar>
+                  </div><span ng-hide="hidewhenaddemployment5"><a ng-click="save53()">Save</a> or <a ng-click="disableEditor53()">cancel</a>.</span></span>       
+            
+        </div>
+      </div>
+    </div>
+
+  </div> 
+    
+    
+ <div class="row"> 
+    
+     <div class="col-md-12">
+          <div class="table-responsive">       
+<button class="btn btn-warning btn-lg" ng-click="createpdf()">Download PDF</button>
+         </div>     
+  </div>
+
+     
+    </div>
+
+								
+								
+							</div>			
+								
+                            </div>
+						   <div role="tabpanel" class="tab-pane" id="documents">             
+							   <div class="col-md-12">
+                <div class="no-margin">
+                    <div class="table-responsive white">
+                        <table class="table table-full-small line">
+                            <colgroup>
+                                <col class="auto-cell-size">
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <td class="f20"><i class="md md-chevron-right lime darken-2 icon-color"></i></td>
+                                    <td ng-click="downloadBookingPDF()">Booking Form - Customer Version  <span><i class="md md-play-download"></i></span></td>
+                                    
+									
+                                </tr>
+                                <tr>
+                                    <td class="f20"><i class="md md-chevron-right lime darken-2 icon-color"></i></td>
+                                    <td ng-click="createCustomerpdf()">Booking Form - Internal Version  <span><i class="fa fa-file-pdf-o"></i></span></td>
+                                  
+									
+                                </tr>
+                                 <tr>
+                                    <td class="f20"><i class="md md-chevron-right lime darken-2 icon-color"></i></td>
+                                    <td ng-click="createpdf()">Resume  <span><i class="md md-folder"></i></span></td>
+                                  
+									
+                                </tr>
+								  <tr>
+                                    <td class="f20"><i class="md md-chevron-right lime darken-2 icon-color"></i></td>
+                                    <td ng-click="openTravelProfile()">Travel Profile  <span><i class="md md-wallet-travel"></i></span></td>
+                                  
+									
+                                </tr>
+                               
+								<tr>
+                                    <td class="f20"><i class="md md-chevron-right lime darken-2 icon-color"></i></td>
+                                    <td ng-click="createPlacementPDF()">Placement Form <span><i class="md md-arrow-forward"></i></span></td>
+                                  
+									
+                                </tr>
+                         
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+
+            </div>
+							   
+		<div class="col-md-12">        
+      		<div class="card">
+        		<div class="table-responsive white">
+					<h3 class="table-title p-20">Attachments <button type="button" class="btn btn-link btn-round btn-lg editbutton" ng-click="openToUpload()"><i class="md md-add"></i></button></h3>
+		        	          <table class="table table-full table-full-small">
+            <colgroup>
+              <col class="p-r-20" />
+            </colgroup>
+            <thead>
+            <tr>
+			 	<th>File Name</th>
+              	<th>Attached By</th>
+				<th>Date</th>
+				<th>Download</th>
+            </tr>
+            </thead>
+            <tbody>
+				<tr ng-repeat="fr in fileRecords">
+					<td>{{fr.name}}</td>
+					<td>{{fr.attached_by}}</td>
+					<td>{{fr.date}}</td>
+					<td><a target="_self" href="{{fr.url}}" download>
+						<i class="md md-file-download"></i>
+						</a></td>
+				</tr>
+            </tbody>
+          </table>
+        		</div>         
+     		</div>      
+    	</div>
+							
+							
+							
+							
+							</div>
+							<div role="tabpanel" class="tab-pane" id="timeline">
+                                <div class="col-md-12">  
+									<timeline>
+										<timeline-event ng-repeat="one in timelineData | orderBy:'-time'" side="{{one.position}}">
+      										<timeline-badge class="{{one.badgeClass}}">
+        										<i class="glyphicon {{one.badgeIconClass}}"></i>
+      										</timeline-badge>
+      										<timeline-panel class="{{one.badgeClass}}">
+        										<timeline-heading>
+          										<h4>{{one.heading}}</h4>
+        										</timeline-heading>
+        										<p>{{one.text}}</p>
+												<p><pan style="float:left;">{{one.staff}}</pan><pan class="" style="float:right;">{{one.time}}</pan></p>
+      										</timeline-panel>
+    									</timeline-event>
+  									</timeline>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+            </div>
+        </div>
+
+    </section>
+</div>

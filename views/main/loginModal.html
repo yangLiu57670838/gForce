@@ -1,0 +1,43 @@
+<div class="modal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" style="width:440px;">
+    <div class="modal-content">
+      <div class="modal-header" style="text-align: center;">
+<!--        <button type="button" class="close" ng-click="$hide()">&times;</button>-->
+          <img src="../../assets/img/login.png" alt="" style="text-align: center">
+        <h4 class="modal-title" style="font-weight: bold;">Just to be safe, we logged you out.</h4>
+          <p class="modal-title">Log back in to pick up where you left off.</p>
+      </div>
+      
+          
+           <form class="" id="idleLoginForm" name="idleLoginForm">
+
+            <div class="modal-body">
+              <div class="row">
+                <div class="col-md-12">
+                   <div class="form-group"> 
+                        <label for="idlePassword" class="control-label" style="">Password</label>
+                        <input type="password" class="form-control" name="idlePassword" ng-model="idlePassword" required> 	  
+                    </div>
+                </div>
+           </div>
+     </div>
+		        
+       <div class="modal-footer">
+          <div class="row">
+              <div class="col-md-4">
+                  <button type="button" class="btn btn-primary" ng-click="idleLogout()">Logout</button>
+              </div>
+              <div class="col-md-offset-3 col-md-4">
+        <button type="submit" class="btn btn-success" ng-click="idleLogin(idlePassword)" ng-disabled="!idlePassword">Login</button>
+              </div>
+          </div>
+      </div>         
+            </form>
+          
+
+
+   
+
+    </div>
+  </div>
+</div>

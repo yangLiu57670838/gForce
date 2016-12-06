@@ -1,0 +1,59 @@
+<div class="aside bs-docs-aside" tabindex="-1" role="dialog" style="max-width:600px;">
+    <div class="close">
+        <div class="btn btn-round btn-info" ng-click="hideCharityTPL()"><i class="md md-close"></i></div>
+    </div>
+
+    <div class="aside-dialog">
+        <div class="aside-body bs-sidebar">
+			
+			
+
+            <form class="form-floating" novalidate="novalidate" id="addPaymentForm" name="addPaymentForm">
+                <fieldset>
+					<legend>Add a Charity</legend>
+                    
+                        <div class="row">
+							<div class="col-md-12">
+								<div class="form-group">  
+							<label for="foundation" class="control-label" style="">Global Foundation</label>
+							<input type="text" class="form-control" name="foundation" ng-model="charityData.foundation" required> 	  
+							</div>
+							</div>
+							<div class="col-md-12">
+									<div class="form-group">  
+							<label for="amount" class="control-label" style="">Amount </label>
+							<input type="number" class="form-control" name="amount" ng-model="charityData.amount" required> 	  
+							</div>
+							</div>
+							<div class="col-md-12">
+								<div class="form-group">
+							   <div class="switch">
+                                        <label class="filled"> Status: Inactive
+                                            <input type="checkbox" ng-model="charityData.status" ng-change="" ng-true-value="'active'" ng-false-value="'inactive'"> <span class="lever"></span>Active</label>
+                                    </div>	  
+							</div>
+							</div>
+							<div class="col-md-12">
+								<div class="form-group">  
+							<textarea class="form-control vertical" placeholder="Comments" rows="3" id="textArea" ng-model="charityData.comments"></textarea>
+								
+							</div>
+                       </div>
+                                </div>
+                            
+
+					
+					<div class="form-group">
+                                <button type="submit" class="btn btn-primary" ng-click="saveCharityDetail(charityData)">Save</button>
+                                <button type="reset" class="btn btn-default">Cancel</button>
+                            </div>
+					
+					
+                </fieldset>
+            </form>
+			
+
+
+        </div>
+    </div>
+</div>

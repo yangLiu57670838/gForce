@@ -1,0 +1,1274 @@
+<div class="aside bs-docs-aside" tabindex="-1" role="dialog" style="max-width: 1300px;">
+    <div class="close close2">
+        <div class="btn btn-round btn-info" ng-click="$hide()"><i class="md md-close"></i></div>
+    </div>
+
+    <div class="aside-dialog">
+        <div class="aside-body bs-sidebar">
+			
+			
+
+            <form class="form-floating" ng-submit="submitCompliance(formData)" id="complianceForm" name="complianceForm">
+                <fieldset>
+					<legend>Working Holiday Compliance Checklist</legend>
+                                <!--        intro     -->
+            <div class="row">
+                <div class="m-b-20">
+                    <h3><i class="md md-attachment"></i>Intro</h3>
+                </div>
+                <div class="col-md-6">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="well white">
+                                <div class="form-floating">
+
+
+                                    <fieldset>
+
+
+                                        <legend>
+
+
+                                            <a href="" ng-model="collapsed1" ng-click="collapsed1=!collapsed1"> Clear introduction of consultant’s name</a>
+
+
+                                        </legend>
+
+                                        <div ng-show="collapsed1">
+                                            <div class="radioBlock form-group">
+                                                <div class="radio radioBlockRadio">
+                                                    <label>
+                                                        <input type="radio" ng-model="formData.introCheckA" value="no"> No
+                                                    </label>
+                                                </div>
+                                                <div class="radio radioBlockRadio">
+                                                    <label>
+                                                        <input type="radio" ng-model="formData.introCheckA" value="yes"> Yes
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="textArea" class="control-label">Comments</label>
+                                                <textarea class="form-control vertical" rows="3" id="introCommentsA" name="introCommentsA" ng-model="formData.introCommentsA"></textarea>
+
+                                            </div>
+                                        </div>
+                                    </fieldset>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="well white">
+                                <div class="form-floating">
+
+                                    <fieldset>
+                                        <legend><a href="" ng-model="collapsed2" ng-click="collapsed2=!collapsed2">Clear introduction of company’s full name</a></legend>
+
+                                        <div ng-show="collapsed2">
+                                            <div class="form-group radioBlock">
+                                                <div class="radio radioBlockRadio">
+                                                    <label>
+                                                        <input type="radio" ng-model="formData.introCheckB" value="no"> No
+                                                    </label>
+                                                </div>
+                                                <div class="radio radioBlockRadio">
+                                                    <label>
+                                                        <input type="radio" ng-model="formData.introCheckB" value="yes"> Yes
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="textArea" class="control-label">Comments</label>
+                                                <textarea class="form-control vertical" rows="3" id="textArea" ng-model="formData.introCommentsB"></textarea>
+
+                                            </div>
+                                        </div>
+                                    </fieldset>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!--        Qualification     -->
+            <div class="row">
+                <div class="m-b-20">
+                    <h3> <i class="md md-attachment"></i>Qualification</h3>
+                </div>
+                <div class="col-md-6">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="well white">
+                                <div class="form-floating">
+
+                                    <fieldset>
+                                        <legend><a href="" ng-model="collapsed3" ng-click="collapsed3=!collapsed3">Did the consultant confirm the age of the customer?</a></legend>
+
+                                        <div ng-show="collapsed3">
+                                            <div class="form-group radioBlock">
+                                                <div class="radio radioBlockRadio">
+                                                    <label>
+                                                        <input type="radio" ng-model="formData.qualificationCheckA" value="no"> No
+                                                    </label>
+                                                </div>
+                                                <div class="radio radioBlockRadio">
+                                                    <label>
+                                                        <input type="radio" ng-model="formData.qualificationCheckA" value="yes"> Yes
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="textArea" class="control-label">Comments</label>
+                                                <textarea class="form-control vertical" rows="3" id="textArea" ng-model="formData.qualificationCommentsA"></textarea>
+
+                                            </div>
+                                        </div>
+                                    </fieldset>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="well white">
+                                <div class="form-floating">
+
+                                    <fieldset>
+                                        <legend><a href="" ng-model="collapsed4" ng-click="collapsed4=!collapsed4">Did the consultant ask if the customer had any serious driving offenses?</a></legend>
+
+                                        <div ng-show="collapsed4">
+                                            <div class="form-group radioBlock">
+                                                <div class="radio radioBlockRadio">
+                                                    <label>
+                                                        <input type="radio" ng-model="formData.qualificationCheckC" value="no"> No
+                                                    </label>
+                                                </div>
+                                                <div class="radio radioBlockRadio">
+                                                    <label>
+                                                        <input type="radio" ng-model="formData.qualificationCheckC" value="yes"> Yes
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="textArea" class="control-label">Comments</label>
+                                                <textarea class="form-control vertical" rows="3" id="textArea" ng-model="formData.qualificationCommentsC"></textarea>
+                                            </div>
+
+                                        </div>
+                                    </fieldset>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="well white">
+                                <div class="form-floating">
+
+                                    <fieldset>
+                                        <legend><a href="" ng-model="collapsed5" ng-click="collapsed5=!collapsed5">Did the consultant confirm the customer could receive a Working Holiday Visa?</a></legend>
+
+                                        <div ng-show="collapsed5">
+                                            <div class="form-group radioBlock">
+                                                <div class="radio radioBlockRadio">
+                                                    <label>
+                                                        <input type="radio" ng-model="formData.qualificationCheckE" value="no"> No
+                                                    </label>
+                                                </div>
+                                                <div class="radio radioBlockRadio">
+                                                    <label>
+                                                        <input type="radio" ng-model="formData.qualificationCheckE" value="yes"> Yes
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="textArea" class="control-label">Comments</label>
+                                                <textarea class="form-control vertical" rows="3" id="textArea" ng-model="formData.qualificationCommentsE"></textarea>
+
+                                            </div>
+                                        </div>
+                                    </fieldset>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="well white">
+                                <div class="form-floating">
+
+                                    <fieldset>
+                                        <legend><a href="" ng-model="collapsed6" ng-click="collapsed6=!collapsed6">Did the consultant confirm the citizenship of the customer?</a>
+                                        </legend>
+
+                                        <div ng-show="collapsed6">
+                                            <div class="form-group radioBlock">
+                                                <div class="radio radioBlockRadio">
+                                                    <label>
+                                                        <input type="radio" ng-model="formData.qualificationCheckB" value="no"> No
+                                                    </label>
+                                                </div>
+                                                <div class="radio radioBlockRadio">
+                                                    <label>
+                                                        <input type="radio" ng-model="formData.qualificationCheckB" value="yes"> Yes
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="textArea" class="control-label">Comments</label>
+                                                <textarea class="form-control vertical" rows="3" id="textArea" ng-model="formData.qualificationCommentsB"></textarea>
+
+                                            </div>
+                                        </div>
+                                    </fieldset>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="well white">
+                                <div class="form-floating">
+
+                                    <fieldset>
+                                        <legend><a href="" ng-model="collapsed7" ng-click="collapsed7=!collapsed7">Did the consultant ask if the customer had any criminal convictions?</a>
+                                        </legend>
+
+                                        <div ng-show="collapsed7">
+                                            <div class="form-group radioBlock">
+                                                <div class="radio radioBlockRadio">
+                                                    <label>
+                                                        <input type="radio" ng-model="formData.qualificationCheckD" value="no"> No
+                                                    </label>
+                                                </div>
+                                                <div class="radio radioBlockRadio">
+                                                    <label>
+                                                        <input type="radio" ng-model="formData.qualificationCheckD" value="yes"> Yes
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="textArea" class="control-label">Comments</label>
+                                                <textarea class="form-control vertical" rows="3" id="textArea" ng-model="formData.qualificationCommentsD"></textarea>
+
+                                            </div>
+                                        </div>
+                                    </fieldset>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!--       Company Background       -->
+            <div class="row">
+                <div class="m-b-20">
+                    <h3> <i class="md md-attachment"></i>Company Background</h3>
+                </div>
+                <div class="col-md-6">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="well white">
+                                <div class="form-floating">
+
+                                    <fieldset>
+                                        <legend><a href="" ng-model="collapsed8" ng-click="collapsed8=!collapsed8">Did the consultant mention annual amount of travelers?</a></legend>
+                                        <div ng-show="collapsed8">
+                                            <div class="form-group radioBlock">
+                                                <div class="radio radioBlockRadio">
+                                                    <label>
+                                                        <input type="radio" ng-model="formData.backgroundCheckA" value="no"> No
+                                                    </label>
+                                                </div>
+                                                <div class="radio radioBlockRadio">
+                                                    <label>
+                                                        <input type="radio" ng-model="formData.backgroundCheckA" value="yes"> Yes
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="textArea" class="control-label">Comments</label>
+                                                <textarea class="form-control vertical" rows="3" id="textArea" ng-model="formData.backgroundCommentsA"></textarea>
+
+                                            </div>
+                                        </div>
+                                    </fieldset>
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+
+            <!--       Program Selection       -->
+            <div class="row">
+                <div class="m-b-20">
+                    <h3> <i class="md md-attachment"></i>Trip Selection</h3>
+                </div>
+                <div class="col-md-6">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="well white">
+                                <div class="form-floating">
+
+                                    <fieldset>
+                                        <legend><a href="" ng-model="collapsed9" ng-click="collapsed9=!collapsed9">Did the consultant confirm a departure date?</a></legend>
+                                        <div ng-show="collapsed9">
+                                            <div class="form-group radioBlock">
+                                                <div class="radio radioBlockRadio">
+                                                    <label>
+                                                        <input type="radio" ng-model="formData.selectionCheckA" value="no"> No
+                                                    </label>
+                                                </div>
+                                                <div class="radio radioBlockRadio">
+                                                    <label>
+                                                        <input type="radio" ng-model="formData.selectionCheckA" value="yes"> Yes
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="textArea" class="control-label">Comments</label>
+                                                <textarea class="form-control vertical" rows="3" id="textArea" ng-model="formData.selectionCommentsA"></textarea>
+
+                                            </div>
+                                        </div>
+                                    </fieldset>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="well white">
+                                <div class="form-floating">
+
+                                    <fieldset>
+                                        <legend><a href="" ng-model="collapsed10" ng-click="collapsed10=!collapsed10">Did the consultant guarantee a job placement?</a>
+                                        </legend>
+                                        <div ng-show="collapsed10">
+                                            <div class="form-group radioBlock">
+                                                <div class="radio radioBlockRadio">
+                                                    <label>
+                                                        <input type="radio" ng-model="formData.selectionCheckC" value="no"> No
+                                                    </label>
+                                                </div>
+                                                <div class="radio radioBlockRadio">
+                                                    <label>
+                                                        <input type="radio" ng-model="formData.selectionCheckC" value="yes"> Yes
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="textArea" class="control-label">Comments</label>
+                                                <textarea class="form-control vertical" rows="3" id="textArea" ng-model="formData.selectionCommentsC"></textarea>
+
+                                            </div>
+                                        </div>
+                                    </fieldset>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="well white">
+                                <div class="form-floating">
+
+                                    <fieldset>
+                                        <legend><a href="" ng-model="collapsed11" ng-click="collapsed11=!collapsed11">Did the consultant guarantee a specific location?</a></legend>
+                                        <div ng-show="collapsed11">
+                                            <div class="form-group radioBlock">
+                                                <div class="radio radioBlockRadio">
+                                                    <label>
+                                                        <input type="radio" ng-model="formData.selectionCheckE" value="no"> No
+                                                    </label>
+                                                </div>
+                                                <div class="radio radioBlockRadio">
+                                                    <label>
+                                                        <input type="radio" ng-model="formData.selectionCheckE" value="yes"> Yes
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="textArea" class="control-label">Comments</label>
+                                                <textarea class="form-control vertical" rows="3" id="textArea" ng-model="formData.selectionCommentsE"></textarea>
+
+                                            </div>
+                                        </div>
+                                    </fieldset>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="well white">
+                                <div class="form-floating">
+
+                                    <fieldset>
+                                        <legend><a href="" ng-model="collapsed12" ng-click="collapsed12=!collapsed12">Did the consultant guarantee any specific working hours?</a></legend>
+                                        <div ng-show="collapsed12">
+                                            <div class="form-group radioBlock">
+                                                <div class="radio radioBlockRadio">
+                                                    <label>
+                                                        <input type="radio" ng-model="formData.selectionCheckG" value="no"> No
+                                                    </label>
+                                                </div>
+                                                <div class="radio radioBlockRadio">
+                                                    <label>
+                                                        <input type="radio" ng-model="formData.selectionCheckG" value="yes"> Yes
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="textArea" class="control-label">Comments</label>
+                                                <textarea class="form-control vertical" rows="3" id="textArea" ng-model="formData.selectionCommentsG"></textarea>
+
+                                            </div>
+                                        </div>
+                                    </fieldset>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="well white">
+                                <div class="form-floating">
+
+                                    <fieldset>
+                                        <legend><a href="" ng-model="collapsed13" ng-click="collapsed13=!collapsed13">Did the consultant go through the required minimum time commitment?</a>
+                                        </legend>
+                                        <div ng-show="collapsed13">
+                                            <div class="form-group radioBlock">
+                                                <div class="radio radioBlockRadio">
+                                                    <label>
+                                                        <input type="radio" ng-model="formData.selectionCheckB" value="no"> No
+                                                    </label>
+                                                </div>
+                                                <div class="radio radioBlockRadio">
+                                                    <label>
+                                                        <input type="radio" ng-model="formData.selectionCheckB" value="yes"> Yes
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="textArea" class="control-label">Comments</label>
+                                                <textarea class="form-control vertical" rows="3" id="textArea" ng-model="formData.selectionCommentsB"></textarea>
+
+                                            </div>
+                                        </div>
+                                    </fieldset>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="well white">
+                                <div class="form-floating">
+
+                                    <fieldset>
+                                        <legend><a href="" ng-model="collapsed14" ng-click="collapsed14=!collapsed14">Did the consultant guarantee a job type?</a>
+                                        </legend>
+                                        <div ng-show="collapsed14">
+                                            <div class="form-group radioBlock">
+                                                <div class="radio radioBlockRadio">
+                                                    <label>
+                                                        <input type="radio" ng-model="formData.selectionCheckD" value="no"> No
+                                                    </label>
+                                                </div>
+                                                <div class="radio radioBlockRadio">
+                                                    <label>
+                                                        <input type="radio" ng-model="formData.selectionCheckD" value="yes"> Yes
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="textArea" class="control-label">Comments</label>
+                                                <textarea class="form-control vertical" rows="3" id="textArea" ng-model="formData.selectionCommentsD"></textarea>
+
+                                            </div>
+                                        </div>
+                                    </fieldset>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="well white">
+                                <div class="form-floating">
+
+                                    <fieldset>
+                                        <legend><a href="" ng-model="collapsed15" ng-click="collapsed15=!collapsed15">Did the consultant guarantee a specific wage?</a>
+                                        </legend>
+                                        <div ng-show="collapsed15">
+                                            <div class="form-group radioBlock">
+                                                <div class="radio radioBlockRadio">
+                                                    <label>
+                                                        <input type="radio" ng-model="formData.selectionCheckF" value="no"> No
+                                                    </label>
+                                                </div>
+                                                <div class="radio radioBlockRadio">
+                                                    <label>
+                                                        <input type="radio" ng-model="formData.selectionCheckF" value="yes"> Yes
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="textArea" class="control-label">Comments</label>
+                                                <textarea class="form-control vertical" rows="3" id="textArea" ng-model="formData.selectionCommentsF"></textarea>
+
+                                            </div>
+                                        </div>
+                                    </fieldset>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!--       Program Cost      -->
+            <div class="row">
+                <div class="m-b-20">
+                    <h3> <i class="md md-attachment"></i>Trip Cost</h3>
+                </div>
+                <div class="col-md-6">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="well white">
+                                <div class="form-floating">
+
+                                    <fieldset>
+                                        <legend><a href="" ng-model="collapsed16" ng-click="collapsed16=!collapsed16">Did the consultant give any advice on how much money customer will need to have saved?</a></legend>
+                                        <div ng-show="collapsed16">
+                                            <div class="form-group radioBlock">
+                                                <div class="radio radioBlockRadio">
+                                                    <label>
+                                                        <input type="radio" ng-model="formData.costCheckA" value="no"> No
+                                                    </label>
+                                                </div>
+                                                <div class="radio radioBlockRadio">
+                                                    <label>
+                                                        <input type="radio" ng-model="formData.costCheckA" value="yes"> Yes
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="textArea" class="control-label">Comments</label>
+                                                <textarea class="form-control vertical" rows="3" id="textArea" ng-model="formData.costCommentsA"></textarea>
+
+                                            </div>
+                                        </div>
+                                    </fieldset>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="well white">
+                                <div class="form-floating">
+
+                                    <fieldset>
+                                        <legend><a href="" ng-model="collapsed17" ng-click="collapsed17=!collapsed17">Did the consultant clearly state the total trip price?</a>
+                                        </legend>
+                                        <div ng-show="collapsed17">
+                                            <div class="form-group radioBlock">
+                                                <div class="radio radioBlockRadio">
+                                                    <label>
+                                                        <input type="radio" ng-model="formData.costCheckC" value="no"> No
+                                                    </label>
+                                                </div>
+                                                <div class="radio radioBlockRadio">
+                                                    <label>
+                                                        <input type="radio" ng-model="formData.costCheckC" value="yes"> Yes
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="textArea" class="control-label">Comments</label>
+                                                <textarea class="form-control vertical" rows="3" id="textArea" ng-model="formData.costCommentsC"></textarea>
+
+                                            </div>
+                                        </div>
+                                    </fieldset>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="well white">
+                                <div class="form-floating">
+
+                                    <fieldset>
+                                        <legend><a href="" ng-model="collapsed18" ng-click="collapsed18=!collapsed18">Did the consultant give any estimates how much a flight could cost?</a></legend>
+                                        <div ng-show="collapsed18">
+                                            <div class="form-group radioBlock">
+                                                <div class="radio radioBlockRadio">
+                                                    <label>
+                                                        <input type="radio" ng-model="formData.costCheckE" value="no"> No
+                                                    </label>
+                                                </div>
+                                                <div class="radio radioBlockRadio">
+                                                    <label>
+                                                        <input type="radio" ng-model="formData.costCheckE" value="yes"> Yes
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="textArea" class="control-label">Comments</label>
+                                                <textarea class="form-control vertical" rows="3" id="textArea" ng-model="formData.costCommentsE"></textarea>
+
+                                            </div>
+                                        </div>
+                                    </fieldset>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="well white">
+                                <div class="form-floating">
+
+                                    <fieldset>
+                                        <legend><a href="" ng-model="collapsed19" ng-click="collapsed19=!collapsed19">Did the consultant give any estimates how much travel insurance could cost?</a></legend>
+                                        <div ng-show="collapsed19">
+                                            <div class="form-group radioBlock">
+                                                <div class="radio radioBlockRadio">
+                                                    <label>
+                                                        <input type="radio" ng-model="formData.costCheckG" value="no"> No
+                                                    </label>
+                                                </div>
+                                                <div class="radio radioBlockRadio">
+                                                    <label>
+                                                        <input type="radio" ng-model="formData.costCheckG" value="yes"> Yes
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="textArea" class="control-label">Comments</label>
+                                                <textarea class="form-control vertical" rows="3" id="textArea" ng-model="formData.costCommentsG"></textarea>
+
+                                            </div>
+                                        </div>
+                                    </fieldset>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="well white">
+                                <div class="form-floating">
+
+                                    <fieldset>
+                                        <legend><a href="" ng-model="collapsed20" ng-click="collapsed20=!collapsed20">Did the consultant give any estimates on what certain things cost in country?</a>
+                                        </legend>
+                                        <div ng-show="collapsed20">
+                                            <div class="form-group radioBlock">
+                                                <div class="radio radioBlockRadio">
+                                                    <label>
+                                                        <input type="radio" ng-model="formData.costCheckB" value="no"> No
+                                                    </label>
+                                                </div>
+                                                <div class="radio radioBlockRadio">
+                                                    <label>
+                                                        <input type="radio" ng-model="formData.costCheckB" value="yes"> Yes
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="textArea" class="control-label">Comments</label>
+                                                <textarea class="form-control vertical" rows="3" id="textArea" ng-model="formData.costCommentsB"></textarea>
+
+                                            </div>
+                                        </div>
+                                    </fieldset>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="well white">
+                                <div class="form-floating">
+
+                                    <fieldset>
+                                        <legend><a href="" ng-model="collapsed21" ng-click="collapsed21=!collapsed21">Did the consultant clearly explain that flights, visas, and insurance are not included in the trip price?</a>
+                                        </legend>
+                                        <div ng-show="collapsed21">
+                                            <div class="form-group radioBlock">
+                                                <div class="radio radioBlockRadio">
+                                                    <label>
+                                                        <input type="radio" ng-model="formData.costCheckD" value="no"> No
+                                                    </label>
+                                                </div>
+                                                <div class="radio radioBlockRadio">
+                                                    <label>
+                                                        <input type="radio" ng-model="formData.costCheckD" value="yes"> Yes
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="textArea" class="control-label">Comments</label>
+                                                <textarea class="form-control vertical" rows="3" id="textArea" ng-model="formData.costCommentsD"></textarea>
+
+                                            </div>
+                                        </div>
+                                    </fieldset>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="well white">
+                                <div class="form-floating">
+
+                                    <fieldset>
+                                        <legend><a href="" ng-model="collapsed22" ng-click="collapsed22=!collapsed22">Did the consultant give any estimates how much a visa could cost?</a>
+                                        </legend>
+                                        <div ng-show="collapsed22">
+                                            <div class="form-group radioBlock">
+                                                <div class="radio radioBlockRadio">
+                                                    <label>
+                                                        <input type="radio" ng-model="formData.costCheckF" value="no"> No
+                                                    </label>
+                                                </div>
+                                                <div class="radio radioBlockRadio">
+                                                    <label>
+                                                        <input type="radio" ng-model="formData.costCheckF" value="yes"> Yes
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="textArea" class="control-label">Comments</label>
+                                                <textarea class="form-control vertical" rows="3" id="textArea" ng-model="formData.costCommentsF"></textarea>
+
+                                            </div>
+                                        </div>
+                                    </fieldset>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--       Urgency   -->
+            <div class="row">
+                <div class="m-b-20">
+                    <h3> <i class="md md-attachment"></i>Urgency </h3>
+                </div>
+                <div class="col-md-6">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="well white">
+                                <div class="form-floating">
+
+                                    <fieldset>
+                                        <legend><a href="" ng-model="collapsed23" ng-click="collapsed23=!collapsed23">Did the consultant give exact number of “remaining spots” in trip?</a></legend>
+                                        <div ng-show="collapsed23">
+                                            <div class="form-group radioBlock">
+                                                <div class="radio radioBlockRadio">
+                                                    <label>
+                                                        <input type="radio" ng-model="formData.urgencyCheckA" value="no"> No
+                                                    </label>
+                                                </div>
+                                                <div class="radio radioBlockRadio">
+                                                    <label>
+                                                        <input type="radio" ng-model="formData.urgencyCheckA" value="yes"> Yes
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="textArea" class="control-label">Comments</label>
+                                                <textarea class="form-control vertical" rows="3" id="textArea" ng-model="formData.urgencyCommentsA"></textarea>
+
+                                            </div>
+                                        </div>
+                                    </fieldset>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="well white">
+                                <div class="form-floating">
+
+                                    <fieldset>
+                                        <legend><a href="" ng-model="collapsed24" ng-click="collapsed24=!collapsed24">Did the consultant offer a promotion to get the customer to sign up?</a></legend>
+                                        <div ng-show="collapsed24">
+                                            <div class="form-group radioBlock">
+                                                <div class="radio radioBlockRadio">
+                                                    <label>
+                                                        <input type="radio" ng-model="formData.urgencyCheckC" value="no"> No
+                                                    </label>
+                                                </div>
+                                                <div class="radio radioBlockRadio">
+                                                    <label>
+                                                        <input type="radio" ng-model="formData.urgencyCheckC" value="yes"> Yes
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="textArea" class="control-label">Comments</label>
+                                                <textarea class="form-control vertical" rows="3" id="textArea" ng-model="formData.urgencyCommentsC"></textarea>
+
+                                            </div>
+                                        </div>
+                                    </fieldset>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="well white">
+                                <div class="form-floating">
+
+                                    <fieldset>
+                                        <legend><a href="" ng-model="collapsed25" ng-click="collapsed25=!collapsed25">Did the consultant tell the customer the deposit was refundable?</a></legend>
+                                        <div ng-show="collapsed25">
+                                            <div class="form-group radioBlock">
+                                                <div class="radio radioBlockRadio">
+                                                    <label>
+                                                        <input type="radio" ng-model="formData.urgencyCheckE" value="no"> No
+                                                    </label>
+                                                </div>
+                                                <div class="radio radioBlockRadio">
+                                                    <label>
+                                                        <input type="radio" ng-model="formData.urgencyCheckE" value="yes"> Yes
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="textArea" class="control-label">Comments</label>
+                                                <textarea class="form-control vertical" rows="3" id="textArea" ng-model="formData.urgencyCommentsE"></textarea>
+
+                                            </div>
+                                        </div>
+                                    </fieldset>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="well white">
+                                <div class="form-floating">
+
+                                    <fieldset>
+                                        <legend><a href="" ng-model="collapsed26" ng-click="collapsed26=!collapsed26">Did the consultant say “we’re closing this week” to get the customer to sign up?</a>
+                                        </legend>
+                                        <div ng-show="collapsed26">
+                                            <div class="form-group radioBlock">
+                                                <div class="radio radioBlockRadio">
+                                                    <label>
+                                                        <input type="radio" ng-model="formData.urgencyCheckB" value="no"> No
+                                                    </label>
+                                                </div>
+                                                <div class="radio radioBlockRadio">
+                                                    <label>
+                                                        <input type="radio" ng-model="formData.urgencyCheckB" value="yes"> Yes
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="textArea" class="control-label">Comments</label>
+                                                <textarea class="form-control vertical" rows="3" id="textArea" ng-model="formData.urgencyCommentsB"></textarea>
+
+                                            </div>
+                                        </div>
+                                    </fieldset>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="well white">
+                                <div class="form-floating">
+
+                                    <fieldset>
+                                        <legend><a href="" ng-model="collapsed27" ng-click="collapsed27=!collapsed27">Did the consultant drop the trip price or deposit to get the customer to sign up?</a>
+                                        </legend>
+                                        <div ng-show="collapsed27">
+                                            <div class="form-group radioBlock">
+                                                <div class="radio radioBlockRadio">
+                                                    <label>
+                                                        <input type="radio" ng-model="formData.urgencyCheckD" value="no"> No
+                                                    </label>
+                                                </div>
+                                                <div class="radio radioBlockRadio">
+                                                    <label>
+                                                        <input type="radio" ng-model="formData.urgencyCheckD" value="yes"> Yes
+                                                    </label>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label for="textArea" class="control-label">Comments</label>
+                                                <textarea class="form-control vertical" rows="3" id="textArea" ng-model="formData.urgencyCommentsD"></textarea>
+
+                                            </div>
+                                        </div>
+                                    </fieldset>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!--      Others  -->
+            <div class="row">
+                <div class="m-b-20">
+                    <h3> <i class="md md-attachment"></i>Others </h3>
+                </div>
+                <div class="col-md-6">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="well white">
+                                <div class="form-floating">
+
+                                    <fieldset>
+                                        <legend><a href="" ng-model="collapsed28" ng-click="collapsed28=!collapsed28">Was the customer told they could go on a 'Payment Plan'?</a></legend>
+                                        <div ng-show="collapsed28">
+                                            <div class="form-group radioBlock">
+                                                <div class="radio radioBlockRadio">
+                                                    <label>
+                                                        <input type="radio" ng-model="formData.othersCheckA" value="no"> No
+                                                    </label>
+                                                </div>
+                                                <div class="radio radioBlockRadio">
+                                                    <label>
+                                                        <input type="radio" ng-model="formData.othersCheckA" value="yes"> Yes
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="textArea" class="control-label">Comments</label>
+                                                <textarea class="form-control vertical" rows="3" id="textArea" ng-model="formData.othersCommentsA"></textarea>
+
+                                            </div>
+                                        </div>
+                                    </fieldset>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="well white">
+                                <div class="form-floating">
+
+                                    <fieldset>
+                                        <legend><a href="" ng-model="collapsed29" ng-click="collapsed29=!collapsed29"> Was the customer guaranteed that a friend/partner/group would all be placed together/working together? </a></legend>
+                                        <div ng-show="collapsed29">
+                                            <div class="form-group radioBlock">
+                                                <div class="radio radioBlockRadio">
+                                                    <label>
+                                                        <input type="radio" ng-model="formData.othersCheckC" value="no"> No
+                                                    </label>
+                                                </div>
+                                                <div class="radio radioBlockRadio">
+                                                    <label>
+                                                        <input type="radio" ng-model="formData.othersCheckC" value="yes"> Yes
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="textArea" class="control-label">Comments</label>
+                                                <textarea class="form-control vertical" rows="3" id="textArea" ng-model="formData.othersCommentsC"></textarea>
+
+                                            </div>
+                                        </div>
+                                    </fieldset>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="well white">
+                                <div class="form-floating">
+
+                                    <fieldset>
+                                        <legend><a href="" ng-model="collapsed30" ng-click="collapsed30=!collapsed30">Did the consultant say that they have travelled through Global previously?</a></legend>
+                                        <div ng-show="collapsed30">
+                                            <div class="form-group radioBlock">
+                                                <div class="radio radioBlockRadio">
+                                                    <label>
+                                                        <input type="radio" ng-model="formData.othersCheckE" value="no"> No
+                                                    </label>
+                                                </div>
+                                                <div class="radio radioBlockRadio">
+                                                    <label>
+                                                        <input type="radio" ng-model="formData.othersCheckE" value="yes"> Yes
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="textArea" class="control-label">Comments</label>
+                                                <textarea class="form-control vertical" rows="3" id="textArea" ng-model="formData.othersCommentsE"></textarea>
+
+                                            </div>
+                                        </div>
+                                    </fieldset>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="well white">
+                                <div class="form-floating">
+
+                                    <fieldset>
+                                        <legend><a href="" ng-model="collapsed31" ng-click="collapsed31=!collapsed31">Was a any cooling off period mentioned during the phone call? </a>
+                                        </legend>
+                                        <div ng-show="collapsed31">
+                                            <div class="form-group radioBlock">
+                                                <div class="radio radioBlockRadio">
+                                                    <label>
+                                                        <input type="radio" ng-model="formData.othersCheckB" value="no"> No
+                                                    </label>
+                                                </div>
+                                                <div class="radio radioBlockRadio">
+                                                    <label>
+                                                        <input type="radio" ng-model="formData.othersCheckB" value="yes"> Yes
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="textArea" class="control-label">Comments</label>
+                                                <textarea class="form-control vertical" rows="3" id="textArea" ng-model="formData.othersCommentsB"></textarea>
+
+                                            </div>
+                                        </div>
+                                    </fieldset>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="well white">
+                                <div class="form-floating">
+
+                                    <fieldset>
+                                        <legend><a href="" ng-model="collapsed32" ng-click="collapsed32=!collapsed32">Was the client promised we would do the tax return for them? </a>
+                                        </legend>
+                                        <div ng-show="collapsed32">
+                                            <div class="form-group radioBlock">
+                                                <div class="radio radioBlockRadio">
+                                                    <label>
+                                                        <input type="radio" ng-model="formData.othersCheckD" value="no"> No
+                                                    </label>
+                                                </div>
+                                                <div class="radio radioBlockRadio">
+                                                    <label>
+                                                        <input type="radio" ng-model="formData.othersCheckD" value="yes"> Yes
+                                                    </label>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label for="textArea" class="control-label">Comments</label>
+                                                <textarea class="form-control vertical" rows="3" id="textArea" ng-model="formData.othersCommentsD"></textarea>
+
+                                            </div>
+                                        </div>
+                                    </fieldset>
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-md-12">
+
+                    <div class="well white">
+                        <div class="form-floating">
+
+                            <fieldset>
+                                <legend><a href="" ng-model="collapsed33" ng-click="collapsed33=!collapsed33">Were the trip inclusions described correctly by the consultant? 
+ </a>
+                                </legend>
+                                <div ng-show="collapsed33">
+                                    <div class="form-group radioBlock">
+                                        <div class="radio radioBlockRadio">
+                                            <label>
+                                                <input type="radio" ng-model="formData.othersCheckF" value="no"> No
+                                            </label>
+                                        </div>
+                                        <div class="radio radioBlockRadio">
+                                            <label>
+                                                <input type="radio" ng-model="formData.othersCheckF" value="yes"> Yes
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="textArea" class="control-label">Comments</label>
+                                        <textarea class="form-control vertical" rows="3" id="textArea" ng-model="formData.othersCommentsF"></textarea>
+
+                                    </div>
+
+
+                                    <div class="table-responsive">
+                                        <table class="table table-bordered table-striped white">
+                                            <thead>
+                                                <tr>
+                                                    <th>Inclusion</th>
+                                                    <th>
+                                                        Canada
+                                                    </th>
+                                                    <th>
+                                                        UK
+                                                    </th>
+                                                    <th>
+                                                        Australia
+                                                    </th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <th class="text-nowrap" scope="row">Airport Transfer</th>
+                                                    <td>Aerocar private car / limousine - door to door</td>
+                                                    <td>Heathrow Express - fast train from Airport to city</td>
+                                                    <td>Con-X-ion semi private minibus from airport to hostel - door to door</td>
+                                                </tr>
+                                                <tr>
+                                                    <th class="text-nowrap" scope="row">Hostel Accommodation</th>
+                                                    <td>5 nights</td>
+                                                    <td>5 nights</td>
+                                                    <td>5 nights</td>
+                                                </tr>
+                                                <tr>
+                                                    <th class="text-nowrap" scope="row">Mobile Phone</th>
+                                                    <td><code>smart, touch screen phone, with call activation credit, not i-phone</code></td>
+                                                    <td><code>smart, touch screen phone, with call activation credit, not i-phone</code></td>
+                                                    <td><code>smart, touch screen phone, with call activation credit, not i-phone</code></td>
+                                                </tr>
+                                                <tr>
+                                                    <th class="text-nowrap" scope="row">Help In Applying For Social Insurance</th>
+                                                    <td>SIN</td>
+                                                    <td>NIN</td>
+                                                    <td>TFN</td>
+                                                </tr>
+                                                <tr>
+                                                    <th class="text-nowrap" scope="row">Ongoing Support</th>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                </tr>
+                                                <tr>
+                                                    <th class="text-nowrap" scope="row">Job Opportunities</th>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                </tr>
+                                                <tr>
+                                                    <th class="text-nowrap" scope="row">Help With Bank Account Setup</th>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                </tr>
+                                                <tr>
+                                                    <th class="text-nowrap" scope="row">Help With Tax Return</th>
+                                                    <td>tax back</td>
+                                                    <td>tax back</td>
+                                                    <td>tax back</td>
+                                                </tr>
+                                                <tr>
+                                                    <th class="text-nowrap" scope="row">Specific Details About Staff accommodation</th>
+                                                    <td>share accom</td>
+                                                    <td>share accom</td>
+                                                    <td>share accom</td>
+                                                </tr>
+                                                <tr>
+                                                    <th class="text-nowrap" scope="row">Guaranteed Income</th>
+                                                    <td>AUD 400 - 600/week plus tips depending on job type</td>
+                                                    <td>AUD 250 to 600/week, depending on job type</td>
+                                                    <td>AUD 650/w plus more depending on job type</td>
+                                                </tr>
+                                                <tr>
+                                                    <th class="text-nowrap" scope="row">City Tours</th>
+                                                    <td></td>
+                                                    <td>big bus city tour</td>
+                                                    <td></td>
+                                                </tr>
+                                                <tr>
+                                                    <th class="text-nowrap" scope="row">Did the consultant offer more than 1 promotion?</th>
+                                                    <td>big Bus Tour</td>
+                                                    <td>london eye ride</td>
+                                                    <td>jet boat thrill ride</td>
+                                                </tr>
+                                                <tr>
+                                                    <th class="text-nowrap" scope="row"></th>
+                                                    <td>whistler tour</td>
+                                                    <td>pub crawl</td>
+                                                    <td>Currumbin wildlife</td>
+                                                </tr>
+                                                <tr>
+                                                    <th class="text-nowrap" scope="row"></th>
+                                                    <td>extended hostel nights</td>
+                                                    <td></td>
+                                                    <td>2 hour surf lesson</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+
+
+                                </div>
+                            </fieldset>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary">Submitt</button>
+                    <button type="reset" class="btn btn-default">Cancel</button>
+                </div>
+
+
+            </div>
+					
+                </fieldset>
+            </form>
+			
+
+
+        </div>
+    </div>
+</div>

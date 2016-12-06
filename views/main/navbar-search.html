@@ -1,0 +1,73 @@
+<div>
+	
+	  <div class="pull-right">
+    <button ng-click="toggleSearch()" class="btn btn-sm btn-link pull-left withoutripple">
+      <i class="md md-search f20" style="font-size: 1.5em;"></i>
+    </button>
+  </div>
+	
+	
+  <div ng-if="showNavbarSearch" class="pull-right">
+    <form class="search-form form-inline ng-valid pull-left" ng-show="showNavbarSearch" ng-submit="submitNavbarSearch(searchText)">
+      <div class="form-group">
+          
+<!--
+        <label class="sr-only" for="search-input">Search</label>
+        <input type="text" ui-items="names" ng-model="navsearch" name="navsearch" class="form-control" id="search-input" placeholder="Search" autofocus bs-options="state for state in states" data-placement="left-bottom" bs-typeahead required>
+-->
+        
+      </div>
+        <div class="form-group">
+        
+                                     <md-content class="">
+<!--    <form ng-submit="$event.preventDefault()">-->
+
+<!--
+      <md-autocomplete 
+                       md-no-cache="ul.noCache" 
+                       md-selected-item="ul.selectedItem" 
+                       md-search-text-change="ul.searchTextChange(ul.searchText)" 
+                       md-search-text="ul.searchText" 
+                       md-selected-item-change="ul.selectedItemChange(item)" 
+                       md-items="item in ul.querySearch(ul.searchText)" 
+                       md-item-text="item.display" 
+                       md-min-length="" 
+                       placeholder="Search"
+                       ng-model="navsearch" 
+                       name="navsearch"
+                       id="search-input">
+        <md-item-template>
+          <span md-highlight-text="ul.searchText" md-highlight-flags="^i">{{item.display}}</span>
+        </md-item-template>
+      </md-autocomplete>
+-->
+										 
+										 
+   <md-autocomplete 
+    md-selected-item="selectedItem" 
+    md-search-text="searchText" 
+    md-items="item in getInterest1(searchText)" 
+    md-item-text="item.first_name + ' ' + item.last_name" 
+    md-min-length="2" 
+    md-search-text-change="selectItemTextChange()"
+    md-selected-item-change="selectedItemChange(item)"                
+    placeholder="Search for Customer Name, CID, Email"
+	md-menu-class="topSearchBoxDropdown"			
+	md-input-id="topSearchBoxInput">
+    <span md-highlight-text="searchText">{{item.first_name}} {{item.last_name}}</span>
+	<md-not-found>
+    No matches found.
+  	</md-not-found>
+  </md-autocomplete>
+
+<!--                                 </form>-->
+  </md-content>
+        
+        </div>
+    </form>
+  </div>
+
+
+    
+    
+</div>

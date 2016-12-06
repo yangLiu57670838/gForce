@@ -1,0 +1,215 @@
+<div class="aside bs-docs-aside" tabindex="-1" role="dialog" style="max-width:1000px;">
+    <div class="close close2">
+        <div class="btn btn-round btn-info" ng-click="hideEditPayrollTPL()"><i class="md md-close"></i></div>
+    </div>
+
+    <div class="aside-dialog">
+        <div class="aside-body bs-sidebar">
+			
+	
+			<div class="row">	
+				<div class="col-md-12">
+			<div class="card no-margin">
+
+			<div class="table-responsive white">
+			  <h3 class="table-title p-20">{{editingPayroll.staff}} - Payrun({{editingPayroll.payroll_number}})</h3>
+
+			  <table class="table table-hover table-full table-full-small">
+				<colgroup>
+
+				</colgroup>
+				<thead>
+				<tr>
+				  <th>#</th>
+				  <th>Customer First Name</th>
+				  <th>Customer Last Name</th>
+				  <th>Claiming Amount</th>
+				  <th>Claiming Date</th>
+				  <th>Status</th>
+				</tr>
+				</thead>
+				<tbody>
+
+				<tr ng-repeat="c in changedCommissionList">
+				  <td>{{$index+1}}</td>
+				  <td>{{c.first_name}}</td>
+				  <td>{{c.last_name}}</td>
+				  <td>{{c.commission}} {{c.currency}}</td>
+				  <td>{{c.date}}</td>
+				  <td>{{c.sales_status}}</td>
+				</tr>
+				</tbody>
+			  </table>
+			</div>
+			</div>
+			</div>
+			</div>
+			<br>
+			
+ 			<form class="form-floating" novalidate="novalidate" id="addPaymentForm" name="addPaymentForm">			
+	 		<div class="row">	
+				<div class="col-md-12">
+				<div class="card no-margin">
+        		<div class="table-responsive white">
+
+				<table class="table table-hover table-full table-full-small presentationEditingTable">
+            <colgroup>
+               <col class="auto-cell-size p-r-20" />
+            </colgroup>
+            <thead>
+            <tr>
+			  <th>#</th>
+              <th>Presentation Day</th>
+              <th>Presentation Number</th>
+			  <th>Amount</th>	
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="p in approvedPresentationList">
+			  <td class="f20">{{$index+1}}</td>
+              <td> {{p.attend_day}} </td>
+              <td>{{p.presentation}}</td>
+			  <td>{{p.amount}}</td>
+				
+            </tr>
+				
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+			</div>
+			<br>
+							
+			<div class="row">	
+				<div class="col-md-5">
+						<div class="form-group">
+							<label for="bonus_amount" class="control-label" style="position:relative;"> Table Fee </label>
+							<input type="text" class="form-control" name="table_fee" ng-model="editingPayroll.table_fee" required> 	  
+						</div>
+					</div>
+						
+</div>
+				
+				
+			<br>
+			<div class="row">	
+				<div class="col-md-3">
+						<div class="form-group">
+							<label for="bonus_amount" class="control-label" style="position:relative;"> Bonus Amount </label>
+							<input type="text" class="form-control" name="bonus_amount" ng-model="editingPayroll.bonus_amount" required> 	  
+						</div>
+					</div>
+				<div class="col-md-2">
+								<div class="form-group">
+							<label for="bonuscurrency" class="control-label" style="position:relative;">Bonus Currency</label>
+							<select ng-model="bonuscurrency.selectedOption" name="bonuscurrency" class='form-control' id='' ng-options="option.name for option in bonuscurrency.availableOptions track by option.id"></select>
+							</div>
+							</div>
+				<div class="col-md-7">
+								<div class="form-group">
+							<label for="bonus_description" class="control-label" style="position:relative;">Bonus Description</label>
+							<input type="text" class="form-control" name="bonus_description" ng-model="editingPayroll.bonus_description" required> 	  
+							</div>
+							</div>
+						
+</div>
+			<div class="row">	
+				<div class="col-md-3">
+						<div class="form-group">
+							<label for="deduction_amount" class="control-label" style="position:relative;"> Deduction Amount </label>
+							<input type="text" class="form-control" name="deduction_amount" ng-model="editingPayroll.deduction_amount" required> 	  
+						</div>
+					</div>
+				<div class="col-md-2">
+								<div class="form-group">
+							<label for="flightclass" class="control-label" style="position:relative;">Deduction Currency</label>
+							<select ng-model="deductioncurrency.selectedOption" name="deductioncurrency" class='form-control' id='' ng-options="option.name for option in deductioncurrency.availableOptions track by option.id"></select>
+							</div>
+							</div>	
+				<div class="col-md-7">
+								<div class="form-group">
+							<label for="deduction_description" class="control-label" style="position:relative;">Deduction Description</label>
+							<input type="text" class="form-control" name="deduction_description" ng-model="editingPayroll.deduction_description" required> 	  
+							</div>
+							</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12 payrun_total">	
+					<div class="row">
+						<div class="col-md-5">
+							<h5>Total Claiming Amount:</h5>
+						</div>
+						<div class="col-md-7">
+							<h5> + {{totalClamingAmount}}</h5>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-5">
+							<h5>Total Presentation Amount:</h5>
+						</div>
+						<div class="col-md-7">
+							<h5> + {{totalPresentation}}</h5>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-5">
+							<h5>Bonus:</h5>
+						</div>
+						<div class="col-md-7">
+							<h5> + {{editingPayroll.bonus_amount}}</h5>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-5">
+							<h5>Deduction:</h5>
+						</div>
+						<div class="col-md-7">
+							<h5> - {{editingPayroll.deduction_amount}}</h5>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-5">
+							<h5>Table Fee:</h5>
+						</div>
+						<div class="col-md-7">
+							<h5> - {{editingPayroll.table_fee}}</h5>
+						</div>
+					</div>
+					<div class="row">
+					<div class="col-md-5">
+						<h5>Total Amount:</h5>
+						</div>
+					<div class="col-md-7">
+						<h5> {{editingPayroll.total_commission}}</h5>
+						</div>
+				</div>
+				</div>
+			</div>
+			
+			<div class="row">
+				<div class="col-md-12">
+					<div class="col-md-3">		
+						<div class="form-group">
+							<button class="btn btn-primary" ng-click="updateThisPayroll()">Update</button>
+						</div>
+					</div>
+					<div class="col-md-3">		
+						<div class="form-group">
+							<button ng-click="resetThisPayroll()" class="btn btn-default">Cancel</button>
+						</div>
+					</div>
+					<div class="col-md-3">		
+						<div class="form-group">
+							<button class="btn btn-success" ng-click="approveThisPayroll()">Approve</button>
+						</div>
+					</div>
+				</div>
+			</div>	
+			</form>
+			<br>
+			
+			
+        </div>
+    </div>
+</div>

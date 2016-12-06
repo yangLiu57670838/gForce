@@ -1,0 +1,59 @@
+<div class="aside bs-docs-aside" tabindex="-1" role="dialog" style="max-width:600px;">
+    <div class="close">
+        <div class="btn btn-round btn-info" ng-click="hideOtherChargesTPL()"><i class="md md-close"></i></div>
+    </div>
+
+    <div class="aside-dialog">
+        <div class="aside-body bs-sidebar">
+			
+			
+
+            <form class="form-floating" novalidate="novalidate" id="addPaymentForm" name="addPaymentForm">
+                <fieldset>
+					<legend>Other Charges</legend>
+                     
+                        <div class="row">
+							<div class="col-md-12">
+								 <div class="form-group">
+							<label for="inputPassword" class="control-label" style=""></label>
+							<select ng-model="otherChargesItem.selectedOption" name="otherChargesItem" class='form-control' id='' ng-options="option.name for option in otherChargesItem.availableOptions track by option.id"></select>
+							</div>
+							</div>
+							<div class="col-md-12">
+								 <div class="form-group">
+							<label for="amount" class="control-label" style="">Amount </label>
+							<input type="number" class="form-control" name="amount" ng-model="otherChargesData.amount" required> 	  
+							</div>
+							</div>
+							<div class="col-md-12">
+								<div class="form-group">
+							   <div class="switch">
+                                        <label class="filled"> Status: Inactive
+                                            <input type="checkbox" ng-model="otherChargesData.status" ng-change="" ng-true-value="'active'" ng-false-value="'inactive'"> <span class="lever"></span>Active</label>
+                                    </div>	  
+							</div>
+								</div>
+							<div class="col-md-12">
+								 <div class="form-group">
+							<textarea class="form-control vertical" placeholder="Comments" rows="3" id="textArea" ng-model="otherChargesData.comments"></textarea>
+								</div>	
+							</div>
+                       
+                                </div>
+                           
+
+					
+					<div class="form-group">
+                                <button type="submit" class="btn btn-primary" ng-click="saveOtherChargesDetail(otherChargesData)">Save</button>
+                                <button type="reset" class="btn btn-default">Cancel</button>
+                            </div>
+					
+					
+                </fieldset>
+            </form>
+			
+
+
+        </div>
+    </div>
+</div>

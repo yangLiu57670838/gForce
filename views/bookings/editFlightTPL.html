@@ -1,0 +1,97 @@
+<div class="aside bs-docs-aside" tabindex="-1" role="dialog" style="max-width:600px;">
+    <div class="close">
+        <div class="btn btn-round btn-info" ng-click="hideEditFlightTPL()"><i class="md md-close"></i></div>
+    </div>
+
+    <div class="aside-dialog">
+        <div class="aside-body bs-sidebar">
+			
+			
+
+            <form class="form-floating" novalidate="novalidate" id="addPaymentForm" name="addPaymentForm">
+                <fieldset>
+					<legend>Edit this flight </legend>
+                      
+                        <div class="row">
+                           	<div class="col-md-12">
+							   <div class="form-group">
+							<label class="control-label" style="position:relative;">Tentative Departure Date</label>
+                            <input type="text" class="form-control" ng-model="f.flight_tentative_departure_date" data-date-format="yy-MM-dd" data-date-type="string" data-autoclose="1" name="flightdate" bs-datepicker required>
+							   </div>
+							</div>
+							<div class="col-md-12">
+							<div class="form-group">	
+								<label for="flightairline" class="control-label" style="position:relative;">Airline</label>
+								<select ng-model="flightairline.selectedOption" name="flightairline" class='form-control' id='' ng-options="option.name for option in flightairline.availableOptions track by option.id"></select>
+							</div>
+							</div>
+							<div class="col-md-12">
+								<div class="form-group">
+							<label for="flightclass" class="control-label" style="position:relative;">Booking Class</label>
+							<select ng-model="flightclass.selectedOption" name="flightclass" class='form-control' id='' ng-options="option.name for option in flightclass.availableOptions track by option.id"></select>
+							</div>
+							</div>
+							<div class="col-md-12">
+								<div class="form-group">
+							<label for="flightnQuotedAmount" class="control-label" style="position:relative;">Quoted Airfare Amount </label>
+							<input type="number" class="form-control" name="flightQuotedAmount" ng-model="f.flight_quoted_airfare_amount" required> 	  
+							</div>
+							</div>
+							<div class="col-md-12">
+								<div class="form-group">
+							<label for="flightTaxAmount" class="control-label" style="position:relative;">Taxes Amount </label>
+							<input type="number" class="form-control" name="flightTaxAmount" ng-model="f.flight_taxes_amount" required> 	  
+							</div>
+							</div>
+							<div class="col-md-12">
+								<div class="form-group">
+							<label for="flightDepartureCity" class="control-label" style="position:relative;">Departure City </label>
+							<input type="text" class="form-control" name="flightDepartureCity" ng-model="f.flight_departure_city" required> 	  
+							</div>
+								</div>
+							<div class="col-md-12">
+								<div class="form-group">
+							<label for="flightArrivalCity" class="control-label" style="position:relative;">Arrival City </label>
+							<input type="text" class="form-control" name="flightArrivalCity" ng-model="f.flight_arrival_city" required> 	  
+							</div>
+							</div>
+							<div class="col-md-12">
+								<div class="form-group">
+								<div class="switch">
+                                        <label class="filled"> Return
+                                            <input type="checkbox" ng-model="f.flight_rtnow" ng-change="" ng-true-value="'oneway'" ng-false-value="'return'"> <span class="lever"></span>One Way</label>
+                                    </div>
+								</div>
+							</div>
+							<div class="col-md-12">
+								<div class="form-group">
+							   <div class="switch">
+                                        <label class="filled"> Status: Inactive
+                                            <input type="checkbox" ng-model="f.flight_status" ng-change="" ng-true-value="'active'" ng-false-value="'inactive'"> <span class="lever"></span>Active</label>
+                                    </div>	  
+							</div>
+							</div>
+							<div class="col-md-12">
+								<div class="form-group">
+							<textarea class="form-control vertical" placeholder="Comments" rows="3" id="textArea" ng-model="f.flight_comments"></textarea>
+								
+							</div>
+                      
+                                </div>
+                            </div>
+
+					
+					<div class="form-group">
+                                <button type="submit" class="btn btn-primary" ng-click="updateFlightDetail(f)">Update</button>
+                                <button type="reset" class="btn btn-default">Cancel</button>
+                            </div>
+					
+					
+                </fieldset>
+            </form>
+			
+
+
+        </div>
+    </div>
+</div>

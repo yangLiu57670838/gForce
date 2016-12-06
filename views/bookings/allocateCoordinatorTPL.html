@@ -1,0 +1,51 @@
+<div class="aside bs-docs-aside" tabindex="-1" role="dialog">
+    <div class="close close2">
+        <div class="btn btn-round btn-info" ng-click="$hide()"><i class="md md-close"></i></div>
+    </div>
+
+    <div class="aside-dialog">
+        <div class="aside-body bs-sidebar">
+			
+			
+
+            <form class="form-floating" novalidate="novalidate" id="addPaymentForm" name="addPaymentForm">
+                <fieldset>
+					<legend>Allocate A Coordinator To This Customer</legend>
+                    <div class="form-group">  
+                        <div class="row">
+                             
+                            <div class="col-md-12">
+   
+                                <div class="col-md-6" style="padding-left: 0px;">
+
+                                   <label class="control-label">Choose a coordinator here</label>
+                                <select ng-model="selectedCoordinators" name="paymentStatus" class='form-control' id='' ng-options="c.fullname for c in allCoordinators"></select>
+                                      </div>
+
+                                
+                            </div>
+                                </div>
+                            </div>
+					
+					
+
+					
+					
+
+					
+	
+					
+					<div class="form-group">
+                                <button type="submit" class="btn btn-primary" ng-click="addCoordinator(selectedCoordinators)">Submit</button>
+                                <button type="reset" class="btn btn-default">Cancel</button>
+                            </div>
+					
+					
+                </fieldset>
+            </form>
+			
+
+
+        </div>
+    </div>
+</div>

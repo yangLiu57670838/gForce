@@ -1,0 +1,78 @@
+<div class="main-content" autoscroll="true" bs-affix-target="" init-ripples="" ng-controller="usersCtrl">
+
+    <section>
+        <div class="page-header">
+            <div class="actions">
+                <button type="button" class="btn btn-link btn-round-sm theme-secondary-text"><span class="md md-info-outline"></span></button>
+                <button type="button" class="btn btn-link btn-round-sm theme-secondary-text"><span class="md md-search"></span></button>
+
+            </div>
+
+            <h1>
+      <i class="md md-camera"></i>
+      Users Setting
+    </h1>
+            <p class="lead">
+
+            </p>
+        </div>
+    </section>
+
+
+
+
+    <div class="table-responsive well no-padding white no-margin">
+        <h3 class="table-title">{{data.length}} {{settings.plural}} available</h3>
+
+        <table class="table table-full m-b-60" id="table-area-1" fsm-big-data="data of data take 30">
+            <thead>
+                <tr fsm-sticky-header scroll-body="'#table-area-1'" scroll-stop="64">
+                    <th>
+                        <input type="checkbox" class="relative" ng-model="selectAll" ng-click="checkAll()" />
+                    </th>
+                    <th fsm-sort="first_name">First Name</th>
+                    <th fsm-sort="last_name">Last Name</th>
+                    <th fsm-sort="email">Email</th>
+                    <th fsm-sort="role">Role</th>
+                    <th fsm-sort="office">Office</th>
+                    <th class="text-right">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="(key, item) in data" ng-click="item.selected=!item.selected" ng-dblclick="editItem(item)">
+                    <td>
+                        <input type="checkbox" class="relative" ng-model="item.selected" ng-click="$event.stopPropagation()" />
+                    </td>
+                    <td>{{ item.first_name }}</td>
+                    <td>{{ item.last_name }}</td>
+                    <td>{{ item.email }}</td>
+                    <td class="tableColumn">{{ item.role }}</td>
+                    <td class="tableColumn">{{ item.office }}</td>
+                    <td class="text-right" ng-click="$event.stopPropagation()">
+                        <button type="button" class="btn btn-link btn-round" data-title="Change password" ng-click="changeP(item)"><i class="md md-security"></i></button>
+                        <button type="button" class="btn btn-link btn-round" data-title="Edit item" ng-click="editItem(item)"><i class="md md-edit"></i></button>
+                        <button type="button" class="btn btn-link btn-round" data-title="View item" ng-click="viewItem(item)"><i class="md md-search"></i></button>
+                        <button type="button" class="btn btn-link btn-round" data-title="Delete item" ng-click="remove(item)"><i class="md md-delete"></i></button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+
+
+
+    </div>
+
+
+    <div class="footer-buttons">
+        <div class="btn btn-primary btn-round btn-lg m-r-10 btn-footer" ng-show="(data|filter:{selected: true}).length" ng-click="remove()" data-title="Remove {{(data|filter:{selected: true}).length}} item(s)" bs-tooltip><i class="md md-delete"></i></div>
+        <div class="btn btn-default btn-round btn-lg m-r-10 btn-footer" scroll-to="top" ng-hide="scroll<100" data-title="Scroll to top" bs-tooltip><i class="md md-arrow-drop-up"></i></div>
+        <div class="btn btn-primary btn-round btn-lg" ng-click="createItem()" data-title="New {{settings.singular}}" bs-tooltip><i class="md md-add"></i></div>
+    </div>
+
+
+
+
+
+
+</div>

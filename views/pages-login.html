@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp" ng-controller="loginCtrl">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>The Global Work & Travel Co. - gForce</title>
+<link rel="apple-touch-icon-precomposed" sizes="57x57" href="../assets/img/gforce-fav-icon-grey/apple-touch-icon-57x57.png" />
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/img/gforce-fav-icon-grey/apple-touch-icon-114x114.png" />
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/img/gforce-fav-icon-grey/apple-touch-icon-72x72.png" />
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/img/gforce-fav-icon-grey/apple-touch-icon-144x144.png" />
+<link rel="apple-touch-icon-precomposed" sizes="60x60" href="../assets/img/gforce-fav-icon-grey/apple-touch-icon-60x60.png" />
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../assets/img/gforce-fav-icon-grey/apple-touch-icon-120x120.png" />
+<link rel="apple-touch-icon-precomposed" sizes="76x76" href="../assets/img/gforce-fav-icon-grey/apple-touch-icon-76x76.png" />
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../assets/img/gforce-fav-icon-grey/apple-touch-icon-152x152.png" />
+<link rel="icon" type="image/png" href="../assets/img/gforce-fav-icon-grey/favicon-196x196.png" sizes="196x196" />
+<link rel="icon" type="image/png" href="../assets/img/gforce-fav-icon-grey/favicon-96x96.png" sizes="96x96" />
+<link rel="icon" type="image/png" href="../assets/img/gforce-fav-icon-grey/favicon-32x32.png" sizes="32x32" />
+<link rel="icon" type="image/png" href="../assets/img/gforce-fav-icon-grey/favicon-16x16.png" sizes="16x16" />
+<link rel="icon" type="image/png" href="../assets/img/gforce-fav-icon-grey/favicon-128.png" sizes="128x128" />
+<meta name="application-name" content="&nbsp;"/>
+<meta name="msapplication-TileColor" content="#FFFFFF" />
+<meta name="msapplication-TileImage" content="../assets/img/gforce-fav-icon-grey/mstile-144x144.png" />
+<meta name="msapplication-square70x70logo" content="../assets/img/gforce-fav-icon-grey/mstile-70x70.png" />
+<meta name="msapplication-square150x150logo" content="../assets/img/gforce-fav-icon-grey/mstile-150x150.png" />
+<meta name="msapplication-wide310x150logo" content="../assets/img/gforce-fav-icon-grey/mstile-310x150.png" />
+<meta name="msapplication-square310x310logo" content="../assets/img/gforce-fav-icon-grey/mstile-310x310.png" />
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>  <script src="//oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>  <script src="//oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>  <![endif]-->
+    <link href="../assets/css/vendors.min.css" rel="stylesheet" />
+    <link href="../assets/css/styles.min.css" rel="stylesheet" />
+<!--    <link href="../assets/css/main.css" rel="stylesheet" />-->
+	<link href="../assets/css/main.min.css" rel="stylesheet" />
+
+    <script charset="utf-8" src="//maps.google.com/maps/api/js?sensor=true"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+
+
+    <script src="../assets/js/vendors/directives/angular-route.js"></script>
+    <script src="../app.js"></script>
+    <script src="../assets/js/globalcrm.min.js"></script>
+    <script src="../assets/js/vendors/directives/ng-table.min.js"></script>
+
+    <script src="../assets/js/vendors/directives/jquery.min.js"></script>
+    <script src="../assets/js/vendors/angular-strap.min.js"></script>
+    <script src="../assets/js/vendors/angular-strap.tpl.min.js"></script>
+    <script src="../assets/js/vendors/angular-animate.js"></script>
+
+    <!-- page loading use -->
+    <script src="../assets/js/vendors/directives/promise-tracker.js"></script>
+    <!-- optional for $http sugar -->
+    <script src="../assets/js/vendors/directives/promise-tracker-http-interceptor.js"></script>
+    
+     <script src="../assets/js/vendors/directives/angular-aria.js"></script>
+     <script src="../assets/js/vendors/directives/angular-material.min.js"></script>
+	 <script data-require="angular-ui-bootstrap@0.3.0" data-semver="0.3.0" src="../assets/js/vendors/directives/ui-bootstrap-tpls-0.3.0.min.js"></script>
+    <script src="../assets/js/vendors/directives/new/readmore.js"></script>
+    <script src="../assets/js/vendors/directives/new/angular-timeline.js"></script>
+<!--    <script src="../assets/js/vendors/directives/new/ng-idle-develop/angular-idle.js"></script>-->
+        <script src="../assets/js/vendors/directives/new/angular-idle-service.js"></script>
+<!--	<script src="../assets/js/vendors/directives/new/select.js"></script>-->
+    <script type="text/javascript" src="http://fgnass.github.io/spin.js/spin.min.js"></script>
+    <script src="../assets/js/vendors/directives/new/angular-spinner-master/angular-spinner.js"></script>
+</head>
+
+<body class="page-login" init-ripples="">
+
+
+    <div class="center">
+
+        <div class="" ng-show="hideLoading" style="height: 100%; text-align: center;">
+            <span class="loader"><span class="loader-inner"></span></span>
+        </div>
+
+  <div class="row loginError" ng-class="{showError: se}">
+
+    <div class="col-md-4 col-md-offset-4">
+      <div class="bs-component">
+        <div class="alert alert-dismissible alert-warning">
+          <button type="button" class="close" ng-click="dismiss()">×</button>
+          <h4>Welcome!</h4>
+            <p> <a href="" class="alert-link">Page will be redirected to the main page in 3 seconds for test purpose.</a></p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+		
+
+		
+<!--
+    <div class="higherLogo login" ng-class="{show2: showform}">
+		<img src="http://globalworkandtravel.com/wp-content/themes/global/asset/images/logo/global-logo-secondary.png" class="">
+	</div>
+-->
+		
+		
+        <div class="card bordered z-depth-2 login" style="" ng-class="{show: showform}">			
+            <div class="card-header">
+                <div class="brand-logo">
+                    <div id="" style="width:100%;">
+                        <img src="assets/img/global/gForce-03-02.png" class="logoImg">
+                    </div>
+                    <!--                    <span>Staff Login</span>-->
+                </div>
+            </div>
+            <div class="card-content">
+                <div class="m-b-30">
+                    <p class="card-title-desc">Welcome to gForce, the Global CRM.</p>
+                  
+                </div>
+                <form ng-submit="doLogin(loginForm)" class="form-floating" id="loginForm">
+                    <div class="form-group">
+                        <label for="inputEmail" class="control-label">Email</label>
+                        <input type="email" class="form-control" ng-model="loginEmail" autocomplete="on" required> </div>
+                    <div class="form-group">
+                        <label for="inputPassword" class="control-label">Password</label>
+                        <input type="password" class="form-control" id="inputPassword" ng-model="loginPassword" required> </div>
+                    <div class="form-group">
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox"> Remember me </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="card-action clearfix">
+                            <div class="pull-right">
+
+                                <button type="submit" class="btn btn-link black-text">Login</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+	
+		
+    </div>
+    <!-- original files -->
+
+    <script charset="utf-8" src="../assets/js/vendors/bootstrap.js"></script>
+
+
+    <script charset="utf-8" src="../assets/js/vendors/select.js"></script>
+    <script charset="utf-8" src="../assets/js/vendors/angular-sanitize.js"></script>
+    <script charset="utf-8" src="../assets/js/vendors/angular-local-storage.js"></script>
+    <script charset="utf-8" src="../assets/js/vendors/loading-bar.js"></script>
+
+    <script charset="utf-8" src="../assets/js/vendors/jcs-auto-validate.min.js"></script>
+
+    <script charset="utf-8" src="../assets/js/vendors/ng-file-upload-file-api.js"></script>
+
+    <script charset="utf-8" src="../assets/js/vendors/hammer.js"></script>
+    <script charset="utf-8" src="../assets/js/vendors/jquery.hammer.js"></script>
+    <script charset="utf-8" src="../assets/js/vendors/velocity.js"></script>
+
+    <script charset="utf-8" src="../assets/js/vendors/d3.js"></script>
+    <script charset="utf-8" src="../assets/js/vendors/c3.js"></script>
+    <script charset="utf-8" src="../assets/js/vendors/c3js-directive.js"></script>
+
+    <script charset="utf-8" src="../assets/js/vendors/lodash.js"></script>
+    <script charset="utf-8" src="../assets/js/vendors/angular-google-maps.js"></script>
+    <script charset="utf-8" src="../assets/js/vendors/jquery-jvectormap-1.2.2.min.js"></script>
+    <script charset="utf-8" src="../assets/js/vendors/jquery-jvectormap-world-mill-en.js"></script>
+
+    <script charset="utf-8" src="../assets/js/vendors/jquery.nouislider.js"></script>
+    <script charset="utf-8" src="../assets/js/vendors/elastic.js"></script>
+    <script charset="utf-8" src="../assets/js/vendors/ng-file-upload-shim.js"></script>
+    <script charset="utf-8" src="../assets/js/vendors/ng-file-upload.js"></script>
+
+    <script charset="utf-8" src="../assets/js/vendors/textAngular-rangy.min.js"></script>
+    <script charset="utf-8" src="../assets/js/vendors/textAngular-sanitize.min.js"></script>
+    <script charset="utf-8" src="../assets/js/vendors/textAngular.min.js"></script>
+
+    <script charset="utf-8" src="../assets/js/vendors/angulartics.min.js"></script>
+    <script charset="utf-8" src="../assets/js/vendors/angulartics-ga.min.js"></script>
+
+    <script charset="utf-8" src="../assets/js/vendors/angular-placeholders.js"></script>
+    <script charset="utf-8" src="../assets/js/vendors/side-nav.js"></script>
+    <script charset="utf-8" src="../assets/js/vendors/ripples.js"></script>
+    <script charset="utf-8" src="../assets/js/vendors/fsm-sticky-header.js"></script>
+    <script charset="utf-8" src="../assets/js/vendors/angular-smooth-scroll.js"></script>
+
+    <script charset="utf-8" src="../assets/js/vendors/colors.js"></script>
+
+
+
+    <script charset="utf-8" src="../assets/js/vendors/directives/formcontrol.js"></script>
+
+
+    <script charset="utf-8" src="../assets/js/vendors/directives/navbar-toggle.js"></script>
+
+    <script charset="utf-8" src="../assets/js/vendors/directives/todo-widget.js"></script>
+
+
+    <script charset="utf-8" src="../assets/js/vendors/directives/vectormap.js"></script>
+    <script charset="utf-8" src="../assets/js/vendors/directives/autofocus.js"></script>
+    <script charset="utf-8" src="../assets/js/vendors/directives/card-flip.js"></script>
+
+    <script charset="utf-8" src="../assets/js/vendors/directives/init-ripples.js"></script>
+
+    <script charset="utf-8" src="../assets/js/vendors/services/color-service.js"></script>
+    <script charset="utf-8" src="../assets/js/vendors/services/todo-service.js"></script>
+    <script charset="utf-8" src="../../assets/js/vendors/directives/ngDialog.js"></script>
+        <script src="../../assets/js/vendors/directives/ng-file-upload-shim.min.js"></script> <!-- for no html5 browsers support -->
+    <script src="../../assets/js/vendors/directives/ng-file-upload.min.js"></script>
+    <!--controller originally below -->
+    <!--  <script charset="utf-8" src="assets/js/controllers/main.js"></script>-->
+    <!--  <script charset="utf-8" src="assets/js/controllers/dashboard.js"></script>-->
+    <!--  <script charset="utf-8" src="assets/js/controllers/charts.js"></script>-->
+    <!--
+  <script charset="utf-8" src="assets/js/controllers/colors.js"></script>
+  <script charset="utf-8" src="assets/js/controllers/buttons.js"></script>
+  <script charset="utf-8" src="assets/js/controllers/lists.js"></script>
+  <script charset="utf-8" src="assets/js/controllers/maps/full-map.js"></script>
+  <script charset="utf-8" src="assets/js/controllers/maps/basic-map.js"></script>
+  <script charset="utf-8" src="assets/js/controllers/maps/clickable-map.js"></script>
+  <script charset="utf-8" src="assets/js/controllers/maps/searchable-map.js"></script>
+  <script charset="utf-8" src="assets/js/controllers/maps/zoomable-map.js"></script>
+  <script charset="utf-8" src="assets/js/controllers/maps/vector-map.js"></script>
+  <script charset="utf-8" src="assets/js/controllers/forms.js"></script>
+  <script charset="utf-8" src="assets/js/controllers/upload.js"></script>
+  <script charset="utf-8" src="assets/js/controllers/tables/basic.js"></script>
+  <script charset="utf-8" src="assets/js/controllers/tables/data.js"></script>
+  <script charset="utf-8" src="assets/js/controllers/apps/crud.js"></script>
+  <script charset="utf-8" src="assets/js/controllers/apps/todo.js"></script>
+-->
+    <!-- endbuild -->
+</body>
+
+</html>

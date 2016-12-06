@@ -1,0 +1,95 @@
+<div class="aside bs-docs-aside" tabindex="-1" role="dialog" style="max-width:600px;">
+    <div class="close">
+        <div class="btn btn-round btn-info" ng-click="hideEditCommissionTPL()"><i class="md md-close"></i></div>
+    </div>
+
+    <div class="aside-dialog">
+        <div class="aside-body bs-sidebar">
+			
+			
+
+            <form class="form-floating" novalidate="novalidate" id="addPaymentForm" name="addPaymentForm">
+                <fieldset>
+					<legend>Edit Commission Detail for {{editingCommission.first_name}} {{editingCommission.last_name}}</legend>
+                    
+                        <div class="row">
+							<div class="col-md-12">
+								  <div class="form-group">
+							<label for="detail" class="control-label" style="position:relative;">Email</label>
+							<input type="text" class="form-control" name="email" ng-model="editingCommission.customer_email" required> 
+							</div>
+							</div>
+							
+							<div class="col-md-12">
+							   	 <div class="form-group">
+							<label class="control-label" style="position:relative;">Submission Date</label>
+                            <input type="text" class="form-control" ng-model="editingCommission.date" data-date-format="yyyy-MM-dd" data-date-type="string" data-autoclose="1" name="submissiondate" bs-datepicker required disabled>	  
+							</div>
+							</div>
+							
+							<div class="col-md-12">
+							   	 <div class="form-group">
+							<label class="control-label" style="position:relative;">Approve Date</label>
+                            <input type="text" class="form-control" ng-model="editingCommission.approve_date" data-date-format="yyyy-MM-dd" data-date-type="string" data-autoclose="1" name="from" bs-datepicker required disabled>	  
+							</div>
+							</div>
+							
+							<div class="col-md-12">
+								 <div class="form-group">
+							<label for="amount" class="control-label" style="position:relative;">Commission Amount </label>
+							<input type="number" class="form-control" name="amount" ng-model="editingCommission.commission" required> 	  
+							</div>
+							</div>
+							
+							<div class="col-md-12">
+								  <div class="form-group">
+							<label for="detail" class="control-label" style="position:relative;">Currency</label>
+							<select ng-model="editingCommissionCurrency.selectedOption" name="currency" class='form-control' id='' ng-options="option.name for option in editingCommissionCurrency.availableOptions track by option.id"></select>	  
+							</div>
+							</div>
+							
+							<div class="col-md-12">
+								  <div class="form-group">
+							<label for="detail" class="control-label" style="position:relative;">Status</label>
+							<select ng-model="editingCommissionStatus.selectedOption" name="status" class='form-control' id='' ng-options="option.name for option in editingCommissionStatus.availableOptions track by option.id"></select>	  
+							</div>
+							</div>
+							
+							<div class="col-md-12">
+								  <div class="form-group">
+							<label for="detail" class="control-label" style="position:relative;">Staff</label>
+							<input type="text" class="form-control" name="staff" ng-model="editingCommission.staff" required> 	  
+							</div>
+							</div>
+							
+							<div class="col-md-12">
+								  <div class="form-group">
+							<label for="detail" class="control-label" style="position:relative;">Office</label>
+							<select ng-model="editingCommissionOffice.selectedOption" name="status" class='form-control' id='' ng-options="option.name for option in editingCommissionOffice.availableOptions track by option.id"></select>	  
+							</div>
+							</div>
+							
+							<div class="col-md-12">
+								 <div class="form-group">
+							<textarea class="form-control vertical" placeholder="note" rows="3" id="textArea" ng-model="editingCommission.note"></textarea>
+								
+							</div>
+                       	</div>
+                                </div>
+                
+
+					
+					<div class="form-group">
+                                <button class="btn btn-primary" ng-click="updateCommissionDetail(editingCommission)">Update</button>
+                                <button class="btn btn-default" ng-click="cancelCommissionDetail(editingCommission)">Cancel</button>
+                            </div>
+					
+					
+                </fieldset>
+            </form>
+			
+
+
+        </div>
+    </div>
+</div>

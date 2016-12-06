@@ -1,0 +1,45 @@
+<div class="aside bs-docs-aside" tabindex="-1" role="dialog">
+    <div class="close close2">
+        <div class="btn btn-round btn-info" ng-click="$hide()"><i class="md md-close"></i></div>
+    </div>
+
+    <div class="aside-dialog">
+        <div class="aside-body bs-sidebar">
+			
+			
+
+            <form class="form-floating" novalidate="novalidate" ng-submit="saveNote(newNote)">
+                <fieldset>
+                    <div class="form-group">
+              			<textarea class="form-control vertical" placeholder="Add a Note" rows="3" id="textArea" ng-model="newNote"></textarea>
+              			<span class="help-block"></span>
+            		</div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-lg btn-primary" ng-disabled="!newNote">Submit</button>
+                    </div>
+                </fieldset>
+            </form>
+			
+			<div class="row" ng-repeat="note in notesList | orderBy:'-notes_id'">					
+				<div class="row">
+					<div class="column col-md-6"><h5>{{note.staff}}</h5></div>
+					
+					<div class="column col-md-6"><h6>{{note.time}}</h6></div>
+				</div>
+				<div class=" readmore">
+					
+						<span hm-read-more
+						hm-text="{{note.text}}" 
+						hm-limit="200" 
+						hm-more-text="Read more" 
+						hm-less-text="Read less"
+						hm-dots-class="dots"
+						hm-link-class="links">
+						</span>
+					
+				</div>
+			</div>
+
+        </div>
+    </div>
+</div>

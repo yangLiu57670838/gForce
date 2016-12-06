@@ -1,0 +1,56 @@
+<div class="main-content" autoscroll="true" bs-affix-target="" init-ripples="" ng-controller="customersCtrl">
+    <section>
+        <div class="page-header">
+			<div class="row">
+			<div class="col-md-6">
+            <h1>  <i class="md md-list"></i>Customer List </h1>
+			</div>
+				
+				<div class="col-md-1 col-md-offset-5">
+               <div class="btn btn-primary btn-round btn-lg" ng-click="addRawCustomer()"><i class="md md-add"></i></div>
+			</div>	
+				
+			</div>
+        </div>
+        <div class="row m-b-40">
+            <div class="col-md-12">
+                <div class="card no-margin">
+                    <div class="table-responsive white">
+                        <table ng-table="customersTable" show-filter="true" class="table table-full table-full-small table-striped">
+                            <colgroup>
+                                <col class="auto-cell-size p-r-20">
+                            </colgroup>
+                            <tbody>
+                                <!--ng href sending get data need to be fixed later-->
+                                <tr ng-repeat="user in data">
+
+                                    <td ng-click=""><span class="md md-edit"></span></td>
+                                    <td data-title="'First Name'" sortable="'first_name'" filter="{ 'first_name': 'text' }" ng-click="viewProfile(user)">{{user.first_name}}</td>
+                                    <td data-title="'Last Name'" sortable="'last_name'" filter="{ 'last_name': 'text' }" ng-click="viewProfile(user)">{{user.last_name}}</td>
+                                    <td data-title="'Email'" sortable="'email'" filter="{ 'email': 'text' }" ng-click="viewProfile(user)">
+                                        {{user.email}}
+                                    </td>
+                                    <td data-title="'Office'" sortable="'office'" filter="{ 'office': 'text' }" ng-click="viewProfile(user)">
+                                        {{user.office}}
+                                    </td>
+                                    <td data-title="'Trip'" sortable="'trip_experience_name'" filter="{ 'trip_experience_name': 'text' }" ng-click="viewProfile(user)">
+                                        {{user.trip_experience_name}}
+                                    </td>
+                                    <td data-title="'Date'" sortable="'time'" filter="{ 'time': 'text' }" ng-click="viewProfile(user)">
+                                        {{user.time}}
+                                    </td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+
+
+                        <!-- <pagination total-items="customers.length" ng-model="currentPage" max-size="maxSize" class="pagination-sm" boundary-links="true">
+                                    </pagination>-->
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

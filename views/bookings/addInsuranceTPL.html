@@ -1,0 +1,84 @@
+<div class="aside bs-docs-aside" tabindex="-1" role="dialog" style="max-width:600px;">
+    <div class="close">
+        <div class="btn btn-round btn-info" ng-click="hideInsuranceTPL()"><i class="md md-close"></i></div>
+    </div>
+
+    <div class="aside-dialog">
+        <div class="aside-body bs-sidebar">
+			
+			
+
+            <form class="form-floating" novalidate="novalidate" id="addPaymentForm" name="addPaymentForm">
+                <fieldset>
+					<legend>Add an Insurance</legend>             
+                        <div class="row">
+							<div class="col-md-12">
+								 <div class="form-group"> 
+							
+							<select ng-model="insuranceCompany.selectedOption" name="insuranceCompany" class='form-control' id='' ng-options="option.name for option in insuranceCompany.availableOptions track by option.id"></select>		 
+							</div>
+							</div>
+                           <div class="col-md-12">
+							    <div class="form-group"> 
+							<label class="control-label" style="">From</label>
+                            <input type="text" class="form-control" ng-model="insuranceData.from" data-date-format="yy-MM-dd" data-date-type="string" data-autoclose="1" name="" bs-datepicker required>	  
+							</div>
+							</div>
+							<div class="col-md-12">
+								 <div class="form-group"> 
+							<label class="control-label" style="">To</label>
+                            <input type="text" class="form-control" ng-model="insuranceData.to" data-date-format="yy-MM-dd" data-date-type="string" data-autoclose="1" name="" bs-datepicker required>	  
+							</div>
+							</div>
+							<div class="col-md-12">
+								 <div class="form-group"> 
+							
+							<select ng-model="insurancePlan.selectedOption" name="insurancePlan" class='form-control' id='' ng-options="option.name for option in insurancePlan.availableOptions track by option.id"></select>	
+							</div>
+							</div>
+							<div class="col-md-12">
+								<div class="form-group"> 
+							    <div class="switch">
+                                        <label class="filled">  Excess: No
+                                            <input type="checkbox" ng-model="insuranceData.excess" ng-change="" ng-true-value="'yes'" ng-false-value="'no'"> <span class="lever"></span>Yes</label>
+                                    </div>
+							</div>
+							</div>
+							<div class="col-md-12">
+								<div class="form-group">
+							   <div class="switch">
+                                        <label class="filled"> Status: Inactive
+                                            <input type="checkbox" ng-model="insuranceData.status" ng-change="" ng-true-value="'active'" ng-false-value="'inactive'"> <span class="lever"></span>Active</label>
+                                    </div>	  
+							</div>
+							</div>
+							<div class="col-md-12">
+								<div class="form-group"> 
+							<label for="amount" class="control-label" style=""> Amount </label>
+							<input type="number" class="form-control" name="amount" ng-model="insuranceData.amount" required> 	  
+							</div>
+							</div>
+							<div class="col-md-12">
+								<div class="form-group">
+							<textarea class="form-control vertical" placeholder="Comments" rows="3" id="textArea" ng-model="insuranceData.comments"></textarea>
+								
+							</div>
+                       </div>
+                                </div>
+                        
+
+					
+					<div class="form-group">
+                                <button type="submit" class="btn btn-primary" ng-click="saveInsuranceDetail(insuranceData)">Save</button>
+                                <button type="reset" class="btn btn-default">Cancel</button>
+                            </div>
+					
+					
+                </fieldset>
+            </form>
+			
+
+
+        </div>
+    </div>
+</div>

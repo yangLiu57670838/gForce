@@ -1,0 +1,60 @@
+<div class="aside bs-docs-aside" tabindex="-1" role="dialog" style="max-width:600px;">
+    <div class="close">
+        <div class="btn btn-round btn-info" ng-click="hideEditPresentationTPL()"><i class="md md-close"></i></div>
+    </div>
+
+    <div class="aside-dialog">
+        <div class="aside-body bs-sidebar">
+			
+			
+
+            <form class="form-floating" novalidate="novalidate" id="addPaymentForm" name="addPaymentForm">
+                <fieldset>
+					<legend>Edit Presentation  Detail for {{editingPresentation.staff}} </legend>
+                     
+                        <div class="row">
+                        <div class="col-md-12">
+                         <div class="form-group">
+							<label class="control-label" style="position:relative;">Attend Day</label>
+                            <input type="text" class="form-control" ng-model="editingPresentation.attend_day" data-date-format="yyyy-MM-dd" data-date-type="string" data-autoclose="1" name="attend_day" bs-datepicker>	  
+							</div>
+							</div>
+                            
+                            <div class="col-md-12">
+								  <div class="form-group">
+							<label for="detail" class="control-label" style="position:relative;">Sales Presentation</label>
+							<input type="number" class="form-control" name="presentation" ng-model="editingPresentation.presentation"> 
+							</div>
+                            </div>
+                            
+                            <div class="col-md-12">
+								  <div class="form-group">
+							<label for="detail" class="control-label" style="position:relative;">Sales Amount</label>
+							<input type="number" class="form-control" name="amount" ng-model="editingPresentation.amount"> 
+							</div>
+						</div>
+                            
+							<div class="col-md-12">
+								  <div class="form-group">
+							<label for="detail" class="control-label" style="position:relative;">Status</label>
+							<select ng-model="editingPresentationStatus.selectedOption" name="status" class='form-control' id='' ng-options="option.name for option in editingPresentationStatus.availableOptions track by option.id"></select>	  
+							</div>
+							</div>
+                                </div>
+                
+
+					
+					<div class="form-group">
+                                <button class="btn btn-primary" ng-click="updatePresentationDetail(editingPresentation)">Update</button>
+                                <button class="btn btn-default" ng-click="cancelPresentationDetail()">Cancel</button>
+                            </div>
+					
+					
+                </fieldset>
+            </form>
+			
+
+
+        </div>
+    </div>
+</div>

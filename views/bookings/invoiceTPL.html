@@ -1,0 +1,242 @@
+<div class="aside bs-docs-aside" tabindex="-1" role="dialog" style="max-width:700px;">
+    <div class="close close2">
+        <div class="btn btn-round btn-info" ng-click="$hide()"><i class="md md-close"></i></div>
+    </div>
+
+    <div class="aside-dialog">
+        <div class="aside-body bs-sidebar">
+			
+			
+
+            <form class="form-floating" novalidate="novalidate" id="addPaymentForm" name="addPaymentForm">
+                <fieldset>
+					<legend>Travel Invoice</legend>
+					<div class="col-md-12">  Invoice ID:  </div>
+					<div class="col-md-12">  Invoiced By: </div>
+					<div class="col-md-12">  date: </div>                                                               <div class="col-md-12"> 
+				
+					<label class="control-label" style="left: 16px;">Due date</label>
+					<input type="text" class="form-control" ng-model="" data-date-format="yy-MM-dd" data-date-type="string" data-autoclose="1" name="" bs-datepicker required>
+					
+					</div>
+					<div class="col-md-12">
+<!--					<label class="control-label">Status </label>-->
+					<select ng-model="data10.selectedOption" name="x.paymentStatus" class='form-control' id='' ng-options="option.name for option in data10.availableOptions track by option.id"></select>
+					</div>
+				<div class="row">
+    	<div class="col-md-12">        
+      		<div class="card">
+        		<div class="table-responsive white">
+					<h3 class="table-title p-20">Flights <button type="button" class="btn btn-link btn-round btn-lg editbutton" ng-click="addFlights()"><i class="md md-add"></i></button></h3>
+		        	          <table class="table table-full table-full-small">
+            <colgroup>
+              <col class="p-r-20" />
+            </colgroup>
+            <thead>
+            <tr>
+                 <th>Name</th>
+              <th>Description</th>
+                <th>Status</th>
+            </tr>
+            </thead>
+            <tbody>
+
+
+            </tbody>
+          </table>
+        		</div>         
+     		</div>      
+    	</div>
+					
+		<div class="col-md-12">        
+      		<div class="card">
+        		<div class="table-responsive white">
+					<h3 class="table-title p-20">Insurance<button type="button" class="btn btn-link btn-round btn-lg editbutton" ng-click="addInsurance()"><i class="md md-add"></i></button></h3>
+		        	          <table class="table table-full table-full-small">
+            <colgroup>
+              <col class="p-r-20" />
+            </colgroup>
+            <thead>
+            <tr>
+                 <th>Name</th>
+              <th>Description</th>
+                <th>Status</th>
+            </tr>
+            </thead>
+            <tbody>
+
+
+            </tbody>
+          </table>
+        		</div>         
+     		</div>      
+    	</div>
+					
+		<div class="col-md-12">        
+      		<div class="card">
+        		<div class="table-responsive white">
+					<h3 class="table-title p-20">Accommodation<button type="button" class="btn btn-link btn-round btn-lg editbutton" ng-click="addAccommodation()"><i class="md md-add"></i></button></h3>
+		        	          <table class="table table-full table-full-small">
+            <colgroup>
+              <col class="p-r-20" />
+            </colgroup>
+            <thead>
+            <tr>
+                 <th>Name</th>
+              <th>Description</th>
+                <th>Status</th>
+            </tr>
+            </thead>
+            <tbody>
+
+
+            </tbody>
+          </table>
+        		</div>         
+     		</div>      
+    	</div>
+					
+		<div class="col-md-12">        
+      		<div class="card">
+        		<div class="table-responsive white">
+					<h3 class="table-title p-20">Transfer<button type="button" class="btn btn-link btn-round btn-lg editbutton" ng-click="addTransfer()"><i class="md md-add"></i></button></h3>
+		        	          <table class="table table-full table-full-small">
+            <colgroup>
+              <col class="p-r-20" />
+            </colgroup>
+            <thead>
+            <tr>
+                 <th>Name</th>
+              <th>Description</th>
+                <th>Status</th>
+            </tr>
+            </thead>
+            <tbody>
+
+
+            </tbody>
+          </table>
+        		</div>         
+     		</div>      
+    	</div>
+					
+		<div class="col-md-12">        
+      		<div class="card">
+        		<div class="table-responsive white">
+					<h3 class="table-title p-20">Addon<button type="button" class="btn btn-link btn-round btn-lg editbutton" ng-click="addAddon()"><i class="md md-add"></i></button></h3>
+		        	          <table class="table table-full table-full-small">
+            <colgroup>
+              <col class="p-r-20" />
+            </colgroup>
+            <thead>
+            <tr>
+                 <th>Name</th>
+              <th>Description</th>
+                <th>Status</th>
+            </tr>
+            </thead>
+            <tbody>
+
+
+            </tbody>
+          </table>
+        		</div>         
+     		</div>      
+    	</div>
+					
+		<div class="col-md-12">        
+      		<div class="card">
+        		<div class="table-responsive white">
+					<h3 class="table-title p-20">Charity<button type="button" class="btn btn-link btn-round btn-lg editbutton" ng-click="addCharity()"><i class="md md-add"></i></button></h3>
+		        	          <table class="table table-full table-full-small">
+            <colgroup>
+              <col class="p-r-20" />
+            </colgroup>
+            <thead>
+            <tr>
+                 <th>Name</th>
+              <th>Description</th>
+                <th>Status</th>
+            </tr>
+            </thead>
+            <tbody>
+
+
+            </tbody>
+          </table>
+        		</div>         
+     		</div>      
+    	</div>
+		
+		<div class="col-md-12">        
+      		<div class="card">
+        		<div class="table-responsive white">
+					<h3 class="table-title p-20">Travel Voucher<button type="button" class="btn btn-link btn-round btn-lg editbutton" ng-click="addVoucher()"><i class="md md-add"></i></button></h3>
+		        	          <table class="table table-full table-full-small">
+            <colgroup>
+              <col class="p-r-20" />
+            </colgroup>
+            <thead>
+            <tr>
+                 <th>Name</th>
+              <th>Description</th>
+                <th>Status</th>
+            </tr>
+            </thead>
+            <tbody>
+
+
+            </tbody>
+          </table>
+        		</div>         
+     		</div>      
+    	</div>
+					
+		<div class="col-md-12">        
+      		<div class="card">
+        		<div class="table-responsive white">
+					<h3 class="table-title p-20">Other Charges<button type="button" class="btn btn-link btn-round btn-lg editbutton" ng-click="addOtherCharges()"><i class="md md-add"></i></button></h3>
+		  <table class="table table-full table-full-small">
+            <colgroup>
+              <col class="p-r-20" />
+            </colgroup>
+            <thead>
+            <tr>
+                 <th>Name</th>
+              <th>Description</th>
+                <th>Status</th>
+            </tr>
+            </thead>
+            <tbody>
+
+
+            </tbody>
+          </table>
+					
+        		</div>         
+     		</div>      
+    	</div>
+					<div class="col-md-12">  Total Invoice Amount:  </div>
+					<div class="col-md-12">  Payments Received: </div>
+					<div class="col-md-12">  Balance Due (include 3%) </div>   			
+					<div class="col-md-12">  Balance Due (discount for cash/direct deposit) </div>
+  	</div>
+					
+					
+      
+	
+					
+					<div class="form-group">
+                                <button type="submit" class="btn btn-primary" ng-click="">Submit</button>
+                                <button type="reset" class="btn btn-default">Cancel</button>
+                            </div>
+					
+					
+                </fieldset>
+            </form>
+			
+
+
+        </div>
+    </div>
+</div>

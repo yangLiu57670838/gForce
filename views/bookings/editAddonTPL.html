@@ -1,0 +1,83 @@
+<div class="aside bs-docs-aside" tabindex="-1" role="dialog" style="max-width:600px;">
+    <div class="close">
+        <div class="btn btn-round btn-info" ng-click="hideEditAddonTPL()"><i class="md md-close"></i></div>
+    </div>
+
+    <div class="aside-dialog">
+        <div class="aside-body bs-sidebar">
+			
+			
+
+            <form class="form-floating" novalidate="novalidate" id="addPaymentForm" name="addPaymentForm">
+                <fieldset>
+					<legend>Edit this Tour/Stop-Over</legend>
+                  
+                        <div class="row">
+							<div class="col-md-12">
+								   <div class="form-group"> 
+							<label for="supplier" class="control-label" style="position:relative;">Supplier:</label>
+							<input type="text" class="form-control" name="supplier" ng-model="aEdit.addon_supplier" required> 	  
+							</div>
+							</div>
+							<div class="col-md-12">
+								 <div class="form-group"> 
+							<label for="grossAmount" class="control-label" style="position:relative;">Gross Amount </label>
+							<input type="number" class="form-control" name="grossAmount" ng-model="aEdit.addon_gross_amount" required> 	  
+							</div>
+							</div>
+							<div class="col-md-12">
+								 <div class="form-group">
+							<label for="tourName" class="control-label" style="position:relative;">Tour Name:</label>
+							<input type="text" class="form-control" name="tourName" ng-model="aEdit.addon_tour_name" required> 	  
+							</div>
+							</div>
+							<div class="col-md-12">
+								<div class="form-group">
+							<label for="nettAmount" class="control-label" style="position:relative;">Nett Amount </label>
+							<input type="number" class="form-control" name="nettAmount" ng-model="aEdit.addon_nett_amount" required> 	  
+							</div>
+								</div>
+                           <div class="col-md-12">
+							   <div class="form-group">
+							<label class="control-label" style="position:relative;">From</label>
+                            <input type="text" class="form-control" ng-model="aEdit.addon_from" data-date-format="yy-MM-dd" data-date-type="string" data-autoclose="1" name="" bs-datepicker required>	  
+							</div>
+							</div>
+							<div class="col-md-12">
+								<div class="form-group">
+							<label class="control-label" style="position:relative;">To</label>
+                            <input type="text" class="form-control" ng-model="aEdit.addon_to" data-date-format="yy-MM-dd" data-date-type="string" data-autoclose="1" name="" bs-datepicker required>	  
+							</div>
+							</div>
+							<div class="col-md-12">
+								<div class="form-group">
+							   <div class="switch">
+                                        <label class="filled"> Status: Inactive
+                                            <input type="checkbox" ng-model="aEdit.addon_status" ng-change="" ng-true-value="'active'" ng-false-value="'inactive'"> <span class="lever"></span>Active</label>
+                                    </div>	  
+							</div>
+							</div>
+							<div class="col-md-12">
+								<div class="form-group">
+							<textarea class="form-control vertical" placeholder="Comments" rows="3" id="textArea" ng-model="aEdit.addon_comments"></textarea>
+								
+							</div>
+                       </div>
+                                </div>
+                           
+
+					
+					<div class="form-group">
+                                <button type="submit" class="btn btn-primary" ng-click="updateAddonDetail(aEdit)">Update</button>
+                                <button type="reset" class="btn btn-default">Cancel</button>
+                            </div>
+					
+					
+                </fieldset>
+            </form>
+			
+
+
+        </div>
+    </div>
+</div>

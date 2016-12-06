@@ -1,0 +1,58 @@
+<div class="main-content" autoscroll="true" bs-affix-target="" init-ripples="" ng-controller="resumeCtrl">
+    <section>
+        <div class="page-header row col-md-12">
+            <h1 class="col-md-3">  <i class="md md-list"></i>Resume List </h1>
+			  <div class="form-group col-md-4">
+                                    <div class="switch">
+                                        <label class="filled"> Incomplete
+                                            <input type="checkbox" ng-model="actionQuery" ng-change="actionQueryChange()" ng-true-value="'complete'" ng-false-value="'incomplete'"> <span class="lever"></span> Complete</label>
+                                    </div>
+                                </div>
+
+        </div>
+        <div class="row m-b-40">
+            <div class="col-md-12">
+                <div class="card no-margin">
+                    <div class="table-responsive white">
+                        <table ng-table="resumesTable" show-filter="true" class="table table-full table-full-small table-striped">
+                            <colgroup>
+                            
+                            </colgroup>
+                            <tbody>
+                                <!--ng href sending get data need to be fixed later-->
+                                <tr ng-repeat="r in data">
+
+                                    <td data-title="'First Name'" sortable="'fname'" filter="{ 'fname': 'text' }" ng-click="viewForm(r)" style='text-align: center;'>{{r.fname}}</td>
+                                    <td data-title="'Last Name'" sortable="'lname'" filter="{ 'lname': 'text' }" ng-click="viewForm(r)" style='text-align: center;'>
+                                        {{r.lname}}
+                                    </td>
+                                    <td data-title="'Email'" sortable="'email'" filter="{ 'email': 'text' }" ng-click="viewForm(r)" style='text-align: center;'>
+                                        {{r.email}}
+                                    </td>
+                                    <td data-title="'Phone Number'" sortable="'phoneno'" filter="{ 'phoneno': 'text' }" ng-click="viewForm(r)" style='text-align: center;'>
+                                        {{r.phoneno}}
+                                    </td> 
+									<td data-title="'Office'" sortable="'office'" filter="{ 'office': 'text' }" ng-click="viewForm(r)" style='text-align: center;'>
+                                        {{r.office}}
+                                    </td> 
+									<td data-title="'Date'" sortable="'submission_date'" filter="{ 'submission_date': 'text' }" ng-click="viewForm(r)" style='text-align: center;'>
+                                        {{r.submission_date}}
+                                    </td> 
+									<td data-title="'Trip'" sortable="'trip_experience_name'" filter="{ 'trip_experience_name': 'text' }" ng-click="viewForm(r)" style='text-align: center;'>
+                                        {{r.trip_experience_name}}
+                                    </td> 
+                                </tr>
+
+                            </tbody>
+                        </table>
+
+
+                        <!-- <pagination total-items="customers.length" ng-model="currentPage" max-size="maxSize" class="pagination-sm" boundary-links="true">
+                                    </pagination>-->
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

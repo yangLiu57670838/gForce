@@ -1,0 +1,66 @@
+<div class="main-content" autoscroll="true" bs-affix-target="" init-ripples="" ng-controller="searchccCtrl">
+    <section>
+        <div class="page-header">
+            <h1>      <i class="md md-list"></i>   Search CID  </h1>
+
+        </div>
+        <div class="row m-b-40">
+            <div class="col-md-12">
+                <div class="card no-margin">
+                    <div class="table-responsive white">
+
+
+                        <form class="form-floating" id="form-validation">
+                            <fieldset>
+                                <div class="form-group col-md-4">
+                                    <label class="control-label" style="padding-left: 15px;">Enter CID Here</label>
+                                    <input type="text" class="form-control" required="" data-error="Numeric CID values" ng-model="CID">
+                                    <div class="help-block with-errors"></div>
+                                </div>
+
+                                <div class="form-group col-md-4">
+                                    <button type="submit" class="btn btn-primary" ng-click="findcid()">Submit</button>
+
+                                </div>
+                            </fieldset>
+
+
+                        </form>
+
+
+                        <table class="table table-full table-full-small">
+                            <colgroup>
+                                <col class="auto-cell-size p-r-20">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th>CID</th>
+                                    <th>First Name</th>
+                                    <th>Last Name</th>
+                                    <th>CC Number</th>
+                                    <th>CC Name</th>
+                                    <th>EX</th>
+                                    <th>CCV</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                                <tr>
+                                    <td>{{cinfo.cid}}</td>
+                                    <td>{{cinfo.first_name}}</td>
+                                    <td>{{cinfo.last_name}}</td>
+                                    <td>{{cinfo.paid_car_number}}</td>
+                                    <td>{{cinfo.paid_card_name}}</td>
+                                    <td>{{cinfo.paid_card_expiry}}</td>
+                                    <td>{{cinfo.paid_card_cvc}}</td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+
+    </section>
+    </div>

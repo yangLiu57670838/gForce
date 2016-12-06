@@ -1,0 +1,51 @@
+<aside class="sidebar fixed" style="width: 260px; left: 0px; ">
+    <div class="brand-logo" style="line-height:49px;">
+        <img src="../../assets/img/global/gForce-03-02.png" class="logoImg">
+        <br>Global CRM </div>
+    <div class="user-logged-in">
+        <div class="content">
+            <div class="user-name">{{staffName}} <span class="text-muted f9" style="padding-left: 10px;">{{staffRole}}</span></div>
+            <div class="user-email" style="font-size:12px;">{{staffEmail}}</div>
+            <div class="user-actions"> <a class="m-r-5" href="#">settings</a> <a href="" ng-click="logout()">logout</a> </div>
+        </div>
+    </div>
+    <ul class="menu-links" ng-cloak>
+        <a menu-link href="#/" icon="md md-blur-on">Dashboard</a>
+		<a menu-link href="#customer" icon="md md-account-circle">All Customers</a>    
+        <li menu-toggle path="" name="Sales" icon="md md-assessment" ng-show="salesShow">
+			<a menu-link href="#bookings"> New Bookings </a>
+			<a menu-link href="#commission"> Commission </a>
+			<a menu-link href="#payroll"> Pay Run </a>
+		</li>
+        <li menu-toggle path="" name="Admin" icon="md md-assignment" ng-show="adminShow">
+			<a menu-link href="#adminbookings"> New Bookings </a>
+		</li>
+		<li menu-toggle path="" name="Coordination" icon="md md-account-child" ng-show="coordinationShow">
+            <a menu-link href="#addPayment">Add Payment </a>
+            <a menu-link href="#searchPayment">Search Payment </a>
+			<a menu-link href="#searchcc" name="Crud">Search CC</a>
+			<a menu-link href="#resume"> Resume </a>
+        </li>
+        <li menu-toggle path="" name="Travel" icon="md md-flight" ng-show="travelShow"></li>
+		<li menu-toggle path="" name="Arrivals" icon="md md-pin-drop" ng-show="arrivalsShow">
+			<a menu-link href="#resume"> Resume </a>
+		</li>
+		<li menu-toggle path="" name="Cancellation" icon="md md-error" ng-show="cancellationShow">
+		
+		</li>
+		<li menu-toggle path="" name="Finance" icon="md md-attach-money" ng-show="financeShow"></li>
+		<li menu-toggle path="" name="Compliance" icon="md md-beenhere" ng-show="complianceShow">
+<!--            <a menu-link href="#compliance"> Working Holiday Checklist </a>-->
+            <a menu-link href="#listInCompliance">New Travellers </a>
+			<a menu-link href="#listAllCompliance">Submissions </a>
+
+        </li>
+        <a menu-link href="" icon="md md-blur-on" ng-show="emptyShow"></a>
+        <li menu-toggle path="" name="Settings" icon="md md-adb" ng-show="settingsShow">
+            <a menu-link href="#users"> Users </a>
+            <a menu-link href="">Roles </a>
+
+        </li>
+		<a menu-link href="#test" icon="md md-blur-on">Test</a>
+    </ul>
+</aside>

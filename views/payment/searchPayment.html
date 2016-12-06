@@ -1,0 +1,132 @@
+<div class="main-content" autoscroll="true" bs-affix-target="" init-ripples="" ng-controller="searchPaymentCtrl">
+    <section>
+        <div class="page-header">
+            <h1>      <i class="md md-list"></i>  Search Payment </h1>
+
+        </div>
+        <div class="row m-b-40">
+            <div class="col-md-12">
+                <div class="card no-margin">
+                    <div class="white">
+
+
+                        <form class="form-floating" id="form-validation">
+                            <fieldset>
+                                <div class="form-group col-md-2">
+                                    <label class="control-label" style="padding-left: 15px;">Customer Name</label>
+                                    <input type="text" class="form-control" data-error="Do not leave it empty" ng-model="tableParams.filter()['search']">
+
+
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                                  <div class="form-group col-md-2">
+                                    <label class="control-label" style="padding-left: 15px;">Staff Name</label>
+                                    <input type="text" class="form-control" data-error="Do not leave it empty" ng-model="tableParams.filter()['search2']">
+
+
+                                    <div class="help-block with-errors"></div>
+                                </div>
+
+                                <!-- <div class="form-group col-md-4">
+                                                <button type="submit" class="btn btn-primary" ng-click="findPayments()">Find all Payments</button>
+                                                <button type="submit" class="btn btn-info" ng-click="findOverdues()">Find all Overdues</button>
+
+                                            </div>-->
+                                <div class="form-group col-md-3">
+                                    <div class="switch">
+                                        <label class="filled"> All Payments
+                                            <input type="checkbox" ng-model="overduess" ng-change="checkboxCheck()"> <span class="lever"></span> Overdue Payments</label>
+                                    </div>
+                                </div>
+                                <div class="form-group col-md-1">
+                                    <label class="control-label" style="padding-left: 15px;">Start Date</label>
+
+                                    <input type="text" class="form-control" ng-model="tableParams.filter()['start']" data-date-format="yy-MM-dd" data-date-type="string" data-autoclose="1" name="start" bs-datepicker>
+                                </div>
+                                <div class="form-group col-md-1">
+                                    <label class="control-label" style="padding-left: 15px;">End Date</label>
+                                    <input type="text" class="form-control" ng-model="tableParams.filter()['end']" data-date-format="yy-MM-dd" data-date-type="string" data-autoclose="1" name="end" bs-datepicker> </div>
+								 <div class="form-group col-md-1">   
+                                    <select ng-model="tableParams.filter()['statusSelect']" style="width: 80px; height: 37px; background-color: transparent;">
+  											<option value="">All Status</option>
+											<option value="Paid">Paid</option>
+  											<option value="Next">Next</option>
+  											<option value="Error">Error</option>
+											<option value="Refund">Refund</option>
+											<option value="Discount">Discount</option>
+											<option value="Cancelled">Cancelled</option>
+											<option value="On Hold">On Hold</option>
+									</select>
+								</div>
+
+                                <div class="form-group col-md-1">
+                                    <button alt="Refresh" type="button" class="btn btn-md blue accent-4 btn-round" ng-click="reset()" style="font-size: 25px; line-height: 12px;"><i class="lg md-refresh"></i> </button>
+                                </div>
+                            </fieldset>
+                            
+                          
+
+
+                           
+                        </form>
+
+
+                        <!-- ngtable-->
+
+                        <table ng-table="tableParams" template-pagination="../data-table-pager.html" class="table table-full table-full-small table-striped">
+                            <colgroup>
+                                <col class="auto-cell-size p-r-20">
+                            </colgroup>
+
+                            <tbody>
+
+                                <tr ng-repeat="item in $data">
+                                    <td><span class="md md-edit"></span></td>
+                                    <td data-title="'Name'" sortable="'customerName'" style="text-align: center;">{{item.customerName}}</td>
+                                    <td data-title="'Staff'" sortable="'Staff'" style="text-align: center;">{{item.Staff}}</td>
+									<td data-title="'Date'" sortable="'paymentDate'" style="text-align: center;">
+										<input type="text" class="edit-inline-input" ng-model="item.paymentDate" data-date-format="yy-MM-dd" data-date-type="string" data-autoclose="1" bs-datepicker>
+									</td>
+                                    
+                                    <td data-title="'Amount'" sortable="'paymentAmount'" style="text-align: center;">
+                                        <input class="edit-inline-input" ng-model="item.paymentAmount" type='text'>{{item.Currency}}
+                                    </td>
+                                    <td data-title="'Status'" sortable="'paymentStatus'" style="text-align: center;">
+										
+										<select ng-model="item.paymentStatus" style="width: 100px; background-color: transparent; text-align-last:center;">
+  											<option value="Paid">Paid</option>
+  											<option value="Next">Next</option>
+  											<option value="Error">Error</option>
+											<option value="Refund">Refund</option>
+											<option value="Discount">Discount</option>
+											<option value="Cancelled">Cancelled</option>
+											<option value="On Hold">On Hold</option>
+										</select>
+										
+                                    </td>
+                                    <td data-title="'Update'" style="text-align: center;">
+                                        <button type="button" class="btn btn-lg red accent-4 btn-round" ng-click="update(item)"> <i class="md md-edit"></i> </button>
+                                    </td>
+
+                                </tr>
+
+                            </tbody>
+                        </table>
+
+                        <!--ngtable end -->
+<div class="row">
+<div class="col-md-3" style="margin-left: 20px;">
+<h5>Total Next Amount: {{totalNextAmount}}</h5>
+</div>
+<div class="col-md-3">
+<h5>Total Paid Amount: {{totalPaidAmount}}</h5>
+</div>
+</div>
+
+                    </div>
+                </div>
+            </div>
+
+		</div>
+    </section>
+    </div>

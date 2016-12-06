@@ -1,0 +1,42 @@
+<div class="modal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" style="width:720px;">
+    <div class="modal-content">
+      <div class="modal-header">
+<!--        <button type="button" class="close" ng-click="$hide()">&times;</button>-->
+        <h4 class="modal-title capitalize">{{f}} History</h4>
+      </div>
+      <div class="modal-body">
+		   <div class="card no-margin">
+		   <div class="table-responsive white">
+		            <table class="table table-full table-full-small log-table">
+            <colgroup>
+              
+            </colgroup>
+            <thead>
+            <tr>
+              	<th>Source</th>
+				<th>Change made on</th>
+				<th>Type of action</th>
+				<th>Changed to</th>
+            </tr>
+            </thead>
+            <tbody>
+
+            <tr ng-repeat="l in loglist track by $index">
+              	<td>{{l.staff_name}}</td>
+				<td>{{l.date}}</td>
+				<td>{{l.status}}</td>
+				<td>{{l.field_value}}</td>
+            </tr>
+            </tbody>
+          </table>
+		  </div>
+		  </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" ng-click="$hide()">Close</button>
+       
+      </div>
+    </div>
+  </div>
+</div>

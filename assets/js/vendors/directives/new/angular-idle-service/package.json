@@ -1,0 +1,87 @@
+{
+  "_args": [
+    [
+      "angular-idle-service",
+      "C:\\Users\\Yang\\Desktop\\gwat\\gforce"
+    ]
+  ],
+  "_from": "angular-idle-service@latest",
+  "_id": "angular-idle-service@1.0.0",
+  "_inCache": true,
+  "_installable": true,
+  "_location": "/angular-idle-service",
+  "_nodeVersion": "5.10.0",
+  "_npmOperationalInternal": {
+    "host": "packages-12-west.internal.npmjs.com",
+    "tmp": "tmp/angular-idle-service-1.0.0.tgz_1462466793799_0.08940458903089166"
+  },
+  "_npmUser": {
+    "email": "luis.hlopez@outlook.com",
+    "name": "kurtz1993"
+  },
+  "_npmVersion": "3.8.3",
+  "_phantomChildren": {},
+  "_requested": {
+    "name": "angular-idle-service",
+    "raw": "angular-idle-service",
+    "rawSpec": "",
+    "scope": null,
+    "spec": "latest",
+    "type": "tag"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/angular-idle-service/-/angular-idle-service-1.0.0.tgz",
+  "_shasum": "ea62fcc5609aac24a171ca8a00708f184cbf9495",
+  "_shrinkwrap": null,
+  "_spec": "angular-idle-service",
+  "_where": "C:\\Users\\Yang\\Desktop\\gwat\\gforce",
+  "author": {
+    "name": "Luis Rogelio Hernández López"
+  },
+  "bugs": {
+    "url": "https://github.com/Kurtz1993/angular-idle-service/issues"
+  },
+  "dependencies": {
+    "angular": "^1.5.5"
+  },
+  "description": "An Angular service that responds to idle users.",
+  "devDependencies": {},
+  "directories": {},
+  "dist": {
+    "shasum": "ea62fcc5609aac24a171ca8a00708f184cbf9495",
+    "tarball": "https://registry.npmjs.org/angular-idle-service/-/angular-idle-service-1.0.0.tgz"
+  },
+  "gitHead": "5afd154269fdf232b4671055ae5e6aad73c1a206",
+  "homepage": "https://github.com/Kurtz1993/angular-idle-service#readme",
+  "keywords": [
+    "angular",
+    "angularjs",
+    "idle",
+    "ng-idle",
+    "angular-idle-service",
+    "angular-idle",
+    "user",
+    "session"
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "maintainers": [
+    {
+      "email": "luis.hlopez@outlook.com",
+      "name": "kurtz1993"
+    }
+  ],
+  "name": "angular-idle-service",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kurtz1993/angular-idle-service.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "1.0.0"
+}

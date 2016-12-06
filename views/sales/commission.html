@@ -1,0 +1,350 @@
+<div class="main-content" autoscroll="true" bs-affix-target="" init-ripples="" ng-controller="commissionCtrl">
+    <section>
+
+        <div class="row m-b-40">
+            <div class="col-md-12">
+                <div class="card no-margin">
+                    <div class="well white">
+
+
+                        <form class="form-floating" id="form-validation">
+                            <fieldset>
+                                <div class="form-group col-md-3">
+<!--                                    <label class="control-label" style="position:relative; padding-left: 15px;">Staff</label>-->
+<ui-select ng-model="selected.value" theme="select2" search-enabled="true">
+    <ui-select-match >
+        <span ng-bind="$select.selected"></span>
+    </ui-select-match>
+    <ui-select-choices repeat="item in (allStaffs | filter: $select.search)">
+        <span ng-bind="item"></span>
+    </ui-select-choices>
+</ui-select>
+									
+                                </div>
+								
+								  <div class="form-group col-md-5">
+<!--                                    <label class="control-label" style="padding-left: 15px;">Start Date</label>-->
+
+									  <select ng-model="payrunDateList.selectedOption" name="payrunDateList" class='form-control' id='' ng-options="option.string for option in payrunDateList.availableOptions track by option.id" ng-change="payrunSelectChange()" ></select>
+                                </div>
+
+<!--
+                                <div class="form-group col-md-3">
+                                    <label class="control-label" style="padding-left: 15px;">Start Date</label>
+
+                                    <input type="text" class="form-control" ng-model="startDate" data-date-format="yyyy-MM-dd" data-date-type="string" data-autoclose="1" name="start" bs-datepicker>
+                                </div>
+                                <div class="form-group col-md-3">
+                                    <label class="control-label" style="padding-left: 15px;">End Date</label>
+                                    <input type="text" class="form-control" ng-model="endDate" data-date-format="yyyy-MM-dd" data-date-type="string" data-autoclose="1" name="end" bs-datepicker> </div>
+-->
+
+
+
+                                <div class="form-group col-md-1">
+                                    <button alt="Refresh" type="button" class="btn btn-md blue accent-4 btn-round" ng-click="searchCommissions()" style="font-size: 25px; line-height: 12px;"><i class="lg md-search"></i> </button>
+                                </div>
+								
+								<div class="form-group col-md-1 col-md-offset-2">
+                                    <button alt="Refresh" type="button" class="btn btn-md red accent-4 btn-round" ng-click="searchAllArchive()" style="font-size: 25px; line-height: 12px;"><i class="lg md-archive"></i> </button>
+                                </div>
+								
+                            </fieldset>
+                            
+                          
+
+
+                           
+                        </form>
+					</div>
+				</div>
+				
+				<div class="card no-margin">
+					 <div class="">
+						
+
+<table ng-table="resumesTable" show-filter="true" class="table table-full table-full-small">
+                            <colgroup>
+                            
+                            </colgroup>
+                            <tbody>
+                                <!--ng href sending get data need to be fixed later-->
+                                <tr ng-repeat="r in data">
+									
+                                    <td data-title="'#'" style="text-align: center;">
+                                       <i class="md md-open-in-new" ng-click="viewCommissionDetail(r)"></i>
+                                    </td>
+                                    <td data-title="'Index'" sortable="'tableIndex'" style="text-align: center;">
+                                       {{r.tableIndex}}
+                                    </td>
+                                    <td data-title="'Staff'" sortable="'staff'" style='text-align: center;' filter="{ 'staff': 'text' }">
+                                        {{r.staff}}
+                                    </td>
+                                    <td data-title="'Customer Email'" sortable="'customer_email'" style='text-align: center;' filter="{ 'customer_email': 'text' }">
+                                        {{r.customer_email}}
+                                    </td>
+                                     <td data-title="'Customer Name'" sortable="'fullname'" style='text-align: center;' filter="{ 'fullname': 'text' }">
+                                        {{r.fullname}}
+                                    </td>
+									<td data-title="'Claiming Date'" sortable="'date'" style='text-align: center;' filter="{ 'date': 'text' }">
+                                        {{r.date}}
+                                    </td>
+									<td data-title="'Claiming Amount'" sortable="'commission'" style='text-align: center;' filter="{ 'commission': 'text' }">
+                                        <input class="edit-inline-input" ng-model="r.commission" type='text'> {{r.currency}}
+                                    </td>
+									
+									<td data-title="'Status'" sortable="'sales_status'" style='text-align: center;' filter="{ 'sales_status': 'text' }">		
+										<select ng-model="r.sales_status" style="width: 70px; background-color: transparent;">
+  											<option value="pending">Pending</option>
+  											<option value="approved">Approved</option>
+  											<option value="declined">Declined</option>
+										</select>
+                                    </td> 
+									<td data-title="'Booking Status'" sortable="'bookingStatus'" style='text-align: center;' filter="{ 'bookingStatus': 'text' }">		
+										{{r.bookingStatus}} <i class="md md-open-in-new" ng-click="viewprofile(r.cid)" ng-show="r.cid"></i>
+                                    </td> 
+									
+									
+									
+                                </tr>
+
+                            </tbody>
+                        </table>
+
+                        <!--ngtable end -->
+
+
+                    </div>
+                </div>
+            </div>			
+			
+		</div>
+		
+	
+		
+<!-- presentation table -->
+<div class="card">
+
+    <div class="row">
+      <div class="col-md-12">
+        <h3 class="table-title p-20">Presentation List<button type="button" class="btn btn-link btn-round btn-lg editbutton" ng-click="addNewPresentation()"><i class="md md-add"></i></button></h3>
+      </div>
+    </div>
+
+    <div class="table-responsive white">
+
+<table ng-table="presentationTable" show-filter="true" class="table table-full table-full-small">
+                            <colgroup>
+                            
+                            </colgroup>
+                            <tbody>
+                                <!--ng href sending get data need to be fixed later-->
+                                <tr ng-repeat="p in data2">
+                                <td data-title="'#'" style="text-align: center;">
+                                       <i class="md md-open-in-new" ng-click="viewPresentationDetail(p)"></i>
+                                </td>
+                                    
+                                    <td data-title="'Index'" sortable="'tableIndex'" style="text-align: center;">
+                                       {{p.tableIndex}}
+                                    </td>
+                                    <td data-title="'Staff'" sortable="'staff'" style='text-align: center;' filter="{ 'staff': 'text' }">
+                                        {{p.staff}}
+                                    </td>
+                                    <td data-title="'Attend Day'" sortable="'attend_day'" style='text-align: center;' filter="{ 'attend_day': 'text' }">
+                                         <input type="text" class="form-control edit-inline-input" ng-model="p.attend_day" data-date-format="yyyy-MM-d" data-date-type="string" data-autoclose="1" name="attend_day" bs-datepicker>
+                                    </td>
+                                    
+									<td data-title="'Sales Presentation'" sortable="'presentation'" style='text-align: center;' filter="{ 'presentation': 'text' }">
+                                        <input class="edit-inline-input" ng-model="p.presentation" type='text'>
+                                    </td>
+									<td data-title="'Submission Date'" sortable="'submission_date'" style='text-align: center;' filter="{ 'submission_date': 'text' }">
+                                        {{p.submission_date}}
+                                    </td>
+									
+									<td data-title="'Amount'" sortable="'amount'" style='text-align: center;' filter="{ 'amount': 'text' }">		
+										<input class="edit-inline-input" ng-model="p.amount" type='number' required>
+                                    </td> 
+									
+									<td data-title="'Status'" sortable="'status'" style='text-align: center;' filter="{ 'status': 'text' }">		
+										<select ng-model="p.status" style="width: 70px; background-color: transparent;">
+  											<option value="pending">Pending</option>
+  											<option value="approved">Approved</option>
+  											<option value="declined">Declined</option>
+										</select>
+                                    </td>								
+									
+                                </tr>
+
+                            </tbody>
+                        </table>
+		
+
+    </div>
+
+  </div>
+		
+<!-- presentation table end -->
+		
+		
+		 <div class="row m-b-40">
+					<div class="col-md-12">
+			
+			         <div class="well white">       
+
+                    <form class="form-floating" ng-submit="addpayment(addPaymentForm)" id="addPaymentForm" name="addPaymentForm">
+                        <fieldset>
+                           <legend>{{selected.value}} - Pay Run ({{payrunDateList.selectedOption.id}})</legend>
+							
+<!--
+				<div class="form-group">  
+					<div class="row">
+					 	<div class="col-md-12">
+							<div class="col-md-6">
+								<label for="payrollNo" class="control-label" style="padding-left: 15px;">Input Payroll Number Here</label>
+                                <input type="text" class="form-control" name="payrollNo" ng-model="payrollNo" required> 
+							</div>
+						 </div>
+					</div>
+				</div>
+-->
+
+							
+				<div class="form-group">  
+					<div class="row"> 
+						<div class="col-md-12">  
+							<div class="col-md-3">
+						   		<label for="bonusAmount" class="control-label" style="padding-left: 15px;">Bonus Amount</label>
+                                <input type="number" class="form-control" name="bonusAmount" ng-model="bonusAmount" required> 
+						  	</div>
+							
+						<div class="col-md-1">
+							<select ng-model="bonuscurrency.selectedOption" name="bonuscurrency" class='form-control' id='' ng-options="option.name for option in bonuscurrency.availableOptions track by option.id"></select>                  		</div>
+							
+							<div class="col-md-8">
+						   		<label for="bonusDescription" class="control-label" style="padding-left: 15px;">Description</label>
+								<input type="text" class="form-control" name="bonusDescription" ng-model="bonusDescription"> 
+						  	</div>
+                               
+						</div>
+					</div>
+				</div>
+		
+							
+				 <div class="form-group">  
+					<div class="row">
+						<div class="col-md-12">
+							<div class="col-md-3">
+								<label for="deductionAmount" class="control-label" style="padding-left: 15px;">Deduction Amount</label>
+								<input type="number" class="form-control" name="deductionAmount" ng-model="deductionAmount" required> 
+							</div>
+                                                                   
+							<div class="col-md-1">							
+								<select ng-model="deductioncurrency.selectedOption" name="deductioncurrency" class='form-control' id='' ng-options="option.name for option in deductioncurrency.availableOptions track by option.id"></select>
+							</div>
+							
+							<div class="col-md-8">
+							   <label for="deductionDescription" class="control-label" style="padding-left: 15px;">Description</label>
+                                <input type="text" class="form-control" name="deductionDescription" ng-model="deductionDescription"> 
+						  </div>
+						</div>
+					</div>
+				</div>				
+
+			 	<div class="form-group">  
+					<div class="row">
+						<div class="col-md-12">                     
+							<div class="col-md-6">
+								<label for="presentationNumber10" class="control-label" style="padding-left: 15px;">Desk Rental Fee</label>
+								<input type="number" class="form-control" name="tableFee" ng-model="tableFee"> 
+							</div>                                
+						</div>
+					</div>
+				</div>
+							
+							
+							
+<!--
+                         <div class="form-group" ng-hide="hidewithEmployee">  
+                        <div class="row">
+                             
+                            <div class="col-md-12">
+
+                                <div class="col-md-3" style="padding-right: 0px;">
+                                   
+                                  <label for="presentationDay" class="control-label" style="left: 16px;">Days Attended</label>
+
+                                <input type="text" class="form-control" ng-model="presentationDay" data-date-format="yyyy-MM-dd" data-date-type="string" data-autoclose="1" name="presentationDay" bs-datepicker required>
+                                    
+                                </div>
+                                <div class="col-md-3">
+
+                                    <label for="presentationNumber" class="control-label" style="padding-left: 15px;">Sales Presentations Per Day</label>
+                                    <input type="number" class="form-control" name="presentationNumber" ng-model="presentationNumber" required> </div>
+                                                                   
+                                <div class="col-md-3" style="padding-right: 0px;">
+                                   
+                                  <label for="presentationDay" class="control-label" style="left: 16px;">Amount</label>
+<input type="number" class="form-control" name="presentationAmount" ng-model="presentationAmount" required>
+                                    
+                                </div>
+								
+                                <div class="col-md-1">
+                                <button class="btn btn-default" type="button" ng-click="todoAdd()">Add</button>									</div>
+                            </div>
+                                </div>
+                            </div>
+-->
+                           
+
+                                
+<!--
+<div ng-repeat="x in todoList track by $index" ng-hide="hidewithEmployee">
+    
+                            <div class="form-group">  
+                            <div class="row">  
+                            <div class="col-md-12">
+
+     					<div class="col-md-3" style="padding-right: 0px;">
+                                   
+                                  <label class="control-label" style="left: 16px;">Days Attended</label>
+
+                                <input type="text" class="form-control" ng-model="x.presentationDay" data-date-format="yyyy-MM-dd" data-date-type="string" data-autoclose="1" name="x.presentationDay" bs-datepicker required>
+                                    
+                                </div>
+								
+     						<div class="col-md-3">
+
+                                    <label for="number" class="control-label" style="padding-left: 15px;">Sales Presentations Per Day</label>
+                                    <input type="number" class="form-control" name="x.number" ng-model="x.number" required> 
+								</div>
+								
+								<div class="col-md-3" style="padding-right: 0px;">
+                                   
+                                  <label for="presentationAmount" class="control-label" style="left: 16px;">Amount</label>
+<input type="number" class="form-control" name="x.presentationAmount" ng-model="x.presentationAmount" required>
+                                    
+                                </div>
+								
+    
+    <div class="col-md-1">
+                                <button class="btn btn-default" type="button" ng-click="remove($index)">Remove</button></div>
+    
+      </div>
+                             </div>
+                             </div>
+</div>
+-->
+
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-primary" ng-click="updateThisPage()">Submit</button>
+                                <button type="reset" class="btn btn-default">Cancel</button>
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+			
+			
+			 </div></div>
+		
+    </section>
+    </div>

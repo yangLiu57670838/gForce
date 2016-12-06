@@ -1,0 +1,68 @@
+<div class="aside bs-docs-aside" tabindex="-1" role="dialog" style="max-width:600px;">
+    <div class="close">
+        <div class="btn btn-round btn-info" ng-click="$hide()"><i class="md md-close"></i></div>
+    </div>
+
+    <div class="aside-dialog">
+        <div class="aside-body bs-sidebar">
+			
+			
+
+            <form class="form-floating" novalidate="novalidate" id="addPaymentForm" name="addPaymentForm">
+                <fieldset>
+					<legend>Add a new trip</legend>
+                      
+                        <div class="row">
+							<div class="col-md-12">
+								<div class="form-group">
+							<select ng-model="tripExperienceList.selectedOption" name="tripExperienceList" class='form-control' id='' ng-options="option.name for option in tripExperienceList.availableOptions track by option.id"></select>
+							</div>
+							</div>
+							<div class="col-md-12">
+								<div class="form-group">
+							<label for="flightnQuotedAmount" class="control-label" style="">Trip Destination </label>
+							<input type="text" class="form-control" name="tripDestination" ng-model="tripDestination" required> 	  
+							</div>
+							</div>
+							<div class="col-md-12">
+								<div class="form-group">
+							<label for="flightnQuotedAmount" class="control-label" style="">Trip Code </label>
+							<input type="text" class="form-control" name="tripCode" ng-model="tripCode" required> 	  
+							</div>
+							</div>	
+							<div class="col-md-12">
+								<div class="form-group">
+							<label for="flightnQuotedAmount" class="control-label" style="">Trip Duration </label>
+							<input type="text" class="form-control" name="tripDuration" ng-model="tripDuration" required> 	  
+							</div>
+							</div>
+							<div class="col-md-12">
+								<div class="form-group">
+							<label for="flightnQuotedAmount" class="control-label" style="">Trip Price </label>
+							<input type="text" class="form-control" name="tripPrice" ng-model="tripPrice" required> 	  
+							</div>
+							</div>
+							
+							<div class="col-md-12">
+								<div class="form-group">
+							<select ng-model="tripStatusList.selectedOption" name="tripStatusList" class='form-control' id='' ng-options="option.name for option in tripStatusList.availableOptions track by option.id"></select>
+							</div>
+							</div>
+							
+                            </div>
+
+					
+					<div class="form-group">
+                                <button type="submit" class="btn btn-primary" ng-click="saveNewTrip(tripDestination, tripCode, tripDuration, tripPrice)">Save</button>
+                                <button type="reset" class="btn btn-default">Cancel</button>
+                            </div>
+					
+					
+                </fieldset>
+            </form>
+			
+
+
+        </div>
+    </div>
+</div>

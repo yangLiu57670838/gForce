@@ -1,0 +1,68 @@
+<div class="aside bs-docs-aside" tabindex="-1" role="dialog" style="max-width:600px;">
+    <div class="close close2">
+        <div class="btn btn-round btn-info" ng-click="$hide()"><i class="md md-close"></i></div>
+    </div>
+
+    <div class="aside-dialog">
+        <div class="aside-body bs-sidebar">
+			
+			
+
+            <form class="form-floating" novalidate="novalidate" name="uploadForm">
+                <fieldset>
+					<legend>Upload Files </legend>
+                      
+                        <div class="row">
+							<div class="col-md-12">
+						  		<div class="form-group">
+                					<label class="control-label">Upload with drag drop</label>
+									
+<!--
+									<input 
+               type="file" 
+               ngf-select 
+               ng-model="file" 
+               name="file" 
+               ngf-pattern="'image/*'"
+               accept="image/*" 
+               ngf-max-size="20MB" 
+               /><i ng-show="upload_form.file.$error.required">*required</i><br><i ng-show="upload_form.file.$error.maxSize">File too large 
+            {{file.size / 1000000|number:1}}MB: max 20M</i>
+-->
+									
+									
+                					<div 
+									   	ngf-drop
+                     					ngf-select
+										ng-model="files"
+                     					class="drop-box"
+                     					ngf-drag-over-class="dragover"
+                     					ngf-allow-dir="true">Select or Drop Files here</div>
+                					<div ngf-no-file-drop>File Drag/Drop is not supported for this browser</div>
+									{{files.name}} - size: {{files.size}}Bytes - type: {{files.type}}<br>
+              					</div>
+							</div>		
+								
+						<div class="col-md-12">
+							<div class="form-group">
+								<select ng-model="fileTypeList.selectedOption" name="fileTypeList" class='form-control' id='' ng-options="option.name for option in fileTypeList.availableOptions track by option.id"></select>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-md-offset-10 col-md-2">
+					<div class="form-group">
+                                <button type="submit" class="btn btn-primary" ng-click="uploadfileButton(files)">Upload</button>
+                                
+                            </div>
+					</div>
+					
+					
+                </fieldset>
+            </form>
+			
+
+
+        </div>
+    </div>
+</div>

@@ -1,0 +1,42 @@
+<div class="main-content" autoscroll="true" bs-affix-target="" init-ripples="" ng-controller="newCustomerCtrl">
+    <section class="forms-basic">
+        <div class="page-header">
+            <h1>      <i class="md md-input"></i>     New Customer    </h1>
+
+        </div>
+        <div class="row  m-b-40">
+            <div class="col-md-3 col-md-push-9">
+                <h5>Info</h5>
+                <p>Dont leave the input field blank.</p>
+            </div>
+            <div class="col-md-8 col-md-pull-3">
+                <div class="well white">
+
+                    <form class="form-floating" action="/" method="post">
+                        <fieldset>
+                            <legend>New customer form</legend> <span class="help-block">Please fill out the following form below.</span>
+                            <div class="form-group">
+                                <label for="inputEmail" class="control-label">Customer Name</label>
+                                <input type="text" class="form-control" name="customerName" required> </div>
+
+                            <div class="form-group">
+                                <select ng-model="data1.selectedOption" class='form-control' id='' name='programName' ng-options="option.name for option in data1.availableOptions track by option.id"></select>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputPassword" class="control-label">Trip Price</label>
+                                <input type="text" class="form-control" id="inputPassword" name="programPrice"> </div>
+
+
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-primary">Submit</button>
+                                <button type="reset" class="btn btn-default">Cancel</button>
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
+    </section>
+</div>

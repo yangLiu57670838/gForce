@@ -1,0 +1,455 @@
+<div class="main-content" autoscroll="true" bs-affix-target="" init-ripples="" ng-controller="resumeformCtrl">
+<section class="forms-basic grey lighten-5">
+
+  <div class="page-header row col-md-12">
+    <h1 class="col-md-3">
+      <i class="md md-list"></i>
+      Resume Form Details
+    </h1>
+	  
+	  <div class="form-group col-md-3">
+                                    <div class="switch">
+                                        <label class="filled"> Incomplete
+                                            <input type="checkbox" ng-model="action" ng-change="actionChange()" ng-true-value="'complete'" ng-false-value="'incomplete'"> <span class="lever"></span> Complete</label>
+                                    </div>
+                                </div>
+	  
+	  <p class="col-md-3">
+	  Last Modified Date: {{form.modified_date}}
+	  </p>
+	  
+
+  </div>
+    
+
+    
+<!--
+<h2>Editors</h2>
+    <div class="field">
+        <strong>State:</strong>
+        <div click-to-edit="location.state"></div>
+    </div>
+    <div class="field">
+        <strong>City:</strong>
+        <div click-to-edit="location.city"></div>
+    </div>
+    <div class="field">
+        <strong>Neighbourhood:</strong>
+        <div click-to-edit="location.neighbourhood"></div>
+    </div>
+-->
+   
+    
+    
+ 
+<div class="row">
+	<div class="col-md-9">
+  		<div class="card">
+        	<div class="table-responsive white">
+          		<h3 class="table-title p-20">Contact Details & Photo</h3>
+				<table class="table table-hover table-full table-full-small">
+					<tbody>
+						<tr> 
+	  						<td>
+								<input ng-model="viewContact.editableValue1" size="10" class="notEditingInput" ng-change="enableEditorButtons(viewContact.id1)" style="width: 100%">
+							</td> 
+              				<td> 
+								<input ng-model="viewContact.editableValue2" size="10" class="notEditingInput" ng-change="enableEditorButtons(viewContact.id2)" style="width: 100%">
+							</td>
+							<td>
+								<input ng-model="viewContact.editableValue3" size="10" class="notEditingInput" ng-change="enableEditorButtons(viewContact.id3)" style="width: 100%">
+							</td>
+            			</tr>
+            			<tr> 
+							<td>
+								<input ng-model="viewContact.editableValue4" size="10" class="notEditingInput" ng-change="enableEditorButtons(viewContact.id4)" style="width: 100%">
+							</td>
+             				<td>
+								<input ng-model="viewContact.editableValue5" size="10" class="notEditingInput" ng-change="enableEditorButtons(viewContact.id5)" style="width: 100%">
+							</td>            
+							<td>
+								<input ng-model="viewContact.editableValue6" size="10" class="notEditingInput" ng-change="enableEditorButtons(viewContact.id6)" style="width: 100%">
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+      
+	<div class="col-md-3" ng-dblclick="enableEditorIMG()">
+       <form name="upload_form" ng-submit="saveIMG(upload_form)">
+	   	<div class="form-group">
+			<span ng-hide="viewIMG.editorEnabled"><img src={{src}} alt="upload file" style="width:170px;height:190px;"></span> <span ng-show="viewIMG.editorEnabled"><input 
+               type="file" 
+               ngf-select 
+               ng-model="file" 
+               name="file" 
+               ngf-pattern="'image/*'"
+               accept="image/*" 
+               ngf-max-size="20MB" 
+               /><i ng-show="upload_form.file.$error.required">*required</i><br><i ng-show="upload_form.file.$error.maxSize">File too large 
+            {{file.size / 1000000|number:1}}MB: max 20M</i><button type="submit" class="btn btn-warning">Save</button> or <button ng-click="disableEditorIMG()" class="btn btn-primary">cancel</button>.</span> 
+	   </div>
+	 </form> 
+<!--            <p>{{progress}}</p>-->
+   	</div>  
+
+</div>
+<!--    <br>-->
+
+	
+<div class="row">
+	<div class="col-md-12">
+  		<div class="card">
+        	<div class="table-responsive white">
+          		<h3 class="table-title p-20">Introduction</h3>      
+              	<div class="form-group" style="">
+              		<text-angular-toolbar name="toolbar1" ta-toolbar="[['bold', 'italics', 'redo', 'undo', 'insertLink']]"></text-angular-toolbar>
+              		<text-angular name="htmlcontent" ng-model="viewIntro.editableValue" ta-target-toolbars='toolbar1,toolbar2' ng-change="enableEditorButtons(viewIntro.id)"> </text-angular>
+              		<text-angular-toolbar name="toolbar2" ta-toolbar="[['html', 'charcount', 'wordcount']]"></text-angular-toolbar>
+            	</div>
+        	</div>         
+      	</div>        
+    </div>
+</div>
+	
+
+<div class="row">
+	<div class="col-md-12">
+  		<div class="card">
+        	<div class="table-responsive white">
+           		<h3 class="table-title p-20"> Objective</h3>
+              	<div class="form-group">
+              		<text-angular-toolbar name="toolbar3" ta-toolbar="[['bold', 'italics', 'ul', 'redo', 'undo', 'insertLink']]"></text-angular-toolbar>
+              		<text-angular name="htmlcontent2" ng-model="viewObjective.editableValue" ta-target-toolbars='toolbar3,toolbar4' ng-change="enableEditorButtons(viewObjective.id)"></text-angular>
+              		<text-angular-toolbar name="toolbar4" ta-toolbar="[['html', 'charcount', 'wordcount']]"></text-angular-toolbar>
+            	</div>     
+			</div>
+		</div>
+	</div>
+</div> 
+
+	
+<div class="row">
+	<div class="col-md-12">
+  		<div class="card">
+        	<div class="table-responsive white">
+          		<h3 class="table-title p-20">Skills</h3>
+				<div class="form-group">
+					<text-angular-toolbar name="toolbar5" ta-toolbar="[['bold', 'italics', 'ul', 'redo', 'undo', 'insertLink']]"></text-angular-toolbar>
+					<text-angular name="htmlcontent3" ng-model="viewSkills.editableValue" ta-target-toolbars='toolbar5,toolbar6' ng-change="enableEditorButtons(viewSkills.id)"></text-angular>
+					<text-angular-toolbar name="toolbar6" ta-toolbar="[['html', 'charcount', 'wordcount']]"></text-angular-toolbar>
+				</div>
+			</div>
+		</div>
+	</div>
+</div> 
+	
+
+<div class="row">
+	<div class="col-md-12">
+  		<div class="card">
+			<div class="table-responsive white">
+   				<h3 class="table-title p-20">Education <button type="button" class="btn btn-link btn-round btn-lg editbutton" ng-click="addoneEducation()"><i class="md md-add"></i></button> 
+				</h3>
+          		<table class="table table-hover table-full table-full-small profileTable">
+            		<colgroup>
+            		</colgroup>
+            		<thead>
+						<tr> 
+							<th>Title</th>
+                 			<th>Institution</th>
+                 			<th>From</th>
+                 			<th>To</th>
+							<th style="width:1%">#</th>
+            			</tr>
+            		</thead>
+            		<tbody>        
+		  				<tr> 
+              				<td><input ng-model="viewEducation.editableValue1" size="10" class="notEditingInput" ng-change="enableEditorButtons(viewEducation.id1)" style="width: 100%"></td>
+                  			<td><input ng-model="viewEducation.editableValue2" size="10" class="notEditingInput" ng-change="enableEditorButtons(viewEducation.id2)" style="width: 100%"></td>
+                  			<td><input type="text" class="form-control" ng-model="viewEducation.editableValue3" ng-change="enableEditorButtons(viewEducation.id3)" data-date-format="MMMM-yyyy" data-date-type="string" data-autoclose="1" bs-datepicker size="10"></td>
+                  			<td><input type="text" class="form-control" ng-model="viewEducation.editableValue4" ng-change="enableEditorButtons(viewEducation.id4)" data-date-format="MMMM-yyyy" data-date-type="string" data-autoclose="1" bs-datepicker size="10"></td>
+							<td></td>
+            			</tr>
+                
+                 		<tr ng-hide="hideEducation2"> 
+              				<td><input ng-model="viewEducation.editableValue5" size="10" class="notEditingInput" ng-change="enableEditorButtons(viewEducation.id5)" style="width: 100%"></td>
+							<td><input ng-model="viewEducation.editableValue6" size="10" class="notEditingInput" ng-change="enableEditorButtons(viewEducation.id6)" style="width: 100%"></td>
+                     		<td><input type="text" class="form-control" ng-model="viewEducation.editableValue7" ng-change="enableEditorButtons(viewEducation.id7)" data-date-format="MMMM-yyyy" data-date-type="string" data-autoclose="1" bs-datepicker size="10"></td>
+                     		<td><input type="text" class="form-control" ng-model="viewEducation.editableValue8" ng-change="enableEditorButtons(viewEducation.id8)" data-date-format="MMMM-yyyy" data-date-type="string" data-autoclose="1" bs-datepicker size="10"></td>
+							<td><button type="button" class="btn btn-link btn-round btn-lg" ng-click="cancelalleducation2()" ng-hide="hideEC2"><i class="md md-cancel"></i></button></td>
+            			</tr>
+                
+						<tr ng-hide="hideEducation3"> 
+              				<td><input ng-model="viewEducation.editableValue9" size="10" class="notEditingInput" ng-change="enableEditorButtons(viewEducation.id9)" style="width: 100%"></td>
+                  			<td><input ng-model="viewEducation.editableValue10" size="10" class="notEditingInput" ng-change="enableEditorButtons(viewEducation.id10)" style="width: 100%"></td>
+							<td><input type="text" class="form-control" ng-model="viewEducation.editableValue11" ng-change="enableEditorButtons(viewEducation.id11)" data-date-format="MMMM-yyyy" data-date-type="string" data-autoclose="1" bs-datepicker size="10"></td> 
+                  			<td><input type="text" class="form-control" ng-model="viewEducation.editableValue12" ng-change="enableEditorButtons(viewEducation.id12)" data-date-format="MMMM-yyyy" data-date-type="string" data-autoclose="1" bs-datepicker size="10"></td>
+							<td><button type="button" class="btn btn-link btn-round btn-lg" ng-click="cancelalleducation3()" ng-hide="hideEC3"><i class="md md-cancel"></i></button></td>
+            			</tr>
+						
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+ </div>      
+   
+	
+<div class="row">
+	<div class="col-md-12">
+  		<div class="card">
+        	<div class="table-responsive white">
+				<h3 class="table-title p-20">Certificates</h3>
+				<div class="form-group">
+              		<text-angular-toolbar name="toolbar7" ta-toolbar="[['bold', 'italics', 'ul', 'redo', 'undo', 'insertLink']]"></text-angular-toolbar>
+              		<text-angular name="htmlcontent4" ng-model="viewCertificates.editableValue" ta-target-toolbars='toolbar7,toolbar8' ng-change="enableEditorButtons(viewCertificates.id)"></text-angular>
+              		<text-angular-toolbar name="toolbar8" ta-toolbar="[['html', 'charcount', 'wordcount']]"></text-angular-toolbar>
+            	</div>
+        	</div>
+		</div>
+	</div>
+</div>   
+	
+	
+<div class="row">
+	<div class="col-md-12">
+  		<div class="card">
+        	<div class="table-responsive white">
+				<h3 class="table-title p-20">Licenses</h3>    
+				<div class="form-group">
+		  			<text-angular-toolbar name="toolbar9" ta-toolbar="[['bold', 'italics', 'ul', 'redo', 'undo', 'insertLink']]"></text-angular-toolbar>
+              		<text-angular name="htmlcontent5" ng-model="viewLicenses.editableValue" ta-target-toolbars='toolbar9,toolbar10' ng-change="enableEditorButtons(viewLicenses.id)"></text-angular>
+              		<text-angular-toolbar name="toolbar10" ta-toolbar="[['html', 'charcount', 'wordcount']]"></text-angular-toolbar>
+            	</div>
+        	</div>
+      	</div>
+	</div>
+</div>
+    
+    
+<div class="row">
+	<div class="col-md-12">
+  		<div class="card no-margin">
+        	<div class="table-responsive white">
+          		<h3 class="table-title p-20">Employment History<button type="button" class="btn btn-link btn-round btn-lg editbutton" ng-click="addoneEmployment()"><i class="md md-add"></i></button></h3>
+          		<table class="table table-hover table-full table-full-small profileTable">
+        			<thead>
+        				<tr> 
+        					<th>Job Title</th>
+         					<th>Company Name</th>
+        					<th>Company Website</th>
+							<th>From</th> 
+							<th>To</th> 
+							<th style="width:1%">#</th>    
+            			</tr>
+            		</thead>
+					<tbody>
+                		<tr> 
+							<td><input ng-model="viewEmployment.editableValue1" size="10" class="notEditingInput" ng-change="enableEditorButtons(viewEmployment.id1)" style="width: 100%"></td>
+							<td><input ng-model="viewEmployment.editableValue2" size="10" class="notEditingInput" ng-change="enableEditorButtons(viewEmployment.id2)" style="width: 100%"></td>
+							<td><input ng-model="viewEmployment.editableValue3" size="10" class="notEditingInput" ng-change="enableEditorButtons(viewEmployment.id3)" style="width: 100%"></td>
+							<td><input type="text" class="form-control" ng-model="viewEmployment.editableValue4" ng-change="enableEditorButtons(viewEmployment.id4)" data-date-format="MMMM-yyyy" data-date-type="string" data-autoclose="1" bs-datepicker style=""></td>
+							
+							<td> <input type="text" class="form-control" ng-model="viewEmployment.editableValue5" ng-change="enableEditorButtons(viewEmployment.id5)" data-date-format="MMMM-yyyy" data-date-type="string" data-autoclose="1" bs-datepicker style=""></td>
+							<td></td>          
+						</tr>                                      
+            		</tbody>
+          		</table>
+        	</div>
+		</div>
+	</div>
+</div> 
+<div class="row">
+	<div class="col-md-12">
+  		<div class="card">
+        	<div class="table-responsive white">                
+           <div class="form-group">
+              <text-angular-toolbar name="toolbar11" ta-toolbar="[['bold', 'italics', 'ul', 'redo', 'undo', 'insertLink']]"></text-angular-toolbar>
+              <text-angular name="htmlcontent6" ng-model="viewEmployment.editableValue6" ta-target-toolbars='toolbar11,toolbar12' ng-change="enableEditorButtons(viewEmployment.id6)"></text-angular>
+              <text-angular-toolbar name="toolbar12" ta-toolbar="[['html', 'charcount', 'wordcount']]"></text-angular-toolbar>
+            </div> 
+        </div>
+      </div>
+    </div>
+  </div> 
+    
+	
+<div class="row" ng-hide="hideEmployment2">
+	<div class="col-md-12">
+  		<div class="card no-margin">
+        	<div class="table-responsive white">
+          		<table class="table table-hover table-full table-full-small profileTable">
+            		<thead>
+            		</thead>
+            		<tbody>    
+            			<tr> 
+							<td><input ng-model="viewEmployment.editableValue7" size="10" class="notEditingInput" ng-change="enableEditorButtons(viewEmployment.id7)" style="width: 100%"></td>  
+                			<td><input ng-model="viewEmployment.editableValue8" size="10" class="notEditingInput" ng-change="enableEditorButtons(viewEmployment.id8)" style="width: 100%"></td>           
+                			<td><input ng-model="viewEmployment.editableValue9" size="10" class="notEditingInput" ng-change="enableEditorButtons(viewEmployment.id9)" style="width: 100%"></td>
+                			<td><input type="text" class="form-control" ng-model="viewEmployment.editableValue10" ng-change="enableEditorButtons(viewEmployment.id10)" data-date-format="MMMM-yyyy" data-date-type="string" data-autoclose="1" bs-datepicker style=""> </td>
+							
+							<td> <input type="text" class="form-control" ng-model="viewEmployment.editableValue11" ng-change="enableEditorButtons(viewEmployment.id11)" data-date-format="MMMM-yyyy" data-date-type="string" data-autoclose="1" bs-datepicker style=""></td>
+							
+                			<td><button type="button" class="btn btn-link btn-round btn-lg" ng-click="cancelallemployment2()" ng-hide="hideEPC2"><i class="md md-cancel"></i></button></td>
+            			</tr>                
+					</tbody>
+				</table>          
+			</div>
+		</div>        
+	</div>
+</div>
+<div class="row" ng-hide="hideEmployment2">
+	<div class="col-md-12">
+  		<div class="card">
+			<div class="table-responsive white">          
+				<div class="form-group">
+					<text-angular-toolbar name="toolbar13" ta-toolbar="[['bold', 'italics', 'ul', 'redo', 'undo', 'insertLink']]"></text-angular-toolbar>
+              		<text-angular name="htmlcontent7" ng-model="viewEmployment.editableValue12" ta-target-toolbars='toolbar13,toolbar14' ng-change="enableEditorButtons(viewEmployment.id12)"></text-angular>
+					<text-angular-toolbar name="toolbar14" ta-toolbar="[['html', 'charcount', 'wordcount']]"></text-angular-toolbar>
+			  	</div>  
+			</div>
+		</div>
+	</div>
+</div> 
+    
+    
+<div class="row" ng-hide="hideEmployment3">
+	<div class="col-md-12">
+  		<div class="card no-margin">
+        	<div class="table-responsive white">
+	  			<table class="table table-hover table-full table-full-small profileTable">
+            		<thead>
+            		</thead>
+            		<tbody>
+              			<tr> 
+                  			<td><input ng-model="viewEmployment.editableValue13" size="10" class="notEditingInput" ng-change="enableEditorButtons(viewEmployment.id13)" style="width: 100%"></td>
+                  			<td><input ng-model="viewEmployment.editableValue14" size="10" class="notEditingInput" ng-change="enableEditorButtons(viewEmployment.id14)" style="width: 100%"></td>
+                  			<td><input ng-model="viewEmployment.editableValue15" size="10" class="notEditingInput" ng-change="enableEditorButtons(viewEmployment.id15)" style="width: 100%"></td>
+                  			<td><input type="text" class="form-control" ng-model="viewEmployment.editableValue16" ng-change="enableEditorButtons(viewEmployment.id16)" data-date-format="MMMM-yyyy" data-date-type="string" data-autoclose="1" bs-datepicker style=""> </td>
+							
+							<td> <input type="text" class="form-control" ng-model="viewEmployment.editableValue17" ng-change="enableEditorButtons(viewEmployment.id17)" data-date-format="MMMM-yyyy" data-date-type="string" data-autoclose="1" bs-datepicker style=""></td>
+							
+                  			<td><button type="button" class="btn btn-link btn-round btn-lg" ng-click="cancelallemployment3()" ng-hide="hideEPC3"><i class="md md-cancel"></i></button></td>
+						</tr>              
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="row" ng-hide="hideEmployment3">
+	<div class="col-md-12">
+  		<div class="card">
+        	<div class="table-responsive white">          
+            	<div class="form-group">
+             		<text-angular-toolbar name="toolbar15" ta-toolbar="[['bold', 'italics', 'ul', 'redo', 'undo', 'insertLink']]"></text-angular-toolbar>
+              		<text-angular name="htmlcontent8" ng-model="viewEmployment.editableValue18" ta-target-toolbars='toolbar15,toolbar16' ng-change="enableEditorButtons(viewEmployment.id18)"></text-angular>
+              		<text-angular-toolbar name="toolbar16" ta-toolbar="[['html', 'charcount', 'wordcount']]"></text-angular-toolbar>
+			  	</div>     
+			</div>
+		</div>
+	</div>
+</div> 
+    
+	
+<div class="row" ng-hide="hideEmployment4">
+	<div class="col-md-12">
+		<div class="card no-margin">
+			<div class="table-responsive white">
+          		<table class="table table-hover table-full table-full-small profileTable">
+            		<thead>
+            		</thead>
+            		<tbody>
+             			<tr>                     
+                 			<td> <input ng-model="viewEmployment.editableValue19" size="10" class="notEditingInput" ng-change="enableEditorButtons(viewEmployment.id19)" style="width: 100%"></td>
+                                    
+                 			<td><input ng-model="viewEmployment.editableValue20" size="10" class="notEditingInput" ng-change="enableEditorButtons(viewEmployment.id20)" style="width: 100%"></td>
+                                    
+                 			<td><input ng-model="viewEmployment.editableValue21" size="10" class="notEditingInput" ng-change="enableEditorButtons(viewEmployment.id21)" style="width: 100%"></td>
+                 	                   
+                 			<td><input type="text" class="form-control" ng-model="viewEmployment.editableValue22" ng-change="enableEditorButtons(viewEmployment.id22)" data-date-format="MMMM-yyyy" data-date-type="string" data-autoclose="1" bs-datepicker style=""></td>
+							
+							<td> <input type="text" class="form-control" ng-model="viewEmployment.editableValue23" ng-change="enableEditorButtons(viewEmployment.id23)" data-date-format="MMMM-yyyy" data-date-type="string" data-autoclose="1" bs-datepicker style=""></td>
+							
+							<td><button type="button" class="btn btn-link btn-round btn-lg" ng-click="cancelallemployment4()" ng-hide="hideEPC4"><i class="md md-cancel"></i></button></td>
+						</tr>                
+					</tbody>
+				</table>       
+			</div>
+		</div>
+	</div>
+</div> 
+<div class="row" ng-hide="hideEmployment4">
+	<div class="col-md-12">
+  		<div class="card">
+			<div class="table-responsive white">          
+		 		<div class="form-group">
+              		<text-angular-toolbar name="toolbar17" ta-toolbar="[['bold', 'italics', 'ul', 'redo', 'undo', 'insertLink']]"></text-angular-toolbar>
+					<text-angular name="htmlcontent9" ng-model="viewEmployment.editableValue24" ta-target-toolbars='toolbar17,toolbar18' ng-change="enableEditorButtons(viewEmployment.id24)"></text-angular>
+              		<text-angular-toolbar name="toolbar18" ta-toolbar="[['html', 'charcount', 'wordcount']]"></text-angular-toolbar>
+			  	</div>   
+			</div>
+		</div>
+	</div>
+</div> 
+       
+<div class="row" ng-hide="hideEmployment5">
+	<div class="col-md-12">
+		<div class="card no-margin">
+        	<div class="table-responsive white">
+				<table class="table table-hover table-full table-full-small profileTable">
+            		<thead>
+            		</thead>
+            		<tbody>                
+              			<tr>                   
+                  			<td> <input ng-model="viewEmployment.editableValue25" size="10" class="notEditingInput" ng-change="enableEditorButtons(viewEmployment.id25)" style="width: 100%"></td>
+                                    
+                			<td> <input ng-model="viewEmployment.editableValue26" size="10" class="notEditingInput" ng-change="enableEditorButtons(viewEmployment.id26)" style="width: 100%"></td>
+                                    
+                  			<td> <input ng-model="viewEmployment.editableValue27" size="10" class="notEditingInput" ng-change="enableEditorButtons(viewEmployment.id27)" style="width: 100%"></td>
+                                    
+                  			<td><input type="text" class="form-control" ng-model="viewEmployment.editableValue28" ng-change="enableEditorButtons(viewEmployment.id28)" data-date-format="MMMM-yyyy" data-date-type="string" data-autoclose="1" bs-datepicker style=""> </td>
+							
+							<td> <input type="text" class="form-control" ng-model="viewEmployment.editableValue29" ng-change="enableEditorButtons(viewEmployment.id29)" data-date-format="MMMM-yyyy" data-date-type="string" data-autoclose="1" bs-datepicker style=""></td>
+    
+              				<td><button type="button" class="btn btn-link btn-round btn-lg" ng-click="cancelallemployment5()" ng-hide="hideEPC5"><i class="md md-cancel"></i></button></td>
+						</tr>                    
+					</tbody>
+				</table>            
+			</div>
+		</div>        
+	</div>
+</div>  
+<div class="row" ng-hide="hideEmployment5">
+	<div class="col-md-12">
+  		<div class="card">
+        	<div class="table-responsive white">          
+		   		<div class="form-group">
+					<text-angular-toolbar name="toolbar19" ta-toolbar="[['bold', 'italics', 'ul', 'redo', 'undo', 'insertLink']]"></text-angular-toolbar>
+              		<text-angular name="htmlcontent10" ng-model="viewEmployment.editableValue30" ta-target-toolbars='toolbar19,toolbar20' ng-change="enableEditorButtons(viewEmployment.id30)"></text-angular>
+					<text-angular-toolbar name="toolbar20" ta-toolbar="[['html', 'charcount', 'wordcount']]"></text-angular-toolbar>
+				</div>   
+			</div>
+		</div>
+	</div>
+</div> 
+    
+    
+ <div class="row"> 
+ 	<div class="col-md-12">
+  		<div class="table-responsive">       
+			<button class="btn btn-warning btn-lg" ng-click="createpdf()">Download PDF</button>
+	 	</div>     
+  	</div>  
+</div>
+
+
+    
+     <span us-spinner="{radius:30, width:8, length: 16, color: 'blue'}" style="position: fixed; top: 50%; left: 57%;" spinner-on="showSpinner"></span>
+    
+    
+</section>
+</div>

@@ -1,0 +1,78 @@
+<div class="aside bs-docs-aside" tabindex="-1" role="dialog" style="max-width:600px;">
+    <div class="close">
+        <div class="btn btn-round btn-info" ng-click="hideEditTransferTPL()"><i class="md md-close"></i></div>
+    </div>
+
+    <div class="aside-dialog">
+        <div class="aside-body bs-sidebar">
+			
+			
+
+            <form class="form-floating" novalidate="novalidate" id="addPaymentForm" name="addPaymentForm">
+                <fieldset>
+					<legend>Edit this Transfer</legend>
+                    
+                        <div class="row">
+							<div class="col-md-12">
+								 <div class="form-group"> 
+							<label for="detail" class="control-label" style="position:relative;">Additional Transfer:</label>
+							<input type="text" class="form-control" name="detail" ng-model="tEdit.additional_transfer" required> 	  
+							</div>
+							</div>
+							<div class="col-md-12">
+								 <div class="form-group">
+							<label for="amount" class="control-label" style="position:relative;"> Amount </label>
+							<input type="number" class="form-control" name="amount" ng-model="tEdit.transfer_amount" required> 	  
+							</div>
+							</div>
+                           <div class="col-md-12">
+							   <div class="form-group"> 
+							<label class="control-label" style="position:relative;">From</label>
+                            <input type="text" class="form-control" ng-model="tEdit.transfer_from" data-date-format="yy-MM-dd" data-date-type="string" data-autoclose="1" name="" bs-datepicker required>	  
+							</div>
+							</div>
+							<div class="col-md-12">
+								<div class="form-group"> 
+							<label class="control-label" style="position:relative;">To</label>
+                            <input type="text" class="form-control" ng-model="tEdit.transfer_to" data-date-format="yy-MM-dd" data-date-type="string" data-autoclose="1" name="" bs-datepicker required>	  
+							</div>
+							</div>
+							<div class="col-md-12">
+								<div class="form-group">
+								<div class="switch">
+                                        <label class="filled"> Return
+                                            <input type="checkbox" ng-model="tEdit.transfer_returnow" ng-change="" ng-true-value="'oneway'" ng-false-value="'return'"> <span class="lever"></span>One Way</label>
+                                    </div>
+								</div>
+							</div>
+							<div class="col-md-12">
+								<div class="form-group">
+							   <div class="switch">
+                                        <label class="filled"> Status: Inactive
+                                            <input type="checkbox" ng-model="tEdit.transfer_status" ng-change="" ng-true-value="'active'" ng-false-value="'inactive'"> <span class="lever"></span>Active</label>
+                                    </div>	  
+							</div>
+							</div>
+							<div class="col-md-12">
+								<div class="form-group">
+							<textarea class="form-control vertical" placeholder="Comments" rows="3" id="textArea" ng-model="tEdit.transfer_comments"></textarea>
+								
+							</div>
+                         </div>
+                                </div>
+
+					
+					<div class="form-group">
+                                <button type="submit" class="btn btn-primary" ng-click="updateTransferDetail(tEdit)">Update</button>
+                                <button type="reset" class="btn btn-default">Cancel</button>
+                            </div>
+					
+					
+                </fieldset>
+            </form>
+			
+
+
+        </div>
+    </div>
+</div>

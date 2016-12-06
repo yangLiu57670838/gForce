@@ -1,0 +1,62 @@
+<div class="aside bs-docs-aside" tabindex="-1" role="dialog" style="max-width:600px;">
+    <div class="close">
+        <div class="btn btn-round btn-info" ng-click="hideAddPresentationTPL()"><i class="md md-close"></i></div>
+    </div>
+
+    <div class="aside-dialog">
+        <div class="aside-body bs-sidebar">
+			
+			
+
+            <form class="form-floating" novalidate="novalidate" id="addPaymentForm" name="addPaymentForm">
+                <fieldset>
+					<legend>Add One Sales Presentation</legend>
+                    
+                        <div class="row">
+							<div class="col-md-12">
+							   	 <div class="form-group">
+							<label class="control-label" style="position:relative;">Attend Day</label>
+                            <input type="text" class="form-control" ng-model="attendDateAdding" data-date-format="yyyy-MM-dd" data-date-type="string" data-autoclose="1" name="attendDateAdding" bs-datepicker required>	  
+							</div>
+							</div>
+							
+							<div class="col-md-12">
+							 <div class="form-group">
+							<label for="amount" class="control-label" style="position:relative;">Presentation </label>
+							<input type="number" class="form-control" name="presentationAdding" ng-model="presentationAdding" required> 	  
+							</div>
+							</div>
+							
+							<div class="col-md-12">
+								  <div class="form-group">
+							<label for="detail" class="control-label" style="position:relative;">Status</label>
+							<select ng-model="presentationStatusAdding.selectedOption" name="presentationStatusAdding" class='form-control' id='' ng-options="option.name for option in presentationStatusAdding.availableOptions track by option.id"></select>	  
+							</div>
+							</div>
+							
+							<div class="col-md-12">
+								 <div class="form-group">
+							<label for="amount" class="control-label" style="position:relative;">Amount </label>
+							<input type="number" class="form-control" name="presentationAmountAdding" ng-model="presentationAmountAdding" required> 	  
+							</div>
+							</div>
+							
+					
+                                </div>
+                
+
+					
+					<div class="form-group">
+                                <button class="btn btn-primary" ng-click="addP(attendDateAdding, presentationAdding, presentationAmountAdding)">Add</button>
+                                <button class="btn btn-default" ng-click="presentationCancel()">Cancel</button>
+                            </div>
+					
+					
+                </fieldset>
+            </form>
+			
+
+
+        </div>
+    </div>
+</div>
